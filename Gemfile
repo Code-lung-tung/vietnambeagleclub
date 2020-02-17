@@ -39,6 +39,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'arctic_admin'
 gem 'friendly_id', '~> 5.2.0'
+gem 'tinymce-rails', '~> 4.0'
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

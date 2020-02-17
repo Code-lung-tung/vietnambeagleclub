@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
   permit_params do
-    Category.column_names.map(&:to_sym).reject { |c| c == :slug }
+    Category.column_names.map(&:to_sym)
   end
 
   index do
