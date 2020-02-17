@@ -4,11 +4,7 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.admin?
-      can :manage, :all
-      cannot %i[destroy], AdminUser
-    else
-      can :read, :all
-    end
+    can :manage, :all
+    cannot %i[destroy], AdminUser
   end
 end
