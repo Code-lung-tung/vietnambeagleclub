@@ -18,4 +18,7 @@ $primary-color: #1895fe;
 //   .status_tag { background: #6090DB; }
 .mce-tinymce {
   margin-left: 25% !important;
+  &.mce-fullscreen {
+    margin-left: 0 !important;
+  }
 }

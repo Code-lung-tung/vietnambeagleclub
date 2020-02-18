@@ -7,13 +7,15 @@ ActiveAdmin.register Article do
     selectable_column
     id_column
     column :title
-    column :photo
-    column :category_id
+    column :photo do |article|
+      image_tag article.photo.thumb.url, size: 50
+    end
+    column :category_id do |article|
+      link_to article.category.name, admin_category_path(article.category)
+    end
     column :slug
     column :status
     column :published_at
-    column :created_at
-    column :updated_at
     actions
   end
 
@@ -26,7 +28,7 @@ ActiveAdmin.register Article do
           next
         end
         if column == :photo
-          f.input :photo, as: :file
+          f.input :photo, as: :file, input_html: { accept: 'image/*' }
           next
         end
         if column == :content
