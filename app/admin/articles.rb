@@ -19,6 +19,12 @@ ActiveAdmin.register Article do
     actions
   end
 
+  filter :title
+  filter :slug
+  filter :category_id
+  filter :status
+  filter :published_at, as: :date_range
+
   form html: { multipart: true } do |f|
     f.inputs do
       Article.column_names.map(&:to_sym).each do |column|

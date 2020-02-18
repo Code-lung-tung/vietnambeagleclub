@@ -24,4 +24,7 @@ ActiveAdmin.register Category do
     end
     f.actions
   end
+
+  filter :name
+  filter :slug
 end
