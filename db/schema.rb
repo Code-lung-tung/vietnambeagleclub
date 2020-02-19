@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_145843) do
     t.integer "color_type", limit: 2
     t.string "living_address"
     t.text "description"
+    t.string "slug"
     t.date "date_of_birth"
     t.date "date_of_death"
     t.datetime "created_at", null: false

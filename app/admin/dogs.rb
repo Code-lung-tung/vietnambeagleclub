@@ -1,9 +1,8 @@
 ActiveAdmin.register Dog do
   NOT_DISPLAY_COLS = %i[description created_at updated_at]
 
-  permit_params do
-    Dog.column_names.map(&:to_sym)
-  end
+  permit_params :id, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
+    :slug, :date_of_birth, :date_of_death, photos_attributes: %i[id title alt image _destroy]
 
   index do
     selectable_column
@@ -28,7 +27,7 @@ ActiveAdmin.register Dog do
   form html: { multipart: true } do |f|
     f.inputs do
       Dog.column_names.map(&:to_sym).each do |column|
-        next if %i[id created_at updated_at].include?(column)
+        next if %i[id slug created_at updated_at].include?(column)
         if column == :mother_id
           f.input :mother_id, as: :select, collection: Dog.female.map { |v| [v.name, v.id] }.to_h
           next
@@ -38,6 +37,13 @@ ActiveAdmin.register Dog do
           next
         end
         f.input column
+      end
+    end
+    f.inputs 'Photos' do
+      f.has_many :photos, heading: false, allow_destroy: true do |ff|
+        ff.input :image, as: :file, input_html: { accept: 'image/*' }
+        ff.input :title
+        ff.input :alt
       end
     end
     f.actions

@@ -8,6 +8,7 @@ class CreateDogs < ActiveRecord::Migration[5.2]
       t.integer :color_type, limit: 1
       t.string :living_address
       t.text :description
+      t.string :slug
       t.date :date_of_birth
       t.date :date_of_death
 
