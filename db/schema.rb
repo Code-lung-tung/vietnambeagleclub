@@ -47,13 +47,13 @@ ActiveRecord::Schema.define(version: 2020_02_18_145843) do
     t.string "title", null: false
     t.text "content"
     t.integer "status", limit: 2, default: 0, null: false, comment: "draft, published, inactive"
+    t.string "slug"
     t.string "meta_title"
     t.string "meta_keywords"
     t.text "meta_description"
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug"
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 

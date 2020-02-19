@@ -47,4 +47,17 @@ ActiveAdmin.register Article do
     f.actions
   end
   
+  show do
+    attributes_table do
+      Article.column_names.map(&:to_sym).each do |column|
+        if column == :photo
+          row column do |article|
+            image_tag article.photo.url, size: 300
+          end
+          next
+        end
+        row column
+      end
+    end
+  end
 end
