@@ -1,7 +1,7 @@
 ActiveAdmin.register Dog do
   NOT_DISPLAY_COLS = %i[description created_at updated_at]
 
-  permit_params :id, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
+  permit_params :id, :name, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
     :slug, :date_of_birth, :date_of_death, photos_attributes: %i[id title alt image _destroy]
 
   index do
@@ -41,11 +41,30 @@ ActiveAdmin.register Dog do
     end
     f.inputs 'Photos' do
       f.has_many :photos, heading: false, allow_destroy: true do |ff|
-        ff.input :image, as: :file, input_html: { accept: 'image/*' }
+        ff.input :image, as: :file, input_html: { accept: 'image/*' }, 
+          hint: ff.object.image.present? ? image_tag(ff.object.image.url, style: 'height:auto; max-width: 500px;') : ''
         ff.input :title
         ff.input :alt
       end
     end
     f.actions
+  end
+
+  show do
+    attributes_table do
+      Dog.column_names.map(&:to_sym).each do |col|
+        next if col == :id
+        row col
+      end
+    end
+
+    panel "Photos" do
+      dog.photos.map do |photo|
+        div do
+          image_tag photo.image.url, style: 'max-width: 800px; height: auto;'
+        end
+        br
+      end
+    end
   end
 end
