@@ -29,11 +29,11 @@ ActiveAdmin.register Dog do
       Dog.column_names.map(&:to_sym).each do |column|
         next if %i[id slug created_at updated_at].include?(column)
         if column == :mother_id
-          f.input :mother_id, as: :select, collection: Dog.female.map { |v| [v.name, v.id] }.to_h
+          f.input column, as: :select, collection: Dog.male.map { |v| [v.name, v.id] }.to_h
           next
         end
         if column == :father_id
-          f.input :father_id, as: :select, collection: Dog.male.map { |v| [v.name, v.id] }.to_h
+          f.input column, as: :select, collection: Dog.female.map { |v| [v.name, v.id] }.to_h
           next
         end
         f.input column
