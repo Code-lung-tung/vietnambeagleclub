@@ -33,7 +33,7 @@ ActiveAdmin.register Dog do
           next
         end
         if column == :father_id
-          f.input :father_id, as: :select, collection: Dog.female.map { |v| [v.name, v.id] }.to_h
+          f.input :father_id, as: :select, collection: Dog.male.map { |v| [v.name, v.id] }.to_h
           next
         end
         f.input column
