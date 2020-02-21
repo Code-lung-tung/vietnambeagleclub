@@ -1,0 +1,4 @@
+toolbar: bold italic underline | uploadimage
+plugins:
+  - uploadimage
+uploadimage: false

@@ -6,6 +6,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :title, null: false
       t.text :content
       t.integer :status, default: 0, limit: 1, null: false, comment: 'draft, published, inactive'
+      t.string :slug
       t.string :meta_title
       t.string :meta_keywords
       t.text :meta_description

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_16_040242) do
+ActiveRecord::Schema.define(version: 2020_02_18_145843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_040242) do
     t.string "title", null: false
     t.text "content"
     t.integer "status", limit: 2, default: 0, null: false, comment: "draft, published, inactive"
+    t.string "slug"
     t.string "meta_title"
     t.string "meta_keywords"
     t.text "meta_description"
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_02_16_040242) do
     t.integer "color_type", limit: 2
     t.string "living_address"
     t.text "description"
+    t.string "slug"
     t.date "date_of_birth"
     t.date "date_of_death"
     t.datetime "created_at", null: false
@@ -96,6 +98,17 @@ ActiveRecord::Schema.define(version: 2020_02_16_040242) do
     t.integer "status", limit: 2, default: 1, null: false
     t.integer "type", limit: 2, null: false
     t.text "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tinymce_images", force: :cascade do |t|
+    t.string "alt", default: ""
+    t.string "hint", default: ""
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.bigint "file_file_size"
+    t.datetime "file_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
