@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_145843) do
+ActiveRecord::Schema.define(version: 2020_02_22_044146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(version: 2020_02_18_145843) do
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
+  create_table "banners", force: :cascade do |t|
+    t.integer "site_setting_id"
+    t.string "title"
+    t.string "link"
+    t.string "alt"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -72,7 +82,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_145843) do
   create_table "dogs", force: :cascade do |t|
     t.integer "father_id"
     t.integer "mother_id"
-    t.string "name"
+    t.string "name", null: false
     t.integer "sex", limit: 2, default: 0, null: false
     t.integer "color_type", limit: 2
     t.string "living_address"
@@ -96,7 +106,7 @@ ActiveRecord::Schema.define(version: 2020_02_18_145843) do
 
   create_table "site_settings", force: :cascade do |t|
     t.integer "status", limit: 2, default: 1, null: false
-    t.integer "type", limit: 2, null: false
+    t.integer "setting_type", limit: 2, null: false
     t.text "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
