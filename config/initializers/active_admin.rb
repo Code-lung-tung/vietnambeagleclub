@@ -199,7 +199,7 @@ ActiveAdmin.setup do |config|
   # Create another checkbox is disabled by default. You can customize it for individual
   # resources or you can enable them globally from here.
   #
-  # config.create_another = true
+  # config.create_another = true'
 
   # == Register Stylesheets & Javascripts
   #
@@ -215,6 +215,7 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+  config.register_javascript 'tinymce.js'
 
   # == CSV options
   #
