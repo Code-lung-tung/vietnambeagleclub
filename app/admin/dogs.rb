@@ -24,6 +24,16 @@ ActiveAdmin.register Dog do
     actions
   end
 
+  filter :name
+  filter :slug
+  filter :mother
+  filter :father
+  filter :date_of_birth
+  filter :date_of_death
+  filter :sex, as: :select, collection: Dog.sexes
+  filter :color_type, as: :select, collection: Dog.color_types
+  filter :living_address
+
   form html: { multipart: true } do |f|
     f.inputs do
       Dog.column_names.map(&:to_sym).each do |column|
