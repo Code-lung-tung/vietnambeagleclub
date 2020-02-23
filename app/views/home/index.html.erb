@@ -64,61 +64,13 @@
                     <button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;">Previous</button>
                     <div class="slick-list draggable">
                         <div class="slick-track" style="opacity: 1; width: 15840px; transform: translate3d(-5760px, 0px, 0px);">
-                            <div class="main-slides slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" style="width: 1440px;" tabindex="-1">
+                        <% @dogs.each_with_index do |dog, index| %> 
+                            <div class="main-slides slick-slide slick-cloned" data-slick-index="<%= index - 1 %>" aria-hidden="true" style="width: 1440px;" tabindex="-1">
 
-                                <img src="https://collievn.com/wp-content/uploads/2018/10/Untitled-4.jpg">
-
-                            </div>
-                            <div class="main-slides slick-slide" data-slick-index="0" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2019/10/33.jpg">
+                                <img src="<%= dog.photos.first.image.url %>">
 
                             </div>
-                            <div class="main-slides slick-slide" data-slick-index="1" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2018/11/3543254-1.jpg">
-
-                            </div>
-                            <div class="main-slides slick-slide" data-slick-index="2" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2018/10/Untitled-4.jpg">
-
-                            </div>
-                            <div class="main-slides slick-slide slick-current slick-active" data-slick-index="3" aria-hidden="false" style="width: 1440px;" tabindex="0">
-
-                                <img src="https://collievn.com/wp-content/uploads/2018/10/Untitled-11111.png">
-
-                            </div>
-                            <div class="main-slides slick-slide" data-slick-index="4" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2018/10/Untitled-4.jpg">
-
-                            </div>
-                            <div class="main-slides slick-slide slick-cloned" data-slick-index="5" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2019/10/33.jpg">
-
-                            </div>
-                            <div class="main-slides slick-slide slick-cloned" data-slick-index="6" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2018/11/3543254-1.jpg">
-
-                            </div>
-                            <div class="main-slides slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2018/10/Untitled-4.jpg">
-
-                            </div>
-                            <div class="main-slides slick-slide slick-cloned" data-slick-index="8" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2018/10/Untitled-11111.png">
-
-                            </div>
-                            <div class="main-slides slick-slide slick-cloned" data-slick-index="9" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
-                                <img src="https://collievn.com/wp-content/uploads/2018/10/Untitled-4.jpg">
-
-                            </div>
+                        <% end %>
                         </div>
                     </div>
 
@@ -157,86 +109,81 @@
                     </div>
                 </section>
                 <section class="parallax-section clearfix default_template" id="section-1561" data-jarallax-original-styles="null" style="z-index: 0;">
-
-                    <div class="mid-content">
-
-                        <h2><span>DỊCH VỤ</span></h2>
-
-                        <div class="parallax-content">
-                            <div class="page-content">
-                                <div class="parallax-content">
-                                    <div class="page-content">
-                                        <p style="text-align: center;">
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="service-listing clearfix">
-                                    <div class="clearfix service-list odd wow fadeInLeft animated animated" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInLeft;">
-                                        <div class="service-image"><img class="alignnone size-full wp-image-1836" src="https://collievn.com/wp-content/uploads/2018/11/cl2.png" alt="" width="104" height="94"></div>
-                                        <div class="service-detail">
-                                            <h3><span style="color: #ff0000;">♥</span>BÁN CHÓ BORDER COLLIE THUẦN CHỦNG</h3>
-                                            <div class="service-content">
-                                                <p>Tất cả chó con khi bán ra đều được xác nhận thuần chủng và sẽ đền tiền gấp 10 lần nếu phát hiện lai tạp<span style="color: #ff0000;">.<a style="color: #ff0000;" href="https://collievn.com/danh-muc/dang-ban">Mua ngay</a>.</span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix service-list even wow fadeInRight animated animated" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                                        <div class="service-image"><img class="alignnone size-full wp-image-1837" src="https://collievn.com/wp-content/uploads/2018/11/cl1.png" alt="" width="106" height="88"></div>
-                                        <div class="service-detail">
-                                            <h3><span style="color: #ff0000;">♥</span>PHỐI GIỐNG CHÓ BORDER COLLIE</h3>
-                                            <div class="service-content">
-                                                <p>Với nhiều đực giống,đầy đủ các mầu sắc đáp ứng đầy đủ yêu cầu của các bạn.<span style="color: #ff0000;"><a style="color: #ff0000;" href="https://collievn.com/phoi-giong-border-collie">Xem ngay</a></span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="clearfix service-list odd wow fadeInLeft animated animated" data-wow-delay="0.75s" style="visibility: visible; animation-delay: 0.75s; animation-name: fadeInLeft;">
-                                        <div class="service-image"><img class="alignnone size-full wp-image-1840" src="https://collievn.com/wp-content/uploads/2018/11/cl5.png" alt="" width="97" height="92"></div>
-                                        <div class="service-detail">
-                                            <h3><span style="color: #ff0000;">♥</span>TRÔNG GIỮ THÚ CƯNG</h3>
-                                            <div class="service-content">
-                                                <p>Nắm bắt được nhu cầu cần có thời gian nghỉ ngơi và giải trí của các bạn.Chúng tôi nhận<span style="color: #ff0000;"> <a style="color: #ff0000;" href="https://collievn.com/dich-vu-trong-giu-cun-chat-luong-tai-ha-noi">trông giữ thú cưng</a></span> với giá thành rẻ nhưng hoàn toàn chất lượng.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix service-list even wow fadeInRight animated animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInRight;">
-                                        <div class="service-image"><img class="alignnone size-full wp-image-1838" src="https://collievn.com/wp-content/uploads/2018/11/cl3.png" alt="" width="86" height="103"></div>
-                                        <div class="service-detail">
-                                            <h3><span style="color: #ff0000;">♥</span>THỨC ĂN CHO THÚ CƯNG</h3>
-                                            <div class="service-content">
-                                                <p>Fitmin là dòng thức ăn được tối ưu nhất cho dòng chó Border Collie,nên chúng tôi đã chọn Fitmin để giới thiệu và cung cấp cho những người yêu chó Border Collie.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="clearfix service-list odd wow fadeInLeft animated animated" data-wow-delay="1.25s" style="visibility: visible; animation-delay: 1.25s; animation-name: fadeInLeft;">
-                                        <div class="service-image"><img class="alignnone size-full wp-image-1841" src="https://collievn.com/wp-content/uploads/2018/11/cl6.png" alt="" width="86" height="100"></div>
-                                        <div class="service-detail">
-                                            <h3><span style="color: #ff0000;">♥</span>HỖ TRỢ,TƯ VẤN 24/24</h3>
-                                            <div class="service-content">
-                                                <p>Luôn luôn sẵn sàng lắng nghe những khó khăn và thắc mắc các bạn gặp phải trong suốt quá trình nuôi dưỡng và chăm sóc chó Border Collie.Đừng ngần ngại,hãy nhắc máy và<span style="color: #ff0000;"> <a style="color: #ff0000;" href="https://www.facebook.com/lechianh1188">liên lạc</a></span> với chúng tôi.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix service-list even wow fadeInRight animated animated" data-wow-delay="1.5s" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeInRight;">
-                                        <div class="service-image"><img class="alignnone size-full wp-image-1837" src="https://collievn.com/wp-content/uploads/2018/11/cl1.png" alt="" width="106" height="88"></div>
-                                        <div class="service-detail">
-                                            <h3><span style="color: #ff0000;">♥</span>HƯỚNG DẪN NGƯỜI CHƠI THAM GIA VÀO CÁC HOẠT ĐỘNG HỘI NHÓM</h3>
-                                            <div class="service-content">
-                                                <p>Sinh hoạt cộng đồng là điều thiết yếu để mỗi chúng ta có thể giao lưu và chia sẻ kiến thức cho nhau.Bên cạnh đó còn góp phần tạo dựng sự đoàn kết,cùng nhau phát triển và lớn mạnh.<span style="color: #ff0000;"><a style="color: #ff0000;" href="https://www.facebook.com/groups/bordercollielover/">Tham gia ngay</a></span></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="content-area"></div>
-                    </div>
-                    <div id="jarallax-container-1" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -100;">
-                        <div style="background-position: 50% 50%; background-size: 100%; background-repeat: no-repeat; background-image: url(&quot;https://collievn.com/?fbclid=IwAR0WS5m30ZI5aKYCsoy1xdPE6L8JBD3IqzZu_SzqhZlQGCMBd0k6SHqQIWo&quot;); position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none;"></div>
-                    </div>
-                </section>
+  <div class="mid-content">
+    <h2><span>DỊCH VỤ</span></h2>
+    <div class="parallax-content">
+      <div class="page-content">
+        <div class="parallax-content">
+          <div class="page-content">
+            <p style="text-align: center;"></p>
+          </div>
+        </div>
+        <div class="service-listing clearfix">
+          <div class="clearfix service-list odd wow fadeInLeft animated animated" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInLeft;">
+            <div class="service-image"><img class="alignnone size-full wp-image-1836" src="https://collievn.com/wp-content/uploads/2018/11/cl2.png" alt="" width="104" height="94"></div>
+            <div class="service-detail">
+              <h3><span style="color: #ff0000;">♥</span>BÁN CHÓ BORDER COLLIE THUẦN CHỦNG</h3>
+              <div class="service-content">
+                <p>Tất cả chó con khi bán ra đều được xác nhận thuần chủng và sẽ đền tiền gấp 10 lần nếu phát hiện lai tạp<span style="color: #ff0000;">.<a style="color: #ff0000;" href="https://collievn.com/danh-muc/dang-ban">Mua ngay</a>.</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix service-list even wow fadeInRight animated animated" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+            <div class="service-image"><img class="alignnone size-full wp-image-1837" src="https://collievn.com/wp-content/uploads/2018/11/cl1.png" alt="" width="106" height="88"></div>
+            <div class="service-detail">
+              <h3><span style="color: #ff0000;">♥</span>PHỐI GIỐNG CHÓ BORDER COLLIE</h3>
+              <div class="service-content">
+                <p>Với nhiều đực giống,đầy đủ các mầu sắc đáp ứng đầy đủ yêu cầu của các bạn.<span style="color: #ff0000;"><a style="color: #ff0000;" href="https://collievn.com/phoi-giong-border-collie">Xem ngay</a></span></p>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="clearfix service-list odd wow fadeInLeft animated animated" data-wow-delay="0.75s" style="visibility: visible; animation-delay: 0.75s; animation-name: fadeInLeft;">
+            <div class="service-image"><img class="alignnone size-full wp-image-1840" src="https://collievn.com/wp-content/uploads/2018/11/cl5.png" alt="" width="97" height="92"></div>
+            <div class="service-detail">
+              <h3><span style="color: #ff0000;">♥</span>TRÔNG GIỮ THÚ CƯNG</h3>
+              <div class="service-content">
+                <p>Nắm bắt được nhu cầu cần có thời gian nghỉ ngơi và giải trí của các bạn.Chúng tôi nhận<span style="color: #ff0000;"> <a style="color: #ff0000;" href="https://collievn.com/dich-vu-trong-giu-cun-chat-luong-tai-ha-noi">trông giữ thú cưng</a></span> với giá thành rẻ nhưng hoàn toàn chất lượng.</p>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix service-list even wow fadeInRight animated animated" data-wow-delay="1s" style="visibility: visible; animation-delay: 1s; animation-name: fadeInRight;">
+            <div class="service-image"><img class="alignnone size-full wp-image-1838" src="https://collievn.com/wp-content/uploads/2018/11/cl3.png" alt="" width="86" height="103"></div>
+            <div class="service-detail">
+              <h3><span style="color: #ff0000;">♥</span>THỨC ĂN CHO THÚ CƯNG</h3>
+              <div class="service-content">
+                <p>Fitmin là dòng thức ăn được tối ưu nhất cho dòng chó Border Collie,nên chúng tôi đã chọn Fitmin để giới thiệu và cung cấp cho những người yêu chó Border Collie.</p>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="clearfix service-list odd wow fadeInLeft animated" data-wow-delay="1.25s" style="visibility: hidden; animation-delay: 1.25s; animation-name: none;">
+            <div class="service-image"><img class="alignnone size-full wp-image-1841" src="https://collievn.com/wp-content/uploads/2018/11/cl6.png" alt="" width="86" height="100"></div>
+            <div class="service-detail">
+              <h3><span style="color: #ff0000;">♥</span>HỖ TRỢ,TƯ VẤN 24/24</h3>
+              <div class="service-content">
+                <p>Luôn luôn sẵn sàng lắng nghe những khó khăn và thắc mắc các bạn gặp phải trong suốt quá trình nuôi dưỡng và chăm sóc chó Border Collie.Đừng ngần ngại,hãy nhắc máy và<span style="color: #ff0000;"> <a style="color: #ff0000;" href="https://www.facebook.com/lechianh1188">liên lạc</a></span> với chúng tôi.</p>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix service-list even wow fadeInRight animated" data-wow-delay="1.5s" style="visibility: hidden; animation-delay: 1.5s; animation-name: none;">
+            <div class="service-image"><img class="alignnone size-full wp-image-1837" src="https://collievn.com/wp-content/uploads/2018/11/cl1.png" alt="" width="106" height="88"></div>
+            <div class="service-detail">
+              <h3><span style="color: #ff0000;">♥</span>HƯỚNG DẪN NGƯỜI CHƠI THAM GIA VÀO CÁC HOẠT ĐỘNG HỘI NHÓM</h3>
+              <div class="service-content">
+                <p>Sinh hoạt cộng đồng là điều thiết yếu để mỗi chúng ta có thể giao lưu và chia sẻ kiến thức cho nhau.Bên cạnh đó còn góp phần tạo dựng sự đoàn kết,cùng nhau phát triển và lớn mạnh.<span style="color: #ff0000;"><a style="color: #ff0000;" href="https://www.facebook.com/groups/bordercollielover/">Tham gia ngay</a></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-area"></div>
+  </div>
+  <div id="jarallax-container-1" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -100;">
+    <div style="background-position: 50% 50%; background-size: 100%; background-repeat: no-repeat; background-image: url(&quot;https://collievn.com/&quot;); position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none;"></div>
+  </div>
+</section>
                 <section class="parallax-section clearfix portfolio_template" id="section-1693" data-jarallax-original-styles="null" style="z-index: 0;">
 
                     <div class="mid-content">
@@ -248,139 +195,19 @@
                                 <p style="text-align: center;">Tất cả những bài viết mới sẽ được cập nhật tại đây</p>
                             </div>
                         </div>
-
                         <div class="portfolio-listing clearfix">
-
-                            <a href="https://collievn.com/10-dieu-ban-chua-biet-ve-border-collie" class="portfolio-list wow fadeInUp animated" data-wow-delay="0.15s" style="visibility: visible; animation-delay: 0.15s; animation-name: fadeInUp;">
+                        <% @articles.each do |article| %>
+                            <a href="/<%= article.slug %>" class="portfolio-list wow fadeInUp animated" data-wow-delay="0.15s" style="visibility: visible; animation-delay: 0.15s; animation-name: fadeInUp;">
                                 <div class="portfolio-wrap">
                                     <div class="portfolio-overlay"><span>+</span></div>
                                     <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/12/images.jpg" alt="10 điều bạn chưa biết về Border Collie">
+                                        <img src="<%= article.photo.url %>" alt="<%= article.title %>">
                                     </div>
-                                    <h3>10 điều bạn chưa biết về Border Collie</h3>
+                                    <h3><%= article.title %></h3>
                                 </div>
                             </a>
-
-                            <a href="https://collievn.com/cho-co-the-an-ca-rot-khong" class="portfolio-list wow fadeInUp animated" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/12/border-collie-ăn-cà-rôt.jpg" alt="Chó có thể ăn cà rôt không">
-                                    </div>
-                                    <h3>Chó có thể ăn cà rôt không</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/cho-co-the-an-nho-khong" class="portfolio-list wow fadeInUp animated" data-wow-delay="0.45s" style="visibility: visible; animation-delay: 0.45s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/12/maxresdefault-560x450.jpg" alt="Chó có thể ăn nho không ?">
-                                    </div>
-                                    <h3>Chó có thể ăn nho không ?</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/cho-co-the-an-tao" class="portfolio-list wow fadeInUp animated" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/12/101355356-dog-under-the-apple-tree-black-and-white-border-collie-waiting-in-apple-orchard--560x450.jpg" alt="Chó có thể ăn táo ?">
-                                    </div>
-                                    <h3>Chó có thể ăn táo ?</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/cach-nuoi-cho-con-border-collie-phuong-phap-nhan-giong-cho-con-border-collie" class="portfolio-list wow fadeInUp animated" data-wow-delay="0.75s" style="visibility: visible; animation-delay: 0.75s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/06/fff-560x450.jpg" alt="[Cách nuôi chó con Border Collie] Phương pháp nhân giống chó con Border Collie">
-                                    </div>
-                                    <h3>[Cách nuôi chó con Border Collie] Phương pháp nhân giống chó con Border Collie</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/thoi-quen-sinh-hoat-border-collie-giai-ma-thoi-quen-sinh-hoat-border-collie" class="portfolio-list wow fadeInUp animated" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/06/s4-560x450.jpg" alt="[Thói quen sinh hoạt Border Collie] Giải mã thói quen sinh hoạt Border Collie">
-                                    </div>
-                                    <h3>[Thói quen sinh hoạt Border Collie] Giải mã thói quen sinh hoạt Border Collie</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/nhung-dieu-can-biet-ve-mua-sinh-san" class="portfolio-list wow fadeInUp animated" data-wow-delay="1.05s" style="visibility: visible; animation-delay: 1.05s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/06/www-560x450.jpg" alt="Những điều cần biết về mùa sinh sản">
-                                    </div>
-                                    <h3>Những điều cần biết về mùa sinh sản</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/nhan-tiem-phong-vacxin-5-7-benh-cho-cho-tai-nha" class="portfolio-list wow fadeInUp animated" data-wow-delay="1.2s" style="visibility: visible; animation-delay: 1.2s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/04/09797-557x450.jpg" alt="Nhận tiêm phòng Vacxin 5 – 7 bệnh cho chó tại nhà">
-                                    </div>
-                                    <h3>Nhận tiêm phòng Vacxin 5 – 7 bệnh cho chó tại nhà</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/mua-cho-border-collie-o-dau-gia-tien-mua-cho-border-collie-bao-nhieu" class="portfolio-list wow fadeInUp animated" data-wow-delay="1.35s" style="visibility: visible; animation-delay: 1.35s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2018/01/216B4F06-3359-4776-A97C-07F78834FEC8.jpeg" alt="Mua chó Border Collie ở đâu – Giá tiền mua chó Border Collie bao nhiêu ?">
-                                    </div>
-                                    <h3>Mua chó Border Collie ở đâu – Giá tiền mua chó Border Collie bao nhiêu ?</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/dieu-can-biet-khi-chon-cho-border-collie" class="portfolio-list wow fadeInUp animated" data-wow-delay="1.5s" style="visibility: visible; animation-delay: 1.5s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2019/02/5775895187_eb2591fe3d_b-560x450.jpg" alt="Điều cần biết khi chọn chó Border Collie">
-                                    </div>
-                                    <h3>Điều cần biết khi chọn chó Border Collie</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/hinh-anh-offline-border-collie-4-11-18" class="portfolio-list wow fadeInUp animated" data-wow-delay="1.65s" style="visibility: visible; animation-delay: 1.65s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2018/11/IMG_8925-1-560x450.jpg" alt="Hình ảnh offline Border Collie 4/11/18">
-                                    </div>
-                                    <h3>Hình ảnh offline Border Collie 4/11/18</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/cham-soc-border-collie-khoe-manh" class="portfolio-list wow fadeInUp animated" data-wow-delay="1.8s" style="visibility: visible; animation-delay: 1.8s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2018/09/28166290_147956042543138_4426248161278308902_n.jpg" alt="Nhưng điều nên biết để chăm sóc border collie khỏe mạnh">
-                                    </div>
-                                    <h3>Nhưng điều nên biết để chăm sóc border collie khỏe mạnh</h3>
-                                </div>
-                            </a>
-
-                            <a href="https://collievn.com/cho-co-the-va-khong-the-an-cac-loai-raucuqua-nao" class="portfolio-list wow fadeInUp animated" data-wow-delay="1.95s" style="visibility: visible; animation-delay: 1.95s; animation-name: fadeInUp;">
-                                <div class="portfolio-wrap">
-                                    <div class="portfolio-overlay"><span>+</span></div>
-                                    <div class="portfolio-image">
-                                        <img src="https://collievn.com/wp-content/uploads/2018/08/images-5.jpg" alt="Chó có thể và không thể ăn các loại rau,củ,quả nào ?">
-                                    </div>
-                                    <h3>Chó có thể và không thể ăn các loại rau,củ,quả nào ?</h3>
-                                </div>
-                            </a>
-
+                        <% end %>
+                        <%= paginate @articles %>
                         </div>
                     </div>
                     <div id="jarallax-container-2" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -100;">
@@ -437,141 +264,25 @@
                             duc-giong}">Red &amp; White</button>
                                         </div>
                                         <div class="tlp-portfolio-isotope" style="position: relative; height: 802.188px;">
-                                            <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  chocolate-white" style="position: absolute; left: 0px; top: 0px;">
-                                                <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2019/06/a8-300x205.jpg" alt="Mr. THOR">
-                                                        <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 70px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2019/06/a8.jpg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/mr-thor"><i class="fa fa-external-link"></i></a></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tlp-content">
-                                                        <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/mr-thor">Mr. THOR</a></h3>
-                                                            <div class="tlp-portfolio-sd"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  lilac-merle" style="position: absolute; left: 300px; top: 0px;">
-                                                <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2018/11/0480BE1F-3236-4A6C-823E-94A209C0CC62-300x200.jpeg" alt="Mr.ALEX">
-                                                        <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 67.5px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2018/11/0480BE1F-3236-4A6C-823E-94A209C0CC62.jpeg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/alex"><i class="fa fa-external-link"></i></a></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tlp-content">
-                                                        <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/alex">Mr.ALEX</a></h3>
-                                                            <div class="tlp-portfolio-sd"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  blue-merle" style="position: absolute; left: 600px; top: 0px;">
-                                                <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2018/11/051BCE76-16A7-4BC7-A8FA-CA5FFEC95C2B-e1541099788925-300x200.jpeg" alt="Mr.BON">
-                                                        <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 67.5px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2018/11/051BCE76-16A7-4BC7-A8FA-CA5FFEC95C2B-e1541099788925.jpeg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/bon"><i class="fa fa-external-link"></i></a></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tlp-content">
-                                                        <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/bon">Mr.BON</a></h3>
-                                                            <div class="tlp-portfolio-sd"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  chocolate-white" style="position: absolute; left: 900px; top: 0px;">
-                                                <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2018/10/IMG_9874-min-300x200.jpg" alt="Mr.BOPBI">
-                                                        <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 67.5px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2018/10/IMG_9874-min.jpg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/bopbi"><i class="fa fa-external-link"></i></a></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tlp-content">
-                                                        <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/bopbi">Mr.BOPBI</a></h3>
-                                                            <div class="tlp-portfolio-sd"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  chocolate-white" style="position: absolute; left: 300px; top: 268px;">
-                                                <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2018/11/45075604_258098614871179_3379388136596439040_n-e1541435821887-300x198.jpg" alt="Mr.FEFA">
-                                                        <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 66.5px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2018/11/45075604_258098614871179_3379388136596439040_n-e1541435821887.jpg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/fe"><i class="fa fa-external-link"></i></a></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tlp-content">
-                                                        <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/fe">Mr.FEFA</a></h3>
-                                                            <div class="tlp-portfolio-sd"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  duc-giong" style="position: absolute; left: 600px; top: 268px;">
-                                                <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2017/08/20479464_498006300552602_2807552587447935895_n-1-e1540925624179-300x200.jpg" alt="Mr.LUCKY">
-                                                        <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 67.5px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2017/08/20479464_498006300552602_2807552587447935895_n-1-e1540925624179.jpg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/lucky"><i class="fa fa-external-link"></i></a></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tlp-content">
-                                                        <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/lucky">Mr.LUCKY</a></h3>
-                                                            <div class="tlp-portfolio-sd"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  chocolate-white" style="position: absolute; left: 900px; top: 268px;">
-                                                <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2018/11/1E13D5B9-8451-4A92-AEFC-A906C71216AD-e1541435528236-300x203.jpeg" alt="Mr.PUPU">
-                                                        <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 69px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2018/11/1E13D5B9-8451-4A92-AEFC-A906C71216AD-e1541435528236.jpeg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/pupu"><i class="fa fa-external-link"></i></a></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tlp-content">
-                                                        <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/pupu">Mr.PUPU</a></h3>
-                                                            <div class="tlp-portfolio-sd"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <% @dogs.each do |dog| %>
                                             <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  black-white" style="position: absolute; left: 0px; top: 272px;">
                                                 <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2018/11/IMG_886033333-1-e1541435158919-300x200.jpg" alt="Mr.TEDDY">
+                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="<%= dog.photos.first.image.url %>" alt="<%= dog.name %>">
                                                         <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 67.5px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2018/11/IMG_886033333-1-e1541435158919.jpg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/teddy"><i class="fa fa-external-link"></i></a></p>
+                                                            <div class="tlp-portfolio-sd"></div>
+                                                            <p class="link-icon" style="margin-top: 67.5px;"><a class="tlp-zoom" href="<%= dog.photos.first.image.url %>"><i class="fa fa-search-plus"></i></a><a target="_blank" href="/portfolio/<%= dog.id %>"><i class="fa fa-external-link"></i></a></p>
                                                         </div>
                                                     </div>
                                                     <div class="tlp-content">
                                                         <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/teddy">Mr.TEDDY</a></h3>
+                                                            <h3><a href="/portfolio/<%= dog.id %>"><%= dog.name %></a></h3>
                                                             <div class="tlp-portfolio-sd"></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  lilac-merle" style="position: absolute; left: 300px; top: 534px;">
-                                                <div class="tlp-portfolio-item">
-                                                    <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="https://collievn.com/wp-content/uploads/2019/03/IMG_9813-min-300x200.jpg" alt="Mr.ZINZIN">
-                                                        <div class="tlp-overlay">
-                                                            <p class="link-icon" style="margin-top: 67.5px;"><a class="tlp-zoom" href="https://collievn.com/wp-content/uploads/2019/03/IMG_9813-min.jpg"><i class="fa fa-search-plus"></i></a><a target="_blank" href="https://collievn.com/portfolio/mr-zinzin"><i class="fa fa-external-link"></i></a></p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="tlp-content">
-                                                        <div class="tlp-content-holder">
-                                                            <h3><a href="https://collievn.com/portfolio/mr-zinzin">Mr.ZINZIN</a></h3>
-                                                            <div class="tlp-portfolio-sd"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <% end %>
+                                        <%= paginate @dogs %>
                                         </div>
                                     </div>
                                 </div>

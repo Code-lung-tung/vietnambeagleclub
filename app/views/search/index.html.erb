@@ -1,1315 +1,257 @@
-<html>
-
-<head>
-    <title>BEAGLE - breed database</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
-    <link href="img/styles.css" type="text/css" rel="STYLESHEET">
-    <style type="text/css">
-        @font-face {
-            font-weight: 400;
-            font-style: normal;
-            font-family: 'Inter-Loom';
-            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Regular.woff2') format('woff2');
-        }
-        
-        @font-face {
-            font-weight: 400;
-            font-style: italic;
-            font-family: 'Inter-Loom';
-            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Italic.woff2') format('woff2');
-        }
-        
-        @font-face {
-            font-weight: 500;
-            font-style: normal;
-            font-family: 'Inter-Loom';
-            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Medium.woff2') format('woff2');
-        }
-        
-        @font-face {
-            font-weight: 500;
-            font-style: italic;
-            font-family: 'Inter-Loom';
-            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-MediumItalic.woff2') format('woff2');
-        }
-        
-        @font-face {
-            font-weight: 700;
-            font-style: normal;
-            font-family: 'Inter-Loom';
-            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Bold.woff2') format('woff2');
-        }
-        
-        @font-face {
-            font-weight: 700;
-            font-style: italic;
-            font-family: 'Inter-Loom';
-            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BoldItalic.woff2') format('woff2');
-        }
-        
-        @font-face {
-            font-weight: 900;
-            font-style: normal;
-            font-family: 'Inter-Loom';
-            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-Black.woff2') format('woff2');
-        }
-        
-        @font-face {
-            font-weight: 900;
-            font-style: italic;
-            font-family: 'Inter-Loom';
-            src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BlackItalic.woff2') format('woff2');
-        }
-    </style>
-</head>
-
-<body text="#000000" data-gr-c-s-loaded="true" class="js-focus-visible" cz-shortcut-listen="true">
-    <div align="center">
-        <table width="1018" height="100%" border="0" cellspacing="2" cellpadding="0" bgcolor="#FFFFFF">
-            <tbody>
-                <tr> </tr>
+<div text="#000000" data-gr-c-s-loaded="true">
+  <div align="center">
+    <table width="1018" height="100%" border="0" cellspacing="2" cellpadding="0" bgcolor="#FFFFFF">
+      <tbody>
+        <tr>
+          <td valign="top" align="left" width="212" bgcolor="#dfab72" style="vertical-align: top;">
+            <!-- ПОИСК -->
+            <form action="/search" method="GET" style="MARGIN-BOTTOM: 10px; WIDTH: 210px;">
+              <p style="MARGIN: 10px 0px 0px 10px;">
+                <font color="#000000" size="1" face="Arial">
+                  <b>
+                    <font size="2"></font><br>
+                    ID:<br>
+                    <input type="text" name="id" value="" size="8" class="MIPT" placeholder="Nhập id">
+                    Tên:<br>
+                    <input type="text" name="name" value="" size="22" class="MIPT" placeholder="Nhập tên">
+                    Màu Sắc:<br>
+                    <select name="color">
+                      <option value="">- - -</option>
+                      <option value="monochrome"> Monochrome </option>
+                      <option value="bicolor"> Bicolor </option>
+                      <option value="tricolor"> Tricolor </option>
+                    </select>
+                    <br>
+                    Giới Tính:<br>
+                    <select name="sex">
+                      <option value="">- - -</option>
+                      <option value="male">Giống Đực</option>
+                      <option value="female">Giống Cái</option>
+                    </select>
+                    <br>
+                    Ngày Sinh (<font size="1"><i>dd-mm-yyyy</i></font>):<br>
+                    <input type="text" name="fromdate" value="" size="4" class="from-date" style="width: 100px"  placeholder="Từ ngày"> &nbsp;&nbsp; 
+                    <input type="text" name="todate" value="" size="4" class="to-date" style="width: 100px"  placeholder="Đến ngày">
+                    <br>
+                  </b>
+                </font>
+              </p>
+              <font color="#000000" size="1" face="Arial"><b>
+              </b></font>
+              <p style="MARGIN:0px 10px 10px 10px;"><font color="#000000" size="1" face="Arial"><b>
+                Sắp xếp theo:<br><br>
+                <input type="radio" name="ordby" checked="" value="0"> Tên <br>
+                <input type="radio" name="ordby" value="1"> Ngày Sinh<br>
+                <input type="radio" name="ordby" value="2"> Ngày Cập Nhật<br>
+                <input type="radio" name="ordby" value="3"> Ngày Tạo<br>
+                </b></font>
+                <font size="1"><br></font>
+                <input type="submit" value="Tìm Kiếm" class="MSUB">
+              </p>
+            </form>
+            <!-- КОНЕЦ ПОИСКА -->
+            <hr noshade="" width="100%" size="2" color="#FFFFFF" vspace="10">
+            <!-- АВТОРИЗАЦИЯ / СПИСОК ОПЕРАЦИЙ -->
+          </td>
+          <td width="800" valign="top" bgcolor="#FFFFFF">
+            <!-- ОСНОВНАЯ ЧАСТЬ СТРАНИЦЫ -->
+            <table width="800" cellspacing="20" cellpadding="0" border="0">
+              <tbody>
                 <tr>
-                    <td valign="top" align="left" width="212" bgcolor="#dfab72">
-                        <!-- ПОИСК -->
-                        <form action="search.php" method="GET" style="MARGIN-BOTTOM: 10px; WIDTH: 210px;">
-                            <p style="MARGIN: 10px 0px 0px 10px;">
-
-                                <font color="#000000" size="1" face="Arial"><b>
-	   <font size="2"></font>
-                                <br> ID:
-                                <br>
-                                <input type="text" name="srchid" value="" size="8" class="MIPT">
-                                <br> Name:
-                                <br>
-
-                                <select name="letter">
-                                    <option value="">&nbsp;</option>
-                                    <option value="a">A</option>
-                                    <option value="b">B</option>
-                                    <option value="c">C</option>
-                                    <option value="d">D</option>
-                                    <option value="e">E</option>
-                                    <option value="f">F</option>
-                                    <option value="g">G</option>
-                                    <option value="h">H</option>
-                                    <option value="i">I</option>
-                                    <option value="j">J</option>
-                                    <option value="k">K</option>
-                                    <option value="l">L</option>
-                                    <option value="m">M</option>
-                                    <option value="n">N</option>
-                                    <option value="o">O</option>
-                                    <option value="p">P</option>
-                                    <option value="q">Q</option>
-                                    <option value="r">R</option>
-                                    <option value="s">S</option>
-                                    <option value="t">T</option>
-                                    <option value="u">U</option>
-                                    <option value="v">V</option>
-                                    <option value="w">W</option>
-                                    <option value="x">X</option>
-                                    <option value="y">Y</option>
-                                    <option value="z">Z</option>
-
-                                    <option value="а">А</option>
-                                    <option value="б">Б</option>
-                                    <option value="в">В</option>
-                                    <option value="г">Г</option>
-                                    <option value="д">Д</option>
-                                    <option value="е">Е</option>
-                                    <option value="ж">Ж</option>
-                                    <option value="з">З</option>
-                                    <option value="и">И</option>
-                                    <option value="й">Й</option>
-                                    <option value="к">К</option>
-                                    <option value="л">Л</option>
-                                    <option value="м">М</option>
-                                    <option value="н">Н</option>
-                                    <option value="о">О</option>
-                                    <option value="п">П</option>
-                                    <option value="р">Р</option>
-                                    <option value="с">C</option>
-                                    <option value="т">Т</option>
-                                    <option value="у">У</option>
-                                    <option value="ф">Ф</option>
-                                    <option value="х">Х</option>
-                                    <option value="ц">Ц</option>
-                                    <option value="ч">Ч</option>
-                                    <option value="ш">Ш</option>
-                                    <option value="щ">Щ</option>
-                                    <option value="ы">Ы</option>
-                                    <option value="э">Э</option>
-                                    <option value="ю">Ю</option>
-                                    <option value="я">Я</option>
-                                </select>
-
-                                <input type="text" name="name" value="" size="22" class="MIPT">
-                                <br> Tattoo / Chip:
-                                <br>
-                                <input type="text" name="tavro" value="" size="28" class="MIPT">
-                                <br> No pedigree:
-                                <br>
-                                <input type="text" name="Rkf" value="" size="28" class="MIPT">
-                                <br> Titles
-
-                                <br>
-                                <select name="titleid">
-                                    <option value="0">- - -</option>
-                                    <option value="19"> Am.Ch </option>
-                                    <option value="100"> Arg.Ch </option>
-                                    <option value="171"> Arm.Ch </option>
-                                    <option value="160"> Aus.Ch </option>
-                                    <option value="22"> Aut.Ch </option>
-                                    <option value="109"> Aze.Ch </option>
-                                    <option value="84"> Balkan.Ch </option>
-                                    <option value="17"> Balt.Ch </option>
-                                    <option value="145"> Balt.W </option>
-                                    <option value="25"> Bel.Ch </option>
-                                    <option value="11"> Blr.Ch </option>
-                                    <option value="39"> Bol.Ch </option>
-                                    <option value="81"> Bos&amp;Hrz.Ch </option>
-                                    <option value="155"> Bra.Ch </option>
-                                    <option value="90"> Bundessiger </option>
-                                    <option value="41"> Can.Ch </option>
-                                    <option value="152"> Chl.Ch </option>
-                                    <option value="7"> Club.Ch </option>
-                                    <option value="72"> Crufts.Winner </option>
-                                    <option value="116"> Cyp.Ch </option>
-                                    <option value="37"> Cze.Ch </option>
-                                    <option value="24"> Den.Ch </option>
-                                    <option value="136"> Dog Of The Year </option>
-                                    <option value="91"> East&amp;Cent.Euro.Ch </option>
-                                    <option value="122"> Eng.Ch </option>
-                                    <option value="33"> Esp.Ch </option>
-                                    <option value="12"> Est.Ch </option>
-                                    <option value="141"> Est.JW </option>
-                                    <option value="140"> Est.W </option>
-                                    <option value="68"> Eurasia Ch. </option>
-                                    <option value="117"> EuropaJugendSiegerin </option>
-                                    <option value="110"> EuropaSieger </option>
-                                    <option value="4"> EuW </option>
-                                    <option value="18"> Fin.Ch </option>
-                                    <option value="93"> Fin.W </option>
-                                    <option value="15"> Fr.Ch </option>
-                                    <option value="29"> Geo.Ch </option>
-                                    <option value="16"> Ger.Ch </option>
-                                    <option value="137"> Gib.Ch </option>
-                                    <option value="75"> Grand Blr.Ch </option>
-                                    <option value="78"> Grand Bol.Ch </option>
-                                    <option value="154"> Grand Bra.Ch </option>
-                                    <option value="151"> Grand Chl.Ch </option>
-                                    <option value="158"> Grand Cze.Ch </option>
-                                    <option value="172"> Grand Geo.Ch </option>
-                                    <option value="108"> Grand Mda.Ch </option>
-                                    <option value="107"> Grand Rom.Ch </option>
-                                    <option value="9"> Grand Rus.Ch </option>
-                                    <option value="159"> Grand Svk.Ch </option>
-                                    <option value="74"> Grand Ua.Ch </option>
-                                    <option value="113"> Grand.Hun.Ch </option>
-                                    <option value="123"> Gre.Ch </option>
-                                    <option value="6"> HOF </option>
-                                    <option value="62"> Hrv.Ch </option>
-                                    <option value="36"> Hun.Ch </option>
-                                    <option value="1"> Int.CH </option>
-                                    <option value="133"> Ire.Ch </option>
-                                    <option value="34"> It.Ch </option>
-                                    <option value="31"> Izr.Ch </option>
-                                    <option value="114"> J Esp.Ch </option>
-                                    <option value="121"> J. Nordic Winner </option>
-                                    <option value="167"> J.Arg.Ch </option>
-                                    <option value="118"> J.Aze.Ch </option>
-                                    <option value="70"> J.Balkan.Ch </option>
-                                    <option value="56"> J.Balt.Ch </option>
-                                    <option value="69"> J.Bel.Ch </option>
-                                    <option value="104"> J.Bel.Ch </option>
-                                    <option value="174"> J.Blr.Ch </option>
-                                    <option value="65"> J.Bol.Ch </option>
-                                    <option value="79"> J.Bos&amp;Hrz.Ch </option>
-                                    <option value="156"> J.Bra.Ch </option>
-                                    <option value="106"> J.Ch.Nld </option>
-                                    <option value="153"> J.Chl.Ch </option>
-                                    <option value="50"> J.Club.Ch </option>
-                                    <option value="148"> J.Cyp.Ch </option>
-                                    <option value="86"> J.Cze.Ch </option>
-                                    <option value="59"> J.Est.Ch </option>
-                                    <option value="48"> J.EuW </option>
-                                    <option value="96"> J.Fin.W </option>
-                                    <option value="103"> J.Fr.Ch </option>
-                                    <option value="97"> J.Ger.Ch </option>
-                                    <option value="163"> J.Gr.Bol.Ch </option>
-                                    <option value="162"> J.Gr.Ukr.Ch </option>
-                                    <option value="85"> J.Hor.Ch </option>
-                                    <option value="98"> J.Hun.Ch </option>
-                                    <option value="102"> J.It.Ch. </option>
-                                    <option value="168"> J.Izr.Ch </option>
-                                    <option value="161"> J.Kaz.Ch </option>
-                                    <option value="170"> J.Kgz.Ch </option>
-                                    <option value="147"> J.Lit.W </option>
-                                    <option value="58"> J.Lt.Ch </option>
-                                    <option value="87"> J.Lux.Ch </option>
-                                    <option value="57"> J.Lv.Ch </option>
-                                    <option value="82"> J.Mac.Ch </option>
-                                    <option value="52"> J.Mda.Ch </option>
-                                    <option value="149"> J.Mnt.Ch </option>
-                                    <option value="40"> J.Pol.Ch </option>
-                                    <option value="49"> J.Rus.Ch </option>
-                                    <option value="111"> J.Slo.Ch </option>
-                                    <option value="112"> J.SMR.Ch </option>
-                                    <option value="80"> J.Srb.Ch </option>
-                                    <option value="157"> J.Swe.Ch </option>
-                                    <option value="88"> J.Sws.Ch </option>
-                                    <option value="105"> J.Sws.Ch </option>
-                                    <option value="53"> J.Ua.Ch </option>
-                                    <option value="169"> J.Uzb.Ch </option>
-                                    <option value="47"> J.WW </option>
-                                    <option value="139"> Jap.Ch </option>
-                                    <option value="55"> Kaz.Ch </option>
-                                    <option value="165"> Kgz.Ch </option>
-                                    <option value="146"> Lit.W </option>
-                                    <option value="14"> Lt.Ch </option>
-                                    <option value="21"> Lux.Ch </option>
-                                    <option value="13"> Lv.Ch </option>
-                                    <option value="143"> Lva.JW </option>
-                                    <option value="142"> Lva.W </option>
-                                    <option value="66"> Mac.Ch </option>
-                                    <option value="26"> Mda.Ch </option>
-                                    <option value="20"> Mex.Ch </option>
-                                    <option value="132"> Mnt.Ch </option>
-                                    <option value="60"> Mon.Ch </option>
-                                    <option value="23"> Nld.Ch </option>
-                                    <option value="92"> Nor.Ch </option>
-                                    <option value="94"> Nor.W </option>
-                                    <option value="120"> Nord Ch. </option>
-                                    <option value="119"> Nordic Winner </option>
-                                    <option value="51"> OANKOO.Ch (rus) </option>
-                                    <option value="30"> Pol.Ch </option>
-                                    <option value="35"> Prt.Ch </option>
-                                    <option value="5"> Res.EuW </option>
-                                    <option value="3"> res.WW </option>
-                                    <option value="44"> RFLS.Ch (rus) </option>
-                                    <option value="46"> RFOS.Ch (rus) </option>
-                                    <option value="45"> RFSS.Ch (rus) </option>
-                                    <option value="43"> RKF.Ch </option>
-                                    <option value="38"> Rom.Ch </option>
-                                    <option value="8"> Rus.Ch </option>
-                                    <option value="164"> Rus.Work.Ch </option>
-                                    <option value="89"> SKK.Ch (kaz) </option>
-                                    <option value="166"> SKKR.Ch </option>
-                                    <option value="61"> Slo.Ch </option>
-                                    <option value="76"> Smr.Ch </option>
-                                    <option value="27"> Srb&amp;Mnt.Ch </option>
-                                    <option value="99"> Srb.Ch </option>
-                                    <option value="28"> Svk.Ch </option>
-                                    <option value="32"> Sw.Ch </option>
-                                    <option value="77"> Swe.Ch </option>
-                                    <option value="95"> Swe.W </option>
-                                    <option value="173"> Tur.Ch </option>
-                                    <option value="10"> Ua.Ch </option>
-                                    <option value="67"> Ukr.Winner </option>
-                                    <option value="83"> Uzb.Ch </option>
-                                    <option value="144"> Vet.EuW </option>
-                                    <option value="138"> Vet.WW </option>
-                                    <option value="150"> Westminster Winner </option>
-                                    <option value="2"> WW </option>
-                                    <option value="54"> Yug.Ch </option>
-                                </select>
-                                <br> Kennel (
-                                <input name="oken" type="checkbox">Owner):
-                                <br>
-                                <select name="Kennel">
-                                    <option value="0">- - -</option>
-                                    <option value="90"> Amazing Success </option>
-                                    <option value="284"> Amelie Pro </option>
-                                    <option value="121"> Amelist </option>
-                                    <option value="75"> Ami-Shegoday </option>
-                                    <option value="107"> Angel's Born </option>
-                                    <option value="244"> Anikalain </option>
-                                    <option value="104"> Ansgar Neil </option>
-                                    <option value="103"> Antonoff Style </option>
-                                    <option value="66"> Anvi High Line </option>
-                                    <option value="85"> Aries Star </option>
-                                    <option value="280"> Arsvita </option>
-                                    <option value="64"> Art-Fantasy </option>
-                                    <option value="1"> Astravegas </option>
-                                    <option value="40"> BatHoff </option>
-                                    <option value="144"> Beauty's Glance </option>
-                                    <option value="117"> Bel' Sonar </option>
-                                    <option value="111"> Bevan-Do </option>
-                                    <option value="69"> Bravo Vista </option>
-                                    <option value="157"> Casa de La Costa </option>
-                                    <option value="88"> Cooper Hall </option>
-                                    <option value="65"> Crom Hunter </option>
-                                    <option value="87"> Dakota Hunter </option>
-                                    <option value="37"> Dar Shah </option>
-                                    <option value="92"> Daring Gold </option>
-                                    <option value="251"> Dasen Prime </option>
-                                    <option value="3"> Demarly </option>
-                                    <option value="100"> Diolayn </option>
-                                    <option value="202"> Divine Choice </option>
-                                    <option value="277"> Dolina Nezhnosti </option>
-                                    <option value="235"> Dzhessamina Blum </option>
-                                    <option value="120"> Egregia Cum Laude </option>
-                                    <option value="11"> Elf Maro </option>
-                                    <option value="287"> Enervate </option>
-                                    <option value="225"> Estrella de la Feliz </option>
-                                    <option value="248"> Fanny Planet </option>
-                                    <option value="94"> Fanta's Brand </option>
-                                    <option value="93"> Fortuna Vitae </option>
-                                    <option value="258"> Fra Riket Terry </option>
-                                    <option value="259"> From Maker Club </option>
-                                    <option value="109"> Gardi Light </option>
-                                    <option value="70"> Gisoly </option>
-                                    <option value="45"> Glaza Naprotiv </option>
-                                    <option value="116"> Glimmingen Castle </option>
-                                    <option value="278"> Gloria Victoribus </option>
-                                    <option value="98"> Golden Amber </option>
-                                    <option value="60"> Golden Gedeon </option>
-                                    <option value="267"> Good Story </option>
-                                    <option value="266"> Gordaya Stat </option>
-                                    <option value="114"> Goshkin Dom </option>
-                                    <option value="96"> Gotfrid Haus </option>
-                                    <option value="249"> Grand Russo </option>
-                                    <option value="41"> GranPremio </option>
-                                    <option value="272"> Helen Style </option>
-                                    <option value="95"> Hunter Laind </option>
-                                    <option value="271"> Hunter of Taurica </option>
-                                    <option value="250"> Imperial Gigant </option>
-                                    <option value="262"> Irinstyle </option>
-                                    <option value="260"> Iz Gostevogo Doma </option>
-                                    <option value="58"> Iz Skazgrada </option>
-                                    <option value="143"> Iz Yarkoy Stayki </option>
-                                    <option value="86"> Jewel Aleksandrina </option>
-                                    <option value="67"> Jolly Voice </option>
-                                    <option value="62"> Kara Urus </option>
-                                    <option value="84"> Krosh Stori </option>
-                                    <option value="264"> Legenda Arbata </option>
-                                    <option value="99"> Limon Evita </option>
-                                    <option value="255"> Lin De Vita </option>
-                                    <option value="254"> Linus Ulius </option>
-                                    <option value="63"> Livli Times </option>
-                                    <option value="102"> Lyubimyy Drug </option>
-                                    <option value="189"> Magna Legatum </option>
-                                    <option value="46"> Magnifique Meute </option>
-                                    <option value="283"> Mio Amore Gioconda </option>
-                                    <option value="273"> Mistika Lumari </option>
-                                    <option value="82"> Nrava Krotkogo </option>
-                                    <option value="223"> Ocean Diamond </option>
-                                    <option value="112"> Olis Dog </option>
-                                    <option value="4"> Orange-Story </option>
-                                    <option value="213"> Paradise Velour </option>
-                                    <option value="91"> Partymix </option>
-                                    <option value="47"> Pride of God's </option>
-                                    <option value="110"> Prime Pride </option>
-                                    <option value="274"> Priori Inkantatum </option>
-                                    <option value="275"> Ray Of Golden Sun </option>
-                                    <option value="61"> Red Americana </option>
-                                    <option value="193"> Red Nova </option>
-                                    <option value="265"> S Zemli Alangasarov </option>
-                                    <option value="35"> Scout-Liss </option>
-                                    <option value="76"> Shegoday </option>
-                                    <option value="39"> Shemsu Sotis </option>
-                                    <option value="36"> Simonaland </option>
-                                    <option value="44"> Skazka Sibiri </option>
-                                    <option value="59"> Sladkaya Zhizn </option>
-                                    <option value="212"> Solar Siberia </option>
-                                    <option value="89"> Star Age </option>
-                                    <option value="270"> Talistars </option>
-                                    <option value="83"> To Be Lucky </option>
-                                    <option value="68"> Ultra Crystal </option>
-                                    <option value="256"> Uniqueen </option>
-                                    <option value="77"> Vadzhilayn </option>
-                                    <option value="7"> Valsi </option>
-                                    <option value="43"> Varinhouse </option>
-                                    <option value="42"> Vi-Oldi </option>
-                                    <option value="253"> Vicky Lane </option>
-                                    <option value="224"> Ville Uman </option>
-                                    <option value="285"> Vokaliz </option>
-                                    <option value="263"> Volga Premium </option>
-                                    <option value="108"> Yanina's Hunters </option>
-                                    <option value="240"> Zavetni Talisman </option>
-                                    <option value="101"> Zhelayu Schastya </option>
-                                    <option value="279"> Zvezda Pandory </option>
-                                    <option value="51"> Dufosee </option>
-                                    <option value="79"> Absolutely Spotless </option>
-                                    <option value="135"> Adharamaj </option>
-                                    <option value="169"> Alikiss </option>
-                                    <option value="191"> Allegro </option>
-                                    <option value="5"> Alotorius Old Glory </option>
-                                    <option value="146"> Alpine Flowers </option>
-                                    <option value="123"> Altajara </option>
-                                    <option value="230"> Amor Fati </option>
-                                    <option value="205"> Angyali Annie </option>
-                                    <option value="142"> Annavah </option>
-                                    <option value="150"> Asalei </option>
-                                    <option value="198"> Auburn </option>
-                                    <option value="247"> Aviatrix </option>
-                                    <option value="23"> Baldev </option>
-                                    <option value="125"> Bangor </option>
-                                    <option value="56"> Barrister </option>
-                                    <option value="8"> Barstail </option>
-                                    <option value="71"> Basic Drive's </option>
-                                    <option value="57"> Bayard </option>
-                                    <option value="105"> Be Brand </option>
-                                    <option value="24"> Beagelee </option>
-                                    <option value="268"> Beagle Force </option>
-                                    <option value="220"> Beagle Inn </option>
-                                    <option value="54"> Bi Guru </option>
-                                    <option value="2"> Bierquil Beagles </option>
-                                    <option value="55"> Blues Singer's </option>
-                                    <option value="234"> Bory Wood </option>
-                                    <option value="25"> Brialey </option>
-                                    <option value="281"> British Guardians </option>
-                                    <option value="197"> Cabaret </option>
-                                    <option value="80"> Cardiem </option>
-                                    <option value="141"> Casa Libra </option>
-                                    <option value="236"> Casal da Vinha </option>
-                                    <option value="53"> Catulus </option>
-                                    <option value="151"> Country Hunter's </option>
-                                    <option value="154"> Crazy Walker </option>
-                                    <option value="166"> Crystalline Quality </option>
-                                    <option value="239"> Cuddling Cheeks </option>
-                                    <option value="219"> Da Mira Naul </option>
-                                    <option value="52"> Daisy Hills </option>
-                                    <option value="173"> Danter </option>
-                                    <option value="49"> Daragoj </option>
-                                    <option value="160"> Darksan </option>
-                                    <option value="113"> Darling Joy </option>
-                                    <option value="182"> De Almodobar </option>
-                                    <option value="200"> De Hoefstal </option>
-                                    <option value="133"> De La Meute D'asterion </option>
-                                    <option value="208"> De La Voix Du Der </option>
-                                    <option value="214"> De Loujennandre </option>
-                                    <option value="207"> De Maxcecan </option>
-                                    <option value="130"> Del Imperio Canino </option>
-                                    <option value="210"> Des Vallees D'argoat </option>
-                                    <option value="175"> Desperado </option>
-                                    <option value="159"> Deviza </option>
-                                    <option value="72"> Dialynne </option>
-                                    <option value="286"> Divine Line </option>
-                                    <option value="119"> Dom Eleonory </option>
-                                    <option value="97"> Dos Touros </option>
-                                    <option value="190"> Dream Of Gaja </option>
-                                    <option value="132"> Du Hetre Au Loup </option>
-                                    <option value="209"> Dynamic Flyer </option>
-                                    <option value="183"> Eardley </option>
-                                    <option value="161"> Eiger Marmots </option>
-                                    <option value="153"> Erben Korwins </option>
-                                    <option value="148"> Etruria 2000 </option>
-                                    <option value="252"> Evalux </option>
-                                    <option value="9"> Exstrim Be </option>
-                                    <option value="10"> Extreme Life </option>
-                                    <option value="196"> Fairytosh </option>
-                                    <option value="176"> Fallowfield </option>
-                                    <option value="203"> Filnor </option>
-                                    <option value="222"> Flabby Ears </option>
-                                    <option value="118"> Fonteposca </option>
-                                    <option value="246"> Free Stride </option>
-                                    <option value="78"> From Elly`s Pack </option>
-                                    <option value="147"> From Yvori’s Joy </option>
-                                    <option value="238"> Fruity Pet </option>
-                                    <option value="136"> Gala </option>
-                                    <option value="261"> Ginger Kingdom </option>
-                                    <option value="73"> Gold Line </option>
-                                    <option value="168"> Got To B </option>
-                                    <option value="233"> Hanne </option>
-                                    <option value="140"> Hessin </option>
-                                    <option value="245"> Holtebakken </option>
-                                    <option value="26"> Houndmaster </option>
-                                    <option value="128"> Infinity Sun </option>
-                                    <option value="12"> Inner Light </option>
-                                    <option value="217"> Jack’s Connection </option>
-                                    <option value="188"> Jalhar </option>
-                                    <option value="155"> Joe Cool's </option>
-                                    <option value="27"> Karakush </option>
-                                    <option value="14"> Kattyval </option>
-                                    <option value="204"> Kertalaakin </option>
-                                    <option value="28"> Kislev </option>
-                                    <option value="170"> Konigreich </option>
-                                    <option value="15"> Kristal Rok </option>
-                                    <option value="126"> Krolewska Zgraja </option>
-                                    <option value="16"> La Casa Demiani </option>
-                                    <option value="131"> Laciata Sfora </option>
-                                    <option value="29"> Langrigg </option>
-                                    <option value="282"> Lantaka </option>
-                                    <option value="229"> Lapitropy </option>
-                                    <option value="187"> Lion Hearts Best </option>
-                                    <option value="13"> Love Best Wishes </option>
-                                    <option value="241"> Luck Devil’s </option>
-                                    <option value="177"> lyndex </option>
-                                    <option value="221"> Maliwick's </option>
-                                    <option value="192"> Mano </option>
-                                    <option value="115"> Megik Layin </option>
-                                    <option value="206"> Member of Snoopy Gang </option>
-                                    <option value="178"> Milroc </option>
-                                    <option value="129"> Monsbay Pack </option>
-                                    <option value="30"> Nangunyah </option>
-                                    <option value="172"> North Ridge </option>
-                                    <option value="211"> Ob-La-Di’s </option>
-                                    <option value="81"> Od Troch Tabiel </option>
-                                    <option value="180"> Of Geable's Pride </option>
-                                    <option value="138"> Of Grant's Garden </option>
-                                    <option value="139"> Of Great Olympia </option>
-                                    <option value="215"> Of The Heath Lake </option>
-                                    <option value="195"> Of Volcano Cotopaxi </option>
-                                    <option value="17"> Omri Relizan </option>
-                                    <option value="31"> Orobay </option>
-                                    <option value="218"> Orogeny </option>
-                                    <option value="179"> Perla Vltavy </option>
-                                    <option value="156"> Plum </option>
-                                    <option value="124"> Pun Kotzky </option>
-                                    <option value="201"> Rabbit Run </option>
-                                    <option value="167"> Ready for a Party </option>
-                                    <option value="137"> Red Baron </option>
-                                    <option value="164"> Rhodium </option>
-                                    <option value="242"> Roeper's </option>
-                                    <option value="32"> Sanmar </option>
-                                    <option value="18"> Sanvita </option>
-                                    <option value="106"> Sarah Lee's Pack </option>
-                                    <option value="165"> Sarangrave </option>
-                                    <option value="20"> Selesta's Dreams </option>
-                                    <option value="184"> Serenaker </option>
-                                    <option value="186"> Silky Village </option>
-                                    <option value="127"> Simpatica PS </option>
-                                    <option value="226"> Simply Royal </option>
-                                    <option value="181"> Skilos Mas </option>
-                                    <option value="145"> Smarthunting </option>
-                                    <option value="19"> Sonika Spirit </option>
-                                    <option value="171"> Sopwith Camel </option>
-                                    <option value="228"> Spotted Puppies </option>
-                                    <option value="21"> Spotty Friend </option>
-                                    <option value="22"> Stardrive Team </option>
-                                    <option value="232"> Starmaids </option>
-                                    <option value="74"> Su Charizma </option>
-                                    <option value="237"> Sunny Side </option>
-                                    <option value="122"> Sweet Courage </option>
-                                    <option value="269"> Swing to Harmony </option>
-                                    <option value="257"> Symposions </option>
-                                    <option value="38"> Szephegyi-Szimat </option>
-                                    <option value="174"> Talbot Hill </option>
-                                    <option value="34"> Tamballa </option>
-                                    <option value="48"> Tergy </option>
-                                    <option value="216"> The Britain Legend </option>
-                                    <option value="134"> The Caesar Beagles </option>
-                                    <option value="152"> The Fortune-Hunter's </option>
-                                    <option value="50"> Timamso </option>
-                                    <option value="227"> Torunski Czar </option>
-                                    <option value="33"> Treeview </option>
-                                    <option value="163"> Trewelyn </option>
-                                    <option value="276"> Ventus Barbatus </option>
-                                    <option value="243"> Vienna Calling </option>
-                                    <option value="158"> Viracocha </option>
-                                    <option value="162"> Vom Seedorf </option>
-                                    <option value="194"> Von Helle Berge </option>
-                                    <option value="185"> Von Ottenbeck </option>
-                                    <option value="199"> Waskasoo </option>
-                                    <option value="231"> Weinlinie </option>
-                                    <option value="149"> Wolmar Star </option>
-                                    <option value="6"> Xandrina </option>
-                                </select>
-                                <br> Color:
-                                <br>
-                                <select name="Color">
-                                    <option value="0">- - -</option>
-                                    <option value="1"> Bicolor </option>
-                                    <option value="2"> Tricolor </option>
-                                </select>
-                                <br> Sex:
-                                <br>
-                                <select name="Sex">
-                                    <option value="0">- - -</option>
-                                    <option value="2">Male</option>
-                                    <option value="1">Female</option>
-                                </select>
-                                <br> City / Country of living:
-                                <br>
-                                <select name="Country">
-                                    <option value="0">- - -</option>
-                                    <option value="41"> Irkutsk </option>
-                                    <option value="85"> United Arab Emirates </option>
-                                    <option value="116"> Africa </option>
-                                    <option value="2"> Argentina </option>
-                                    <option value="86"> Arkhangelsk </option>
-                                    <option value="110"> Armavir </option>
-                                    <option value="84"> Armenia </option>
-                                    <option value="10"> Australia </option>
-                                    <option value="52"> Austria </option>
-                                    <option value="97"> Azerbaijan </option>
-                                    <option value="43"> Belarus </option>
-                                    <option value="88"> Belgium </option>
-                                    <option value="100"> Bishkek </option>
-                                    <option value="112"> Blagoveshchensk </option>
-                                    <option value="73"> Bosnia and Herzegovina </option>
-                                    <option value="70"> Brasil </option>
-                                    <option value="111"> Bryansk </option>
-                                    <option value="56"> Bulgaria </option>
-                                    <option value="55"> Canada </option>
-                                    <option value="15"> Cheboksary </option>
-                                    <option value="69"> Chelyabinsk </option>
-                                    <option value="92"> Chile </option>
-                                    <option value="113"> China </option>
-                                    <option value="48"> Croatia </option>
-                                    <option value="90"> Cyprus </option>
-                                    <option value="19"> Czech Republic </option>
-                                    <option value="22"> Denmark </option>
-                                    <option value="8"> Dzerzhinsk </option>
-                                    <option value="34"> Ekaterinburg </option>
-                                    <option value="75"> Estonia </option>
-                                    <option value="20"> Finland </option>
-                                    <option value="46"> France </option>
-                                    <option value="77"> Georgia </option>
-                                    <option value="5"> Germany </option>
-                                    <option value="76"> Gibraltar </option>
-                                    <option value="107"> Glazov </option>
-                                    <option value="105"> Greece </option>
-                                    <option value="11"> Hungary </option>
-                                    <option value="101"> Iceland </option>
-                                    <option value="96"> India </option>
-                                    <option value="93"> Ireland </option>
-                                    <option value="47"> Israel </option>
-                                    <option value="42"> Italy </option>
-                                    <option value="62"> Izhevsk </option>
-                                    <option value="115"> Japan </option>
-                                    <option value="38"> Kaliningrad </option>
-                                    <option value="9"> Kaluga </option>
-                                    <option value="44"> Kazakhstan </option>
-                                    <option value="26"> Kazan </option>
-                                    <option value="98"> Kemerovo </option>
-                                    <option value="104"> Khabarovsk </option>
-                                    <option value="79"> Kostroma </option>
-                                    <option value="29"> Krasnodar </option>
-                                    <option value="16"> Krasnoyarsk </option>
-                                    <option value="99"> Kyrgyzstan </option>
-                                    <option value="49"> Latvia </option>
-                                    <option value="30"> Lithuania </option>
-                                    <option value="94"> Luxembourg </option>
-                                    <option value="64"> Macedonia </option>
-                                    <option value="24"> Magnitogorsk </option>
-                                    <option value="78"> Malta </option>
-                                    <option value="82"> Mexico </option>
-                                    <option value="25"> Mineralnye Vody </option>
-                                    <option value="63"> Moldova </option>
-                                    <option value="118"> Mongolia </option>
-                                    <option value="45"> Montenegro </option>
-                                    <option value="7"> Moscow </option>
-                                    <option value="91"> Murmansk </option>
-                                    <option value="102"> Nakhabino </option>
-                                    <option value="27"> Netherlands </option>
-                                    <option value="50"> New Zealand </option>
-                                    <option value="23"> Nizhny Novgorod </option>
-                                    <option value="80"> Norway </option>
-                                    <option value="13"> Novokuznetsk </option>
-                                    <option value="14"> Novosibirsk </option>
-                                    <option value="33"> Orel </option>
-                                    <option value="59"> Orenburg </option>
-                                    <option value="122"> Orsk </option>
-                                    <option value="89"> Penza </option>
-                                    <option value="67"> Perm’ </option>
-                                    <option value="119"> Philippines </option>
-                                    <option value="4"> Poland </option>
-                                    <option value="54"> Portugal </option>
-                                    <option value="106"> Puerto Rico </option>
-                                    <option value="72"> Romania </option>
-                                    <option value="81"> Rubtsovsk </option>
-                                    <option value="1"> Russia </option>
-                                    <option value="83"> Rybinsk </option>
-                                    <option value="61"> Samara </option>
-                                    <option value="121"> San Marino </option>
-                                    <option value="12"> Saratov </option>
-                                    <option value="51"> Serbia </option>
-                                    <option value="66"> Sevastopol </option>
-                                    <option value="68"> Simferopol </option>
-                                    <option value="32"> Slovakia </option>
-                                    <option value="58"> Slovenija </option>
-                                    <option value="36"> Smolensk </option>
-                                    <option value="18"> Sochi </option>
-                                    <option value="109"> South Korea </option>
-                                    <option value="39"> Spain </option>
-                                    <option value="120"> Sri Lanka </option>
-                                    <option value="28"> St. Petersburg </option>
-                                    <option value="57"> Sweden </option>
-                                    <option value="53"> Switzerland </option>
-                                    <option value="71"> Thailand </option>
-                                    <option value="17"> Tomsk </option>
-                                    <option value="114"> Turkey </option>
-                                    <option value="87"> Tyumen </option>
-                                    <option value="40"> Ufa </option>
-                                    <option value="6"> Ukrain </option>
-                                    <option value="21"> United Kingdom </option>
-                                    <option value="65"> Uruguay </option>
-                                    <option value="3"> USA </option>
-                                    <option value="117"> Uzbekistan </option>
-                                    <option value="103"> Vietnam </option>
-                                    <option value="74"> Vladivostok </option>
-                                    <option value="37"> Volgograd </option>
-                                    <option value="31"> Vologda </option>
-                                    <option value="35"> Voronezh </option>
-                                    <option value="60"> Yaroslavl </option>
-                                    <option value="108"> Yeisk </option>
-                                    <option value="95"> Zhukovsky </option>
-                                </select>
-                                <br> Owner:
-                                <br>
-                                <input type="text" name="owner" value="" size="26" class="MIPT">
-                                <br> Datebirth (<font size="1"><i>dd.mm.yyyy</i></font>):
-                                <br>
-                                <input type="text" name="db1" value="" size="8" class="MIPT"> &nbsp;&nbsp;
-                                <input type="text" name="db2" value="" size="8" class="MIPT">
-                                <br>
-
-                                <input name="withfoto" type="checkbox"> with photo
-                                <br>
-
-                                </b>
-                                </font>
-                            </p><font color="#000000" size="1" face="Arial"><b>
-
-           </b></font>
-                            <p style="MARGIN:0px 10px 10px 10px;"><font color="#000000" size="1" face="Arial"><b>
-	   Results order:<br><br>
-           <input type="radio" name="ordby" checked="" value="0"> By name <br>
-           <input type="radio" name="ordby" value="1"> By kennels <br>
-           <input type="radio" name="ordby" value="2"> By datebirth<br>
-	   <input type="radio" name="ordby" value="3"> By update date<br>
-           <input type="radio" name="ordby" value="4"> By insert date<br>
-           </b></font>
-                                <font size="1"><br></font>
-                                <input type="submit" value="Search" class="MSUB">
-                            </p>
-                        </form>
-                        <!-- КОНЕЦ ПОИСКА -->
-                        <hr noshade="" width="100%" size="2" color="#FFFFFF" vspace="10">
-                        <!-- АВТОРИЗАЦИЯ / СПИСОК ОПЕРАЦИЙ -->
-
-                        <form width="212" action="login.php" method="GET" style="MARGIN-BOTTOM: 10px">
-                            <p style="MARGIN-BOTTOM: 10px">
-                                <font color="#000000" size="1" face="Arial"><b>
-		 Login:<br>
-		 <input type="text" name="login" value="" size="26"><br>
-		 Password:<br>
-		 <input type="password" name="password" value="" size="26"><br>
-		 <br>
-		 <input type="Submit" value="Enter" class="MSUB">
-		 </b></font></p><font color="#000000" size="1" face="Arial"><b>
-
-	 <!-- КОНЕЦ АВТОРИЗАЦИИ / ОПЕРАЦИЙ --><hr noshade="" width="100%" size="2" color="#FFFFFF" vspace="10"> <!-- СЧЕТЧИК --><p style="MARGIN: 10px">
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" async="" src="http://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript">
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter20802250 = new Ya.Metrika({id:20802250,
-                    webvisor:true,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
-
-    var n = d.getElementsByTagName('script')[0],
-        s = d.createElement('script'),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//mc.yandex.ru/metrika/watch.js';
-
-    if (w.opera == '[object Opera]') {
-        d.addEventListener('DOMContentLoaded', f, false);
-    } else { f(); }
-})(document, window, 'yandex_metrika_callbacks');
-</script>
-<noscript><div><img src='//mc.yandex.ru/watch/20802250' style='position:absolute; left:-9999px;' alt='' /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-	</p>
-	 <!-- КОНЕЦ СЧЕТЧИКА --><hr noshade="" width="100%" size="2" color="#FFFFFF" vspace="10"> <!-- COPYRIGHTS -->
-	  <p>
-	  <font face="Arial" size="1" color="#000000">
-	  Web scripts<br>
-	  ''Virtual breed database''<br>
-	  Copyright ©, 2004-2020 <a href="mailto:yuriysemenov@yandex.ru">Y.Semenov</a><br>
-	  All rights reserved.
-	  </font>
-                            </p>
-                            <!-- КОНЕЦ COPYRIGHTS -->
-                            </b>
+                  <td valign="top">
+                   <% if @dogs.length > 0 %>
+                   <% @dog = @dogs.first %>
+                    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td width="1" height="48" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="48" border="0"></td>
+                          <td width="*" height="48" valign="bottom">
+                            <div class="infotitle"><%= @dog.name %></div>
+                          </td>
+                          <td width="1" height="48" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="48" border="0"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
+                    <!-- ТАБЛИЦА ФОТО И РЕКВИЗИТОВ -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tbody>
+                        <tr>
+                          <td width="320" valign="top">
+                            <div style="MARGIN: 22px 1px 22px 1px;">
+                              <a href="ph/57-0.jpg" rel="lightbox" title=""><img src="<%= @dog.photos.first.image %>" width="300" border="1"></a><br>
+                              &nbsp;
+                            </div>
+                            <font size="1" face="Verdana">
                             </font>
-                        </form>
-                    </td>
-                    <td width="800" valign="top" bgcolor="#FFFFFF">
-                        <!-- ОСНОВНАЯ ЧАСТЬ СТРАНИЦЫ -->
-                        <table width="800" cellspacing="20" cellpadding="0" border="0">
-                            <tbody>
+                          </td>
+                          <td width="*" valign="top">
+                            <table border="0" cellspacing="10" cellpadding="0">
+                              <tbody>
                                 <tr>
-                                    <td valign="top">
-                                        <table width="100%" border="0" cellspacing="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td valign="top" align="middle" width="170" height="110">
-                                                        <table border="0" cellspacing="0" width="100%" height="100%">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td align="center" valign="middle">
-                                                                        <a href="http://beagle.mybb.ru/viewtopic.php?id=13312#p642058" target="_blank"> <img src="http://beaglebase.ru/archive/2015.jpg" <="" a=""></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                    <td valign="top" align="middle" width="10" height="110"><img src="img/pixel.gif" border="0" width="10"></td>
-                                                    <td valign="top" align="middle" width="170" height="110">
-                                                        <table border="0" cellspacing="0" width="100%" height="100%">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td align="center" valign="middle">
-                                                                        <a href="http://beagle.mybb.ru/viewtopic.php?id=13312#p642058" target="_blank"> <img src="http://beaglebase.ru/archive/2015.jpg" <="" a=""></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                    <td valign="top" align="middle" width="10" height="110"><img src="img/pixel.gif" border="0" width="10"></td>
-                                                    <td valign="top" align="middle" width="170" height="110">
-                                                        <table border="0" cellspacing="0" width="100%" height="100%">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td align="center" valign="middle">
-                                                                        <a href="http://beagle.mybb.ru/viewtopic.php?id=13312#p642058" target="_blank"> <img src="http://beaglebase.ru/archive/2015.jpg" <="" a=""></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                    <td valign="top" align="middle" width="10" height="110"><img src="img/pixel.gif" border="0" width="10"></td>
-                                                    <td valign="top" align="middle" width="170" height="110">
-                                                        <table border="0" cellspacing="0" width="100%" height="100%">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td align="center" valign="middle">
-                                                                        <a href="http://beagle.mybb.ru/viewtopic.php?id=13312#p642058" target="_blank"> <img src="http://beaglebase.ru/archive/2015.jpg" <="" a=""></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                  <td align="left"><font color="#d36e00" face="Verdana" style="font-size:8.0pt;">Bố:</font></td>
+                                  <td align="left"><a href="/search?id=<%= @dog.father ? @dog.father.id : '' %>"><font face="MS Sans Serif" style="font-size:8.0pt; TEXT-TRANSFORM: uppercase;"><b></b></font></a><font face="MS Sans Serif" style="font-size:8.0pt; TEXT-TRANSFORM: uppercase;"><b><a style="TEXT-DECORATION: none;" href="/search?id=<%= @dog.father ? @dog.father.id : '' %>"><%= @dog.father ? @dog.father.name : ''  %></a></b></font></td>
+                                </tr>
+                                <tr>
+                                  <td align="left" height="18"><font color="#d36e00" face="Verdana" style="font-size:8.0pt;">Mẹ:</font></td>
+                                  <td align="left"><a href="/search?id=<%= @dog.mother ? @dog.mother.id : '' %>"><font face="MS Sans Serif" style="font-size:8.0pt; TEXT-TRANSFORM: uppercase;"><b></b></font></a><font face="MS Sans Serif" style="font-size:8.0pt; TEXT-TRANSFORM: uppercase;"><b><a style="TEXT-DECORATION: none;" href="/search?id=<%= @dog.mother ? @dog.mother.id : '' %>"><%= @dog.mother ? @dog.mother.name : ''  %></a></b></font></td>
+                                </tr>
+                                <tr>
+                                  <td align="left" height="18"><font color="#d36e00" face="Verdana" style="font-size:8.0pt;">Ngày Sinh:</font></td>
+                                  <td align="left"><font face="MS Sans Serif" style="font-size:8.0pt;"><b><%= @dog.date_of_birth  %></b></font></td>
+                                </tr>
+                                <tr>
+                                  <td align="left" height="18"><font color="#d36e00" face="Verdana" style="font-size:8.0pt;">Giới Tính:</font></td>
+                                  <td align="left"><font face="MS Sans Serif" style="font-size:8.0pt;"><b><%= @dog.sex  %></b></font></td>
+                                </tr>
+                                <tr>
+                                  <td align="left" height="18"><font color="#d36e00" face="Verdana" style="font-size:8.0pt;">Màu Sắc:</font></td>
+                                  <td align="left"><font face="MS Sans Serif" style="font-size:8.0pt;"><b><%= @dog.color_type  %></b></font></td>
+                                </tr>
+                                <tr>
+                                  <td align="left" height="18"><font color="#d36e00" face="Verdana" style="font-size:8.0pt;">Nơi Sống:</font></td>
+                                  <td align="left"><font face="MS Sans Serif" style="font-size:8.0pt;"><b><%= @dog.living_address  %></b></font></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- КОНЕЦ ТАБЛИЦЫ ФОТО И РЕКВИЗИТОВ -->
+                    <table width="100%" border="0" cellspacing="1" cellpadding="7" bgcolor="#dfab72">
+                      <tbody>
+                      </tbody>
+                    </table>
+                    <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
+                    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td width="1" height="48" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="48" border="0"></td>
+                          <td width="*" height="48" valign="bottom">
+                            <div class="infotitle" style="MARGIN: 0px;"> Gia phả </div>
+                          </td>
+                          <td width="1" height="48" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="48" border="0"></td>
+                        </tr>
+                        <tr>
+                          <td width="1" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="24" border="0"></td>
+                          <td width="*" valign="top">
+                            <font face="MS Sans Serif" size="2">
+                              <table width="100%" border="0" cellspacing="1" cellpadding="5" bgcolor="#dfab72">
+                                <tbody>
+                                  <tr>
+                                   <td align="Center" valign="Center" bgcolor="#ffffff" rowspan="8">
+                                    <a style="TEXT-DECORATION: none;" href="/search?id=<%= @dog.id %>"><%= @dog.name %></a>&nbsp;<br>
+                                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  @dog.living_address %> </font></font>
+                                   </td>
+                                  <% @dog.children_of_father.each do |dog_ch|%>
+                                    <td align="Center" valign="Center" bgcolor="#ffffff" rowspan="4">
+                                    <a style="TEXT-DECORATION: none;" href="/search?id=<%= dog_ch.id %>"><%= dog_ch.name %></a>&nbsp;<br>
+                                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  dog_ch.living_address %> </font></font>
                                     </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table width="800" border="0" cellspacing="20">
-                            <tbody>
-                                <tr>
-                                    <td width="*" valign="top">
-                                        <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
-                                        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                                            <tbody>
-                                                <tr>
-                                                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                                                    <td width="*" height="48" valign="bottom">
-                                                        <div class="infotitle" style="MARGIN: 0px;"> INTRODUCTION </div>
-                                                    </td>
-                                                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" height="1" valign="middle" align="center" colspan="3" bgcolor="#720000"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" height="12" valign="bottom"><img src="img/pixel.gif" width="1" height="12" border="0"></td>
-                                                    <td width="*" height="12" valign="bottom"> <font color="#686868" face="Arial" style="font-size:7.0pt;">Dear friends, welcome to the Beagles database homepage!</font> </td>
-                                                    <td width="1" height="12" valign="bottom"><img src="img/pixel.gif" width="1" height="12" border="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" valign="bottom" colspan="3"><img src="img/pixel.gif" width="1" height="18" border="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                                                    <td width="*" valign="top"><font face="MS Sans Serif" size="2"><p class="p_text">The purpose of the database is to collect and compile information about the breed.</p>
-
-<p class="p_text">For all questions and suggestions concerning the database, contact the <a href="mailto:beaglebase@yandex.com">administrator</a>.</p></font></td>
-                                                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
-                                        <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
-                                        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                                            <tbody>
-                                                <tr>
-                                                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                                                    <td width="*" height="48" valign="bottom">
-                                                        <div class="infotitle" style="MARGIN: 0px;"> FOR SALE </div>
-                                                    </td>
-                                                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" height="1" valign="middle" align="center" colspan="3" bgcolor="#720000"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" valign="bottom" colspan="3"><img src="img/pixel.gif" width="1" height="18" border="0"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                                                    <td width="*" valign="top"><font face="MS Sans Serif" size="2"><table width="*" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td width="150" align="left" valign="top">
-					  <p style="MARGIN: 0px 20px 10px 0px;">
-					  <img src="showphoto.php?id=12270&amp;n=0&amp;s=140" width="140" border="1">
-					  </p>
-					  <font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=12270">Mio Amore Gioconda Antonio Soprano</a></font></td>
-                                                    <td width="150" align="left" valign="top">
-                                                        <p style="MARGIN: 0px 20px 10px 0px;">
-                                                            <img src="showphoto.php?id=12271&amp;n=0&amp;s=140" width="140" border="1">
-                                                        </p>
-                                                        <font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=12271">Mio Amore Gioconda Accurate Shot</a></font></td>
-                                                    <td width="150" align="left" valign="top">
-                                                        <p style="MARGIN: 0px 20px 10px 0px;">
-                                                            <img src="showphoto.php?id=9428&amp;n=0&amp;s=140" width="140" border="1">
-                                                        </p>
-                                                        <font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=9428">De Almodobar Prince of Elephants</a></font></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        </font>
+                                    <% dog_ch.children_of_father.each do |ch| %>
+                                        <td align="Center" valign="Center" bgcolor="#ffffff" rowspan="2">
+                                        <a style="TEXT-DECORATION: none;" href="/search?id=<%= ch.id %>"><%= ch.name %></a>&nbsp;<br>
+                                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  ch.living_address %> </font></font>
+                                        </td>
+                                    <% end %>
+                                  <% end %>
+                                  <% @dog.children_of_mother.each do |dog_ch|%>
+                                    <td align="Center" valign="Center" bgcolor="#ffffff" rowspan="4">
+                                    <a style="TEXT-DECORATION: none;" href="/search?id=<%= dog_ch.id %>"><%= dog_ch.name %></a>&nbsp;<br>
+                                    <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  dog_ch.living_address %> </font></font>
                                     </td>
-                                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
-                        <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
-                        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                            <tbody>
+                                    <% dog_ch.children_of_mother.each do |ch| %>
+                                        <td align="Center" valign="Center" bgcolor="#ffffff" rowspan="2">
+                                        <a style="TEXT-DECORATION: none;" href="/search?id=<%= ch.id %>"><%= ch.name %></a>&nbsp;
+                                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  ch.living_address %> </font></font>
+                                        </td>
+                                    <% end %>
+                                  <% end %>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </font>
+                          </td>
+                          <td width="1" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="24" border="0"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
+                    <table width="100%" border="0" cellspacing="2" cellpadding="0" class="ERT">
+                      <tbody>
+                        <tr>
+                          <td width="30%" valign="top">
+                            <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
+                            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                              <tbody>
                                 <tr>
-                                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                                    <td width="*" height="48" valign="bottom">
-                                        <div class="infotitle" style="MARGIN: 0px;"> 5 LATEST LITTERS </div>
-                                    </td>
-                                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
+                                  <td width="1" height="48" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="48" border="0"></td>
+                                  <td width="*" height="48" valign="bottom">
+                                    <div class="infotitle" style="MARGIN: 0px;"> PHOTOGRAPHIES </div>
+                                  </td>
+                                  <td width="1" height="48" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="48" border="0"></td>
                                 </tr>
+                                <% @dog.photos.each do |photo| %>
                                 <tr>
-                                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
+                                  <td width="1" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="24" border="0"></td>
+                                  <td width="*" valign="top">
+                                    <font face="MS Sans Serif" size="2">
+                                      <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                                        <tbody>
+                                          <tr>
+                                            <td width="25%" align="center" valign="top"><font size="1"><img src="<%= photo.image.url %>" width="180" border="1"></font></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </font>
+                                  </td>
+                                  <td width="1" valign="bottom"><img src="http://beaglebase.ru/img/pixel.gif" width="1" height="24" border="0"></td>
                                 </tr>
-                                <tr>
-                                    <td width="1" height="1" valign="middle" align="center" colspan="3" bgcolor="#720000"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                                </tr>
-                                <tr>
-                                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                                </tr>
-                                <tr>
-                                    <td width="1" height="12" valign="bottom"><img src="img/pixel.gif" width="1" height="12" border="0"></td>
-                                    <td width="*" height="12" valign="bottom"> <font color="#686868" face="Arial" style="font-size:7.0pt;">Information about 5 latest litters, entered in the database</font> </td>
-                                    <td width="1" height="12" valign="bottom"><img src="img/pixel.gif" width="1" height="12" border="0"></td>
-                                </tr>
-                                <tr>
-                                    <td width="1" valign="bottom" colspan="3"><img src="img/pixel.gif" width="1" height="18" border="0"></td>
-                                </tr>
-                                <tr>
-                                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                                    <td width="*" valign="top"><font face="MS Sans Serif" size="2"><table width="*" border="0" cellspacing="5" cellpadding="3">
-		     <tbody><tr>
-			<td align="left" valign="top" colspan="4" bgcolor="#eeece0"><a class="litteritem" href="/search.php?fatherid=10222&amp;motherid=2707&amp;db1=10.12.2019&amp;db2=10.12.2019">LITTER BIRTH 10.12.2019</a></td>
-		     </tr><tr>
-			<td width="90" align="left" valign="top"><p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=10222&amp;n=0&amp;s=80" width="80" border="1"></p></td>
-			<td width="*" align="left" valign="top"><font class="litteritem">Gotfrid Haus Mark Darsi</font></td>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=2707&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Вritanija</font></td>
-                                </tr>
-                                <tr>
-                                    <td align="left" valign="top" colspan="4" bgcolor="#eeece0"><a class="litteritem" href="/search.php?fatherid=9831&amp;motherid=3571&amp;db1=05.12.2019&amp;db2=05.12.2019">LITTER BIRTH 05.12.2019</a></td>
-                                </tr>
-                                <tr>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=9831&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Art-Fantasy Zenit</font></td>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=3571&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Jewel Aleksandrina Exquisite Pearl</font></td>
-                                </tr>
-                                <tr>
-                                    <td align="left" valign="top" colspan="4" bgcolor="#eeece0"><a class="litteritem" href="/search.php?fatherid=6247&amp;motherid=5019&amp;db1=26.11.2019&amp;db2=26.11.2019">LITTER BIRTH 26.11.2019</a></td>
-                                </tr>
-                                <tr>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=6247&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Uno Momento Kattyval</font></td>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=5019&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Ketty Kismet Darling Joy</font></td>
-                                </tr>
-                                <tr>
-                                    <td align="left" valign="top" colspan="4" bgcolor="#eeece0"><a class="litteritem" href="/search.php?fatherid=867&amp;motherid=4395&amp;db1=15.11.2019&amp;db2=15.11.2019">LITTER BIRTH 15.11.2019</a></td>
-                                </tr>
-                                <tr>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=867&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Pun Kotzky Bumbershoot</font></td>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=4395&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Egregia Cum Laude Gioconda</font></td>
-                                </tr>
-                                <tr>
-                                    <td align="left" valign="top" colspan="4" bgcolor="#eeece0"><a class="litteritem" href="/search.php?fatherid=6622&amp;motherid=8045&amp;db1=14.11.2019&amp;db2=14.11.2019">LITTER BIRTH 14.11.2019</a></td>
-                                </tr>
-                                <tr>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=6622&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Valsi  Istborn</font></td>
-                                    <td width="90" align="left" valign="top">
-                                        <p style="MARGIN: 0px 5px 5px 0px;"><img src="/showphoto.php?id=8045&amp;n=0&amp;s=80" width="80" border="1"></p>
-                                    </td>
-                                    <td width="*" align="left" valign="top"><font class="litteritem">Fanetta</font></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </font>
-                    </td>
-                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
+                                <% end %>
+                              </tbody>
+                            </table>
+                            <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА --> 
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
+                    <table width="100%" border="0" cellspacing="2" cellpadding="5">
+                      <tbody>
+                        <tr>
+                          <td valign="middle" align="right" height="28" width="100%" colspan="4"><i><font size="-1">Cập nhật lần cuối vào <%= @dog.updated_at %> &nbsp;&nbsp;&nbsp;&nbsp; </font></i></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  <% else %>
+                    <h1>Không có kết quả tìm thấy</h1>
+                  <% end %>
+                  </td>
                 </tr>
-            </tbody>
-        </table>
-        <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
-        <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
-        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-            <tbody>
-                <tr>
-                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                    <td width="*" height="48" valign="bottom">
-                        <div class="infotitle" style="MARGIN: 0px;"> THANKS </div>
-                    </td>
-                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="1" valign="middle" align="center" colspan="3" bgcolor="#720000"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" valign="bottom" colspan="3"><img src="img/pixel.gif" width="1" height="18" border="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                    <td width="*" valign="top"><font face="MS Sans Serif" size="2"><p class="p_text">We express our gratitude to everyone who took or even take part in filling in this catalog ! Your support and interest in this project is very important to us.</p>
-
-<p class="p_text">Thank you very much dear friends, believe in its necessity and benefit of the breed.</p></font></td>
-                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
-        </td>
-        <td width="220" valign="top">
-            <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
-            <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                <tbody>
-                    <tr>
-                        <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                        <td width="*" height="48" valign="bottom">
-                            <div class="infotitle" style="MARGIN: 0px;"> 5 LATEST DOGS </div>
-                        </td>
-                        <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                    </tr>
-                    <tr>
-                        <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                    </tr>
-                    <tr>
-                        <td width="1" height="1" valign="middle" align="center" colspan="3" bgcolor="#720000"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                    </tr>
-                    <tr>
-                        <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                    </tr>
-                    <tr>
-                        <td width="1" height="12" valign="bottom"><img src="img/pixel.gif" width="1" height="12" border="0"></td>
-                        <td width="*" height="12" valign="bottom"> <font color="#686868" face="Arial" style="font-size:7.0pt;">Dogs in base: 12506</font> </td>
-                        <td width="1" height="12" valign="bottom"><img src="img/pixel.gif" width="1" height="12" border="0"></td>
-                    </tr>
-                    <tr>
-                        <td width="1" valign="bottom" colspan="3"><img src="img/pixel.gif" width="1" height="18" border="0"></td>
-                    </tr>
-                    <tr>
-                        <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                        <td width="*" valign="top"><font face="MS Sans Serif" size="2"><table width="*" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
-			<td width="90" align="left" valign="top"><p style="MARGIN: 0px 10px 10px 0px;"><img src="showphoto.php?id=12506&amp;n=0&amp;s=80" width="80" border="1"></p></td>
-			<td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=12506">Dolchevita Iz Juravlinogo Klina</a></font></td>
-                    </tr>
-                    <tr>
-                        <td width="90" align="left" valign="top">
-                            <p style="MARGIN: 0px 10px 10px 0px;"><img src="img/nopic.jpg" width="80" border="1"></p>
-                        </td>
-                        <td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=12505">Fortuna Vitae Deysu Fentes</a></font></td>
-                    </tr>
-                    <tr>
-                        <td width="90" align="left" valign="top">
-                            <p style="MARGIN: 0px 10px 10px 0px;"><img src="img/nopic.jpg" width="80" border="1"></p>
-                        </td>
-                        <td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=12504">Elisabel Gordost Aristokrata</a></font></td>
-                    </tr>
-                    <tr>
-                        <td width="90" align="left" valign="top">
-                            <p style="MARGIN: 0px 10px 10px 0px;"><img src="img/nopic.jpg" width="80" border="1"></p>
-                        </td>
-                        <td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=12503">Astra Absolut Malta</a></font></td>
-                    </tr>
-                    <tr>
-                        <td width="90" align="left" valign="top">
-                            <p style="MARGIN: 0px 10px 10px 0px;"><img src="img/nopic.jpg" width="80" border="1"></p>
-                        </td>
-                        <td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=12502">Ezel Sun Mary</a></font></td>
-                    </tr>
-                </tbody>
+              </tbody>
             </table>
-            </font>
-        </td>
-        <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
+            <!-- КОНЕЦ ОСНОВНОЙ ЧАСТИ СТРАНИЦЫ --> 
+          </td>
         </tr>
-        </tbody>
-        </table>
-        <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
-        <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
-        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-            <tbody>
-                <tr>
-                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                    <td width="*" height="48" valign="bottom">
-                        <div class="infotitle" style="MARGIN: 0px;"> 5 LATEST SHOWS </div>
-                    </td>
-                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="1" valign="middle" align="center" colspan="3" bgcolor="#720000"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" valign="bottom" colspan="3"><img src="img/pixel.gif" width="1" height="18" border="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                    <td width="*" valign="top"><font face="MS Sans Serif" size="2"><p align="left" style="FONT-SIZE: 10px; FONT-FAMILY: Verdana;" valign="top"><a href="shows.php?showid=1746"><b>«Мой Ласковый и Нежный Друг 2019», НОО «ГДОЛЖ - Контакт», Нижний Тагил</b></a><br>29.09.2019, Russia</p><p align="left" style="FONT-SIZE: 10px; FONT-FAMILY: Verdana;" valign="top"><a href="shows.php?showid=1745"><b>«Бриз Звездопад в Сокольниках 2019» ЧРКФ, РОО ОЛСБП «Бриз», Москва</b></a><br>28.09.2019, Russia</p><p align="left" style="FONT-SIZE: 10px; FONT-FAMILY: Verdana;" valign="top"><a href="shows.php?showid=1744"><b>Выставка САС, РОО КК «Планета Собак», Москва</b></a><br>28.09.2019, Russia</p><p align="left" style="FONT-SIZE: 10px; FONT-FAMILY: Verdana;" valign="top"><a href="shows.php?showid=1743"><b>Выставка САС, МОКСиСС «Миллениум», МО, Тучково</b></a><br>28.09.2019, Russia</p><p align="left" style="FONT-SIZE: 10px; FONT-FAMILY: Verdana;" valign="top"><a href="shows.php?showid=1742"><b>Выставка САС-ЧРКФ, МООЛЖ «Амиго», МО, Подольск</b></a><br>28.09.2019, Russia</p></font></td>
-                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                </tr>
-            </tbody>
-        </table>
-        <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
-        <!-- ТАБЛИЦА-ЗАГОЛОВОК СОБАКИ -->
-        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-            <tbody>
-                <tr>
-                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                    <td width="*" height="48" valign="bottom">
-                        <div class="infotitle" style="MARGIN: 0px;"> 5 TOP SIRES </div>
-                    </td>
-                    <td width="1" height="48" valign="bottom"><img src="img/pixel.gif" width="1" height="48" border="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="1" valign="middle" align="center" colspan="3" bgcolor="#720000"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="2" valign="middle" align="center" colspan="3"><img src="img/pixel.gif" width="1" height="1" border="0" vspace="0" hspace="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" height="12" valign="bottom"><img src="img/pixel.gif" width="1" height="12" border="0"></td>
-                    <td width="*" height="12" valign="bottom"> <font color="#686868" face="Arial" style="font-size:7.0pt;">5  sires, having biggest number of offsprings in the base</font> </td>
-                    <td width="1" height="12" valign="bottom"><img src="img/pixel.gif" width="1" height="12" border="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" valign="bottom" colspan="3"><img src="img/pixel.gif" width="1" height="18" border="0"></td>
-                </tr>
-                <tr>
-                    <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-                    <td width="*" valign="top"><font face="MS Sans Serif" size="2"><table width="*" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
-			<td width="90" align="left" valign="top"><p style="MARGIN: 0px 10px 10px 0px;"><img src="showphoto.php?id=32&amp;n=0&amp;s=80" width="80" border="1"></p></td>
-			<td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=32">Szephegyi-Szimat Virgonc</a></font>
-                        <p style="MARGIN: 5px 0px 0px 0px; FONT-SIZE: 10px;">146 Offsprings in base</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="90" align="left" valign="top">
-                        <p style="MARGIN: 0px 10px 10px 0px;"><img src="showphoto.php?id=380&amp;n=0&amp;s=80" width="80" border="1"></p>
-                    </td>
-                    <td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=380">Simonaland Moonshiner</a></font>
-                        <p style="MARGIN: 5px 0px 0px 0px; FONT-SIZE: 10px;">117 Offsprings in base</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="90" align="left" valign="top">
-                        <p style="MARGIN: 0px 10px 10px 0px;"><img src="showphoto.php?id=2207&amp;n=0&amp;s=80" width="80" border="1"></p>
-                    </td>
-                    <td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=2207">Beagelee Road Runner</a></font>
-                        <p style="MARGIN: 5px 0px 0px 0px; FONT-SIZE: 10px;">114 Offsprings in base</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="90" align="left" valign="top">
-                        <p style="MARGIN: 0px 10px 10px 0px;"><img src="showphoto.php?id=2&amp;n=0&amp;s=80" width="80" border="1"></p>
-                    </td>
-                    <td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=2">Alotorius Old Glory  Giorgio Versace</a></font>
-                        <p style="MARGIN: 5px 0px 0px 0px; FONT-SIZE: 10px;">87 Offsprings in base</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td width="90" align="left" valign="top">
-                        <p style="MARGIN: 0px 10px 10px 0px;"><img src="showphoto.php?id=469&amp;n=0&amp;s=80" width="80" border="1"></p>
-                    </td>
-                    <td width="*" align="left" valign="top"><font class="operitem"><a style="TEXT-DECORATION: none;" href="dog.php?screen=1&amp;userif=2&amp;id=469">Astravegas Oliver Stone</a></font>
-                        <p style="MARGIN: 5px 0px 0px 0px; FONT-SIZE: 10px;">87 Offsprings in base</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        </font>
-        </td>
-        <td width="1" valign="bottom"><img src="img/pixel.gif" width="1" height="24" border="0"></td>
-        </tr>
-        </tbody>
-        </table>
-        <!-- КОНЕЦ ТАБЛИЦЫ-ЗАГОЛОВКА -->
-        </td>
-        </tr>
-        </tbody>
-        </table>
-        <!-- КОНЕЦ ОСНОВНОЙ ЧАСТИ СТРАНИЦЫ -->
-        </td>
-        </tr>
-        </tbody>
-        </table>
+      </tbody>
+    </table>
+    <%= paginate @dogs %>
+  </div>
+  <div id="overlay" style="display: none;"></div>
+  <div id="lightbox" style="display: none;">
+    <div id="outerImageContainer" style="width: 250px; height: 250px;">
+      <div id="imageContainer">
+        <img id="lightboxImage">
+        <div id="hoverNav"><a id="prevLink" href="#"></a><a id="nextLink" href="#"></a></div>
+        <div id="loading"><a id="loadingLink" href="#"><img src="/lbox/loading.gif"></a></div>
+      </div>
     </div>
-</body>
-<loom-container id="lo-engage-ext-container">
-    <div></div>
-    <loom-shadow classname="resolved"></loom-shadow>
-</loom-container>
-
-</html>
+    <div id="imageDataContainer">
+      <div id="imageData">
+        <div id="imageDetails"><span id="caption"></span><span id="numberDisplay"></span></div>
+        <div id="bottomNav"><a id="bottomNavClose" href="#"><img src="/lbox/closelabel.gif"></a></div>
+      </div>
+    </div>
+  </div>
+</div>

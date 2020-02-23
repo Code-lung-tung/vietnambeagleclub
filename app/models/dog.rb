@@ -15,4 +15,12 @@ class Dog < ApplicationRecord
 
   accepts_nested_attributes_for :photos, reject_if: proc { |attributes| attributes[:image].blank? },
     allow_destroy: true
+
+  scope :by_male, ->{ where(sex: 'male').order(created_at: :desc) }
+  scope :by_id, ->(id){ where(id: id) if id.present? }
+  scope :by_name, ->(name){ where("name like '% ? %'", name) if name.present? }
+  scope :by_sex, ->(sex){ where(sex: sex) if sex.present? }
+  scope :by_color, ->(color){ where(color_type: color) if color.present? }
+  scope :by_date, ->(from, to){ where('date_of_birth BETWEEN ? AND ?', from, to) if from.present? && to.present? }
+  scope :order_by_field, ->(field){ order('? asc', field) if field.present? }
 end
