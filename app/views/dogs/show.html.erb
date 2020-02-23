@@ -13,9 +13,13 @@
           <div class="tlp-portfolio-container tlp-single-detail">
             <div class="tlp-portfolio-detail-wrap">
               <div class="tlp-portfolio-image">
+              <% @dog.photos.each do |dog| %>
                 <div class="portfolio-feature-img">
-                  <img width="960" height="640" src="<%= @dog.photos.first.image.url %>" class="attachment-full size-full wp-post-image wp-post-image" alt="" srcset="https://collievn.com/wp-content/uploads/2018/11/IMG_886033333-1-e1541435158919.jpg 960w, https://collievn.com/wp-content/uploads/2018/11/IMG_886033333-1-e1541435158919-300x200.jpg 300w, https://collievn.com/wp-content/uploads/2018/11/IMG_886033333-1-e1541435158919-768x512.jpg 768w, https://collievn.com/wp-content/uploads/2018/11/IMG_886033333-1-e1541435158919-384x256.jpg 384w" sizes="(max-width: 960px) 100vw, 960px">                
+                  <img width="960" height="640" src="<%= dog.image.url %>" 
+                  class="attachment-full size-full wp-post-image wp-post-image" alt="" 
+                  srcset="<%= dog.image.url %> 960w, <%= dog.image.url %> 300w, <%= dog.image.url %> 768w, <%= dog.image.url %> 384w" sizes="(max-width: 960px) 100vw, 960px">                
                 </div>
+              <% end %>
               </div>
               <div class="portfolio-detail-desc">
                 <h2 class="portfolio-title"><%= @dog.name %></h2>

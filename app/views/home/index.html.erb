@@ -57,26 +57,24 @@
         <!-- #masthead -->
 
         <div id="content" class="site-content " style="padding-top: 109px;">
-
             <section id="main-slider" class="full-screen-no">
 
                 <div class="bx-slider slick-initialized slick-slider">
                     <button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;">Previous</button>
                     <div class="slick-list draggable">
                         <div class="slick-track" style="opacity: 1; width: 15840px; transform: translate3d(-5760px, 0px, 0px);">
+                        
                         <% @dogs.each_with_index do |dog, index| %> 
                             <div class="main-slides slick-slide slick-cloned" data-slick-index="<%= index - 1 %>" aria-hidden="true" style="width: 1440px;" tabindex="-1">
-
                                 <img src="<%= dog.photos.first.image.url %>">
-
                             </div>
                         <% end %>
                         </div>
                     </div>
-
                     <button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;">Next</button>
                 </div>
 
+                
             </section>
             <div class="ap-home">
                 <section class="parallax-section clearfix default_template" id="section-2" data-jarallax-original-styles="null" style="z-index: 0;">
