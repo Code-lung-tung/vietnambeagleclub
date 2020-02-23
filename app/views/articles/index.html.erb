@@ -4,7 +4,7 @@
       <h1 class="page-title">Chuyên mục: Bài Viết Mới</h1>
     </header>
     <!-- .page-header -->
-    <% @articles.each do |article| %>
+    <% @articles.each_with_index do |article, index| %>
     <article id="post-2569" class="article-wrap post-2569 post type-post status-publish format-standard has-post-thumbnail hentry category-bai-viet-moi tag-10-dieu-ban-chua-biet-ve-border-collie tag-border-collie tag-giong-cho-thong-minh-nhat-the-gioi">
       <div class="entry-thumb">
         <a href="/<%= article.slug %>"><img src="<%= article.photo.url %>" alt="<%= article.title %>"></a> 
@@ -24,10 +24,9 @@
       <!-- .entry-content -->
       <footer class="entry-footer">
         <span class="cat-links">
-        <i class="fa fa-folder-open"></i>Posted in <a href="https://collievn.com/bai-viet-moi" rel="category tag">Bài Viết Mới</a>                    </span>
+        <i class="fa fa-folder-open"></i>Posted in <a href="/bai-viet-moi" rel="category tag">Bài Viết Mới</a>                    </span>
         <span class="tags-links">
-        <i class="fa fa-tags"></i>Tagged <a href="https://collievn.com/tag/10-dieu-ban-chua-biet-ve-border-collie" rel="tag">10 điều bạn chưa biết về Border Collie</a>, <a href="https://collievn.com/tag/border-collie" rel="tag">border collie</a>, <a href="https://collievn.com/tag/giong-cho-thong-minh-nhat-the-gioi" rel="tag">giống chó thông minh nhất thế giới</a>                    </span>
-        <span class="comments-link"><a href="https://collievn.com/10-dieu-ban-chua-biet-ve-border-collie#respond"><i class="fa fa-comments"></i>Leave a comment</a></span>
+        <i class="fa fa-tags"></i>Tagged <a href="/<%= article.slug %>" rel="tag"><%= article.title %></a>, <a href="/<%= @articles.last.slug %>" rel="tag"><%= @articles.last.title %></a></span>
       </footer>
       <!-- .entry-footer -->
     </article>

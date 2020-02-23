@@ -154,6 +154,12 @@
                                         <a style="TEXT-DECORATION: none;" href="/search?id=<%= ch.id %>"><%= ch.name %></a>&nbsp;<br>
                                         <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  ch.living_address %> </font></font>
                                         </td>
+                                         <% ch.children_of_father.each do |c| %>
+                                          <td align="Center" valign="Center" bgcolor="#ffffff" rowspan="1">
+                                            <a style="TEXT-DECORATION: none;" href="/search?id=<%= c.id %>"><%= c.name %></a>&nbsp;<br>
+                                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  c.living_address %> </font></font>
+                                          </td>
+                                        <% end %>
                                     <% end %>
                                   <% end %>
                                   <% @dog.children_of_mother.each do |dog_ch|%>
@@ -166,6 +172,12 @@
                                         <a style="TEXT-DECORATION: none;" href="/search?id=<%= ch.id %>"><%= ch.name %></a>&nbsp;
                                         <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  ch.living_address %> </font></font>
                                         </td>
+                                        <% dog_ch.children_of_mother.each do |c| %>
+                                          <td align="Center" valign="Center" bgcolor="#ffffff" rowspan="1">
+                                            <a style="TEXT-DECORATION: none;" href="/search?id=<%= c.id %>"><%= c.name %></a>&nbsp;
+                                            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;" class=""><%=  c.living_address %> </font></font>
+                                           </td>
+                                        <% end %>
                                     <% end %>
                                   <% end %>
                                   </tr>

@@ -53,3 +53,143 @@
     font-family: 'Inter-Loom';
     src: url('https://cdn.loom.com/assets/fonts/inter/Inter-UI-BlackItalic.woff2') format('woff2');
 }
+
+.main-navigation>ul>li.current a,
+.main-navigation li:hover>a,
+.blog-list .blog-excerpt .posted-date,
+.woocommerce p.stars a,
+.product_meta a,
+.woocommerce-MyAccount-navigation a,
+.woocommerce-MyAccount-content a,
+.woocommerce-cart-form__cart-item a,
+.woocommerce-info a,
+body:not(.home) .main-navigation .current_page_item>a,
+body:not(.home) .main-navigation .current-menu-item>a,
+h4.blog-post-title a:hover,
+h4.portfolio-post-title a:hover {
+    color: #e66432;
+}
+
+#main-slider .slick-dots li.slick-active button,
+.slider-caption .caption-description a:hover,
+.btn:hover,
+.testimonial-listing .slick-arrow:hover,
+.blog-list .blog-excerpt span,
+.woocommerce ul.products li.product .onsale,
+.woocommerce span.onsale,
+.woocommerce ul.products li.product .button,
+.parallax-section .wpcf7-form .wpcf7-submit,
+#go-top,
+.posted-on,
+.pagination .nav-links a,
+.pagination .nav-links span,
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span,
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+    background: #e66432;
+}
+
+.woocommerce #respond input#submit.alt:hover,
+.woocommerce a.button.alt:hover,
+.woocommerce button.button.alt:hover,
+.woocommerce input.button.alt:hover {
+    background: #cf5a2d;
+}
+
+#masthead.header-bottom-border,
+#main-slider .slick-dots li.slick-active button,
+.slider-caption .caption-description a:hover,
+.btn:hover,
+.team-image:hover,
+.team-image.slick-current,
+.testimonial-listing .slick-arrow:hover,
+.blog-list .blog-excerpt,
+#secondary h2.widget-title {
+    border-color: #e66432;
+}
+
+#secondary h2.widget-title {
+    border-color: #e66432;
+}
+
+@media screen and (max-width: 1000px) {
+    .main-navigation>ul,
+    .menu-toggle {
+        background-color: #e66432 !important;
+    }
+}
+
+.posted-on:before {
+    border-color: transparent transparent #b85028 #b85028;
+}
+
+.ap-home #section-2 .overlay {
+    background: url(https://collievn.com/wp-content/themes/accesspress-parallax/images/overlay0.png);
+}
+
+.ap-home #section-1561 {
+    background: url() no-repeat scroll top left #34beed;
+    background-size: auto;
+    color: #ffffff
+}
+
+.ap-home #section-1561 .overlay {
+    background: url(https://collievn.com/wp-content/themes/accesspress-parallax/images/overlay0.png);
+}
+
+.ap-home #section-1693 {
+    background: url() no-repeat scroll top left;
+    background-size: auto;
+    color: #dd3333
+}
+
+.ap-home #section-1693 .overlay {
+    background: url(https://collievn.com/wp-content/themes/accesspress-parallax/images/overlay0.png);
+}
+
+.ap-home #section-1699 {
+    background: url() no-repeat scroll top left;
+    background-size: auto;
+    color: #dd3333
+}
+
+.ap-home #section-1699 .overlay {
+    background: url(https://collievn.com/wp-content/themes/accesspress-parallax/images/overlay0.png);
+}
+
+.ap-home #section-1713 {
+    background: url() no-repeat scroll top center #ffffff;
+    background-size: auto;
+    color:
+}
+
+.ap-home #section-1713 .overlay {
+    background: url(https://collievn.com/wp-content/themes/accesspress-parallax/images/overlay0.png);
+}
+
+.ap-home #section-787 {
+    background: url() no-repeat scroll top left;
+    background-size: auto;
+    color:
+}
+
+.ap-home #section-787 .overlay {
+    background: url(https://collievn.com/wp-content/themes/accesspress-parallax/images/overlay0.png);
+}
+
+#main-slider .main-slides:after {
+    display: none
+}
+
+;
