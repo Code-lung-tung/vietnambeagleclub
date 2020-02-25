@@ -141,7 +141,7 @@ h4.portfolio-post-title a:hover {
 .ap-home #section-1561 {
     background: url() no-repeat scroll top left #34beed;
     background-size: auto;
-    color: #ffffff
+    color: #ffffff;
 }
 
 .ap-home #section-1561 .overlay {
@@ -151,7 +151,7 @@ h4.portfolio-post-title a:hover {
 .ap-home #section-1693 {
     background: url() no-repeat scroll top left;
     background-size: auto;
-    color: #dd3333
+    color: #dd3333;
 }
 
 .ap-home #section-1693 .overlay {
@@ -161,7 +161,7 @@ h4.portfolio-post-title a:hover {
 .ap-home #section-1699 {
     background: url() no-repeat scroll top left;
     background-size: auto;
-    color: #dd3333
+    color: #dd3333;
 }
 
 .ap-home #section-1699 .overlay {
@@ -171,7 +171,6 @@ h4.portfolio-post-title a:hover {
 .ap-home #section-1713 {
     background: url() no-repeat scroll top center #ffffff;
     background-size: auto;
-    color:
 }
 
 .ap-home #section-1713 .overlay {
@@ -181,7 +180,6 @@ h4.portfolio-post-title a:hover {
 .ap-home #section-787 {
     background: url() no-repeat scroll top left;
     background-size: auto;
-    color:
 }
 
 .ap-home #section-787 .overlay {
@@ -189,7 +187,5 @@ h4.portfolio-post-title a:hover {
 }
 
 #main-slider .main-slides:after {
-    display: none
+    display: none;
 }
-
-;
