@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 SiteSetting.setting_types.keys.map(&:to_sym).each do |type|
-  SiteSetting.create!(setting_type: type)
+  SiteSetting.find_or_create_by!(setting_type: type)
 end
