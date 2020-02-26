@@ -3,7 +3,7 @@ ActiveAdmin.register SiteSetting do
 
   permit_params :id, :value, :status,
     banners_attributes: %i[id title status alt link image _destroy],
-    services_attributes: %i[id title status content _destroy]
+    services_attributes: %i[id title status content image display_order _destroy]
 
   index do
     selectable_column
@@ -47,7 +47,10 @@ ActiveAdmin.register SiteSetting do
     if f.object.service?
       f.has_many :services, heading: false, allow_destroy: true do |ff|
         ff.input :title
+        ff.input :image, as: :file, input_html: { accept: 'image/*' },
+          hint: ff.object.image.present? ? image_tag(ff.object.image.url, style: 'height:auto; max-width: 500px;') : ''
         ff.input :status, as: :select, collection: Service.statuses.keys.to_a, include_blank: false
+        ff.input :display_order, as: :select, collection: (1..Service.count), include_blank: false
         ff.input :content, input_html: { class: 'editor' }
       end
     end
