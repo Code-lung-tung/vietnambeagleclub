@@ -11,8 +11,12 @@ ActiveAdmin.register SiteSetting do
     column :setting_type do |s|
       s.setting_type.humanize
     end
-    column :value
-    column :status
+    column :value do |s|
+      strip_tags s.value
+    end
+    column :status do |s|
+      status_tag s.status
+    end
     column :updated_at
     actions
   end
@@ -29,7 +33,7 @@ ActiveAdmin.register SiteSetting do
           next
         end
         if column == :value && !f.object.banner? && !f.object.service?
-          f.input column, input_html: { class: 'editor' }
+          f.input column, input_html: { class: f.object.google_map? ? '' : 'editor' }
           next
         end
       end

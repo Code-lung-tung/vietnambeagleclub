@@ -9,7 +9,9 @@ ActiveAdmin.register Category do
     column :name
     column :description
     column :slug
-    column :status
+    column :status do |category|
+      status_tag category.status
+    end
     column :created_at
     column :updated_at
     actions
@@ -23,6 +25,20 @@ ActiveAdmin.register Category do
       end
     end
     f.actions
+  end
+
+  show do
+    attributes_table do
+      Category.column_names.map(&:to_sym).each do |column|
+        if column == :status
+          row column do |category|
+            status_tag category.status
+          end
+          next
+        end
+        row column
+      end
+    end
   end
 
   filter :name
