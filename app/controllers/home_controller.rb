@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index 
-    @articles = Article.order(created_at: :desc).page params[:page]
+    @articles = Article.active.order(created_at: :desc).page params[:page]
     @dogs = Dog.by_male.page params[:page]
   end
 

@@ -18,7 +18,7 @@ class Dog < ApplicationRecord
 
   scope :by_male, ->{ where(sex: 'male').order(created_at: :desc) }
   scope :by_id, ->(id){ where(id: id) if id.present? }
-  scope :by_name, ->(name){ where("name like '% ? %'", name) if name.present? }
+  scope :by_name, ->(name){ where("name LIKE ?", "%#{name}%") if name.present? }
   scope :by_sex, ->(sex){ where(sex: sex) if sex.present? }
   scope :by_color, ->(color){ where(color_type: color) if color.present? }
   scope :by_date, ->(from, to){ where('date_of_birth BETWEEN ? AND ?', from, to) if from.present? && to.present? }
