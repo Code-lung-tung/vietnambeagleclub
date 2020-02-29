@@ -54,7 +54,7 @@ ActiveAdmin.register SiteSetting do
         ff.input :image, as: :file, input_html: { accept: 'image/*' },
           hint: ff.object.image.present? ? image_tag(ff.object.image.url, style: 'height:auto; max-width: 500px;') : ''
         ff.input :status
-        ff.input :display_order, as: :select, collection: (1..Service.count), include_blank: false
+        ff.input :display_order
         ff.input :content, input_html: { class: 'editor' }
       end
     end
