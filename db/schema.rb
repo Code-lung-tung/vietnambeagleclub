@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_044146) do
+ActiveRecord::Schema.define(version: 2020_02_26_071347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_02_22_044146) do
   create_table "banners", force: :cascade do |t|
     t.integer "site_setting_id"
     t.string "title"
+    t.integer "status", limit: 2, default: 1, null: false
     t.string "link"
     t.string "alt"
     t.string "image"
@@ -102,6 +103,17 @@ ActiveRecord::Schema.define(version: 2020_02_22_044146) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dog_id"], name: "index_photos_on_dog_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.integer "site_setting_id"
+    t.string "title", null: false
+    t.text "content"
+    t.integer "status", limit: 2, default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.integer "display_order", limit: 2, default: 1
   end
 
   create_table "site_settings", force: :cascade do |t|

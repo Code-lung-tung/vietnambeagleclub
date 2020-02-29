@@ -14,7 +14,9 @@ ActiveAdmin.register Article do
       link_to article.category.name, admin_category_path(article.category)
     end
     column :slug
-    column :status
+    column :status do |article|
+      status_tag article.status
+    end
     column :published_at
     actions
   end
@@ -52,7 +54,19 @@ ActiveAdmin.register Article do
       Article.column_names.map(&:to_sym).each do |column|
         if column == :photo
           row column do |article|
-            image_tag article.photo.url, size: 300
+            image_tag article.photo.url, style: 'height:auto; max-width: 500px;'
+          end
+          next
+        end
+        if column == :content
+          row column do |article|
+            strip_tags article.content
+          end
+          next
+        end
+        if column == :status
+          row column do |article|
+            status_tag article.status
           end
           next
         end

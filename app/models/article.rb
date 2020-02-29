@@ -9,6 +9,4 @@ class Article < ApplicationRecord
 
   validates :title, length: { maximum: 355 }, presence: true
   validates :photo, :category_id, presence: true
-  	
-  scope :active, ->{ where(status: statuses[:published]) }
 end
