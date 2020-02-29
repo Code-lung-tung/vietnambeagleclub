@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
 //= require activestorage
 //= require turbolinks
 //= require_tree .
@@ -18,3 +19,12 @@
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
+//= require jquery.slick
+
+$(function(){
+  $('.slick-slider').slick({
+    autoplay: true,
+    autoplaySpeed: 2000,
+    mobileFirst: true
+  })
+})
