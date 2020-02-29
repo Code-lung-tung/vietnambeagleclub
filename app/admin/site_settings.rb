@@ -7,7 +7,6 @@ ActiveAdmin.register SiteSetting do
 
   index do
     selectable_column
-    id_column
     column :setting_type do |s|
       s.setting_type.humanize
     end
