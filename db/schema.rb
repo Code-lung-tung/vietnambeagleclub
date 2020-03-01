@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_071347) do
+ActiveRecord::Schema.define(version: 2020_03_01_134010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,12 +127,9 @@ ActiveRecord::Schema.define(version: 2020_02_26_071347) do
   create_table "tinymce_images", force: :cascade do |t|
     t.string "alt", default: ""
     t.string "hint", default: ""
-    t.string "file_file_name"
-    t.string "file_content_type"
-    t.bigint "file_file_size"
-    t.datetime "file_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "file"
   end
 
 end
