@@ -18,6 +18,6 @@ function initTinyMce () {
       'searchreplace visualblocks code fullscreen',
       'insertdatetime media table contextmenu paste code uploadimage textcolor'
     ],
-    toolbar: 'bold italic underline | forecolor backcolor | bullist,numlist | fontsizeselect link image | alignleft aligncenter alignright alignjustify | undo redo'
+    toolbar: 'bold italic underline | forecolor backcolor | bullist numlist | fontsizeselect link uploadimage | alignleft aligncenter alignright alignjustify | undo redo'
   })
 }
