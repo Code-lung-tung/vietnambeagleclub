@@ -15,8 +15,19 @@
   </head>
 
   <body>
+    <div id="fb-root"></div>
     <%= render 'partial/header' %>
     <%= yield %>
     <%= render 'partial/footer' %>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=538825283650992&autoLogAppEvents=1"></script>
+    <script>
+      window.addEventListener('sfsi_plus_functions_loaded', function () {
+        if (typeof sfsi_plus_responsive_toggle == 'function') {
+          sfsi_plus_responsive_toggle(0);
+          // console.log('sfsi_plus_responsive_toggle');
+
+        }
+      })
+    </script>
   </body>
 </html>

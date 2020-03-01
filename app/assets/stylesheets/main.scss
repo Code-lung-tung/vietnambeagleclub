@@ -1598,12 +1598,12 @@ Main SLider
 
 #main-slider .slick-prev.slick-arrow {
     left: 40px;
-    background: url(images/controls.png) no-repeat;
+    background: asset_url('controls.png') no-repeat;
 }
 
 #main-slider .slick-next.slick-arrow {
     right: 40px;
-    background: url(images/controls.png) no-repeat right top;
+    background: asset_url('controls.png') no-repeat right top;
 }
 
 #main-slider .slick-dots {
@@ -1921,7 +1921,7 @@ Portfolio Section
     bottom: 0;
     left: 0;
     color: #FFF;
-    background: url(images/portfolio-text-bg.png) repeat-x top left;
+    /*background: url(images/portfolio-text-bg.png) repeat-x top left;*/
     font-size: 16px;
     margin: 0;
     text-transform: uppercase;
