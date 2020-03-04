@@ -1,0 +1,46 @@
+<!-- BEGIN RESULT -->
+<div class="col-md-9">
+  <h2><i class="fa fa-file-o"></i> Result</h2>
+  <hr>
+  <%= render "search_by_name_form" %>
+  <div class="padding"></div>
+  <div class="row">
+    <%= render "order_result" %>
+    <div class="col-md-6 text-right">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
+        <button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- BEGIN TABLE RESULT -->
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <td class="number text-center">1</td>
+          <td class="image"><img src="http://beaglebase.ru/img/nopic.jpg" alt=""></td>
+          <td class="product">
+            <strong>PRIORI INCANTATUM HELENA BEAUTY LOVE</strong>
+            <br>
+            Tu Bi Laki My Gold Amber x Gerda O Callaghan
+          </td>
+          <td class="price text-right">05/17/2019</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- END TABLE RESULT -->
+  <!-- BEGIN PAGINATION -->
+  <ul class="pagination">
+    <li class="disabled"><a href="#">«</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">»</a></li>
+  </ul>
+  <!-- END PAGINATION -->
+</div>
+<!-- END RESULT -->
