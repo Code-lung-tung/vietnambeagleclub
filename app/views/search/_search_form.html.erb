@@ -2,49 +2,54 @@
 <div class="col-md-3">
   <h2 class="grid-title"><i class="fa fa-filter"></i> Filters</h2>
   <hr>
-  <div class="padding"></div>
-  <!-- BEGIN FILTER BY CATEGORY -->
-  <h4>By color:</h4>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck"> Bicolor</label>
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck"> Tricolor</label>
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck"> Desktop</label>
-  </div>
-  <!-- END FILTER BY CATEGORY -->
-  <div class="padding"></div>
-  <!-- BEGIN FILTER BY SEX -->
-  <h4>By sex:</h4>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck">Male</label>
-  </div>
-  <div class="checkbox">
-    <label><input type="checkbox" class="icheck">Female</label>
-  </div>
-  <!-- END FILTER BY SEX -->
-  <div class="padding"></div>
-  <!-- BEGIN FILTER BY DATE -->
-  <h4>By date of birth:</h4>
-  From
-  <div class="input-group date form_date" data-date="2014-06-14T05:25:07Z" data-date-format="dd-mm-yyyy" data-link-field="dtp_input1">
-    <input type="text" class="form-control">
-    <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
-  </div>
-  <input type="hidden" id="dtp_input1" value="">
-  To
-  <div class="input-group date form_date" data-date="2014-06-14T05:25:07Z" data-date-format="dd-mm-yyyy" data-link-field="dtp_input2">
-    <input type="text" class="form-control">
-    <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
-  </div>
-  <input type="hidden" id="dtp_input2" value="">
-  <!-- END FILTER BY DATE -->
-  <div class="padding"></div>
-  <!-- BEGIN FILTER BY ID -->
-  <h4>By ID:</h4>
-  <input type="text" class="form-control">
-  <!-- END FILTER BY ID -->
+  <%= search_form_for @q, url: search_path do |f| %>
+    <!-- BEGIN FILTER BY CATEGORY -->
+    <h4>By color:</h4>
+
+    <% Dog.color_types.each do |(key, val)| %>
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :color_type_in, { multiple: true }, val, nil %>
+          <%= key %>
+        </label>
+      </div>
+    <% end %>
+    <!-- END FILTER BY CATEGORY -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY SEX -->
+    <h4>By sex:</h4>
+    <% Dog.sexes.each do |(key, val)| %>
+      <div class="checkbox">
+        <label>
+          <%= f.check_box :sex_in, { multiple: true }, val, nil %>
+          <%= key %>
+        </label>
+      </div>
+    <% end %>
+    <!-- END FILTER BY SEX -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY DATE -->
+    <h4>By date of birth:</h4>
+    From
+    <div class="input-group date form_date" data-date="2014-06-14T05:25:07Z" data-date-format="dd-mm-yyyy" data-link-field="dtp_input1">
+      <%= f.search_field :date_of_birth_gteq, class: "form-control" %>
+      <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
+    </div>
+    To
+    <div class="input-group date form_date" data-date="2014-06-14T05:25:07Z" data-date-format="dd-mm-yyyy" data-link-field="dtp_input2">
+      <%= f.search_field :date_of_birth_lteq, class: "form-control" %>
+      <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
+    </div>
+    <!-- END FILTER BY DATE -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY ID -->
+    <h4>By ID:</h4>
+    <%= f.search_field :id_eq, class: "form-control" %>
+    <!-- END FILTER BY ID -->
+    <%= f.hidden_field :name_cont %>
+    <div class="padding"></div>
+    <h4>&nbsp;</h4>
+    <input type="submit" class="btn btn-primary" value="Search">
+  <% end %>
 </div>
 <!-- END FILTERS -->

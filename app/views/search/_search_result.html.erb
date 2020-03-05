@@ -17,29 +17,14 @@
   <div class="table-responsive">
     <table class="table table-hover">
       <tbody>
-        <tr>
-          <td class="number text-center">1</td>
-          <td class="image"><img src="http://beaglebase.ru/img/nopic.jpg" alt=""></td>
-          <td class="product">
-            <strong>PRIORI INCANTATUM HELENA BEAUTY LOVE</strong>
-            <br>
-            Tu Bi Laki My Gold Amber x Gerda O Callaghan
-          </td>
-          <td class="price text-right">05/17/2019</td>
-        </tr>
+        <%= render partial: "dog", collection: @dogs, as: :dog %>
       </tbody>
     </table>
   </div>
   <!-- END TABLE RESULT -->
   <!-- BEGIN PAGINATION -->
   <ul class="pagination">
-    <li class="disabled"><a href="#">«</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">»</a></li>
+    <%= paginate @dogs %>
   </ul>
   <!-- END PAGINATION -->
 </div>
