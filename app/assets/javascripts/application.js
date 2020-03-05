@@ -14,6 +14,7 @@
 //= require jquery3
 //= require_tree .
 //= require activestorage
+//= require bootstrap.min
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
