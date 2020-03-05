@@ -26,4 +26,8 @@ $(function(){
     autoplaySpeed: 2000,
     mobileFirst: true
   })
+
+  $('.datepicker').datepicker({
+    format: 'dd-mm-yyyy'
+  });
 })

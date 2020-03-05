@@ -1,13 +1,15 @@
 <!-- BEGIN SEARCH INPUT -->
 <div class="input-group">
-  <input type="text" class="form-control js-searchFrmNameInp" value="<%= params[:q][:name_cont] %>">
+  <input type="text" class="form-control js-searchFrmNameInp" value="<%= params.dig(:q, :name_cont) %>">
   <span class="input-group-btn">
-    <button class="btn btn-primary js-searchFrmNameSearch" type="button"><i class="fa fa-search"></i></button>
+    <button class="btn btn-primary btn-search js-searchFrmNameSearch" type="button">
+      <i class="fa fa-search"></i>
+    </button>
   </span>
 </div>
 <!-- END SEARCH INPUT -->
-<% if params[:q][:name_cont].empty? %>
+<% if params.dig(:q, :name_cont).nil? || params.dig(:q, :name_cont).empty? %>
   &nbsp;
 <% else %>
-  <p>Showing all results matching "<%= params[:q][:name_cont] %>"</p>
+  <p>Showing all results matching "<%= params.dig(:q, :name_cont) %>"</p>
 <% end %>
