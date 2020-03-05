@@ -9,7 +9,7 @@ class TinymceAssetsController < ApplicationController
 
     render json: {
       image: {
-        url:    image.file.url,
+        url:    image.reload.file_url,
         height: geometry.height.to_i,
         width:  geometry.width.to_i
       }

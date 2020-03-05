@@ -8,7 +8,7 @@ ActiveAdmin.register Article do
     id_column
     column :title
     column :photo do |article|
-      image_tag article.photo.thumb.url, size: 50
+      image_tag article.photo.thumb.url
     end
     column :category_id do |article|
       link_to article.category.name, admin_category_path(article.category)

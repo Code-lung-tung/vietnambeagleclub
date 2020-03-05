@@ -12,13 +12,15 @@
 //
 //= require rails-ujs
 //= require jquery3
-//= require activestorage
 //= require_tree .
+//= require activestorage
+//= require bootstrap.min
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 //= require jquery.slick
+//= require search
 
 $(function() {
     $('.slick-slider').slick({
@@ -26,6 +28,18 @@ $(function() {
         autoplaySpeed: 2000,
         mobileFirst: true
     })
+})
+
+$(function() {
+    $('.slick-slider').slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
+        mobileFirst: true
+    })
+
+    $('.datepicker').datepicker({
+        format: 'dd-mm-yyyy'
+    });
 })
 
 $(document).ready(function() {
