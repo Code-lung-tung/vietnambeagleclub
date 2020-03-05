@@ -11,7 +11,7 @@ body:not(.home) .main-navigation .current_page_item>a,
 body:not(.home) .main-navigation .current-menu-item>a,
 h4.blog-post-title a:hover,
 h4.portfolio-post-title a:hover {
-    color: #e66432;
+  color: #e66432;
 }
 
 #main-slider .slick-dots li.slick-active button,
@@ -41,14 +41,14 @@ h4.portfolio-post-title a:hover {
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
 .woocommerce input.button:hover {
-    background: #e66432;
+  background: #e66432;
 }
 
 .woocommerce #respond input#submit.alt:hover,
 .woocommerce a.button.alt:hover,
 .woocommerce button.button.alt:hover,
 .woocommerce input.button.alt:hover {
-    background: #cf5a2d;
+  background: #cf5a2d;
 }
 
 #masthead.header-bottom-border,
@@ -60,20 +60,40 @@ h4.portfolio-post-title a:hover {
 .testimonial-listing .slick-arrow:hover,
 .blog-list .blog-excerpt,
 #secondary h2.widget-title {
-    border-color: #e66432;
+  border-color: #e66432;
 }
 
 #secondary h2.widget-title {
-    border-color: #e66432;
+  border-color: #e66432;
 }
 
 @media screen and (max-width: 1000px) {
-    .main-navigation>ul,
-    .menu-toggle {
-        background-color: #e66432 !important;
-    }
+
+  .main-navigation>ul,
+  .menu-toggle {
+    background-color: #e66432 !important;
+  }
 }
 
 .posted-on:before {
-    border-color: transparent transparent #b85028 #b85028;
+  border-color: transparent transparent #b85028 #b85028;
 }
+
+.btn-search {
+  background: #E66432 !important;
+  border: none !important;
+  &:hover {
+    background: #b74f27 !important;
+  }
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+  background-color: #E66432 !important;
+  border-color: #E66432 !important;
+  color: #fff !important;
+}
+
+.pagination>li>a, .pagination>li>span {
+  color: #333 !important;
+}
+

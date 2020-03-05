@@ -1,0 +1,20 @@
+<tr>
+  <td class="number text-center"><%= dog.id %></td>
+  <td class="image">
+    <%= image_tag dog.photos.any? ? dog.photos.first.image_url : "nopic" %>
+  </td>
+  <td class="product">
+    <strong><%= dog.name %></strong>
+    <br>
+    <% if dog.father.present? && dog.mother.present? %>
+      <%= "#{dog.father.name} x #{dog.mother.name}" %>
+    <% end %>
+  </td>
+  <td class="price text-right">
+    <% if dog.date_of_birth.present? %>
+      <%= dog.date_of_birth.strftime('%d-%m-%Y') %>
+    <% else %>
+      &nbsp;
+    <% end %>
+  </td>
+</tr>
