@@ -17,5 +17,6 @@
  *= require main
  *= require custom
  *= require search
+ *= require bootstrap
  *= require bootstrap-datepicker
  */
