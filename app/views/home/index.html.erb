@@ -224,30 +224,17 @@
                   <% @dogs.each do |dog| %>
                   <div
                     class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  black-white"
-                    style="position: absolute; left: 0px; top: 272px;">
                     <div class="tlp-portfolio-item">
-                      <div class="tlp-portfolio-thum tlp-item"><img class="img-responsive" src="<%= dog.photos.first.image.url %>" alt="<%= dog.name %>">
-                        <div class="tlp-overlay">
-                          <div class="tlp-portfolio-sd"></div>
-                          <p class="link-icon" style="margin-top: 67.5px;"><a class="tlp-zoom" href=""><i
-                                class="fa fa-search-plus"></i></a><a target="_blank" href="/portfolio/<%= dog.id %>"><i
-                                class="fa fa-external-link"></i></a></p>
-                        </div>
-                      </div>
-                      <div class="tlp-content">
-                        <div class="tlp-content-holder">
-                          <h3><a href="/portfolio/<%= dog.id %>"><%= dog.name %></a></h3>
-                          <div class="tlp-portfolio-sd"></div>
+                      <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="<%= dog.photos.first.image.url %>" alt="<%= dog.name %>">
+                        <div class="card-img-top">
+                          <h5 class="card-title"><%= dog.name %></h5>
+                          <a href="/portfolio/<%= dog.id %>" class="btn btn-primary">Xem Chi Tiết</a>
                         </div>
                       </div>
                     </div>
                   </div>
                   <% end %>
-
-                
-
-
-
                 </div>
               </div>
             </div>
