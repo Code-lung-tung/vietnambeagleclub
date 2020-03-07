@@ -62,6 +62,6 @@ class Dog < ApplicationRecord
   private
 
   def parents(dog)
-    [self.father.presence || Dog.new(name: 'None'), self.mother.presence || Dog.new(name: 'None')]
+    [dog.father.presence || Dog.new(name: 'None'), dog.mother.presence || Dog.new(name: 'None')]
   end
 end
