@@ -45,3 +45,47 @@
   display: inline;
   font-weight: 600;
 }
+
+.infoDetails {
+  &-breadcrumb {
+    color: #333 !important;
+    &:hover {
+      color: #E66432 !important;
+    }
+  }
+  &-mainInfo {
+    margin-top: 20px;
+    &-photo {
+      border: 1px solid;
+    }
+    &-row {
+      font-size: 1em;
+      line-height: 2.5em;
+      .infoLabel {
+        color: #E66432;
+      }
+      .infoValue {
+        font-weight: bold;
+        &::after {
+          content: "\00a0\00a0";
+        }
+      }
+    }
+  }
+  &-pedigree {
+    table { 
+      table-layout: fixed;
+      & > tbody > tr > td {
+        border-color: #E66432;
+        vertical-align: middle;
+        text-align: center;
+        a {
+          color: #333;
+          &:hover {
+            color: #E66432;
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get '/search', to: 'search#index'
+  get '/details/:id', to: 'search#details', as: :details
+  get '/details/:id/relative', to: 'search#relative', as: :relative
+  get '/details/:id/descendant', to: 'search#descendant', as: :descendant
+  get '/details/:id/genealogy', to: 'search#genealogy', as: :genealogy
+  get '/details/:id/genealogy-result', to: 'search#genealogy_result', as: :genealogy_result
+  
   get '/bai-viet-moi', to: 'articles#index'
 
   get '/:slug', to: 'home#show'

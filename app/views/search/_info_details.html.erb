@@ -1,0 +1,39 @@
+<!-- BEGIN RESULT -->
+<div class="col-md-9 infoDetails">
+  <%= render "main_info" %>
+  <div class="infoDetails-pedigree">
+    <h3><i class="fa fa-folder-open"></i> GENEALOGY</h3>
+    <hr>
+    <table class="table table-bordered">
+      <tbody>
+        <% @dog.genealogy.each do |dog_arr| %>
+        <tr>
+          <% dog_arr.each do |dog_record| %>
+          <td rowspan="<%= dog_record.rowspan(self_depth: dog_record.depth) %>">
+            <b>
+              <% if dog_record.id? %>
+              <%= link_to dog_record.name, details_path(dog_record.slug) %>
+              <% else %>
+              <%= dog_record.name %>
+              <% end %>
+            </b>
+            <br>
+            <%= dog_record.color_type %>
+          </td>
+          <% end %>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="infoDetails-photos">
+    <h3><i class="fa fa-photo"></i> PHOTOS</h3>
+    <hr>
+    <% @dog.photos.each do |photo| %>
+    <div class="col-md-3">
+      <%= image_tag photo.image_url %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<!-- END RESULT -->

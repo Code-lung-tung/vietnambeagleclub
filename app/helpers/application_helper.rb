@@ -7,4 +7,8 @@ module ApplicationHelper
     return SiteSetting.send(type).first.services if type == :service
     SiteSetting.send(type).first&.value&.html_safe
   end
+
+  def integer_to_roman(number)
+    [nil, 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'][number]
+  end
 end

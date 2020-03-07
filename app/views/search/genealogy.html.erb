@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <!-- BEGIN SEARCH RESULT -->
+    <div class="col-md-12">
+      <div class="grid search">
+        <div class="grid-body">
+          <div class="row">
+            <%= render "search_form" %>
+            <div class="col-md-9 infoDetails">
+              <%= render "main_info" %>
+              <div class="infoDetails-siblings">
+                <h3><i class="fa fa-photo"></i> GENEALOGY</h3>
+                <hr>
+                <div class="row">
+                  <div class="col-md-3">
+                    <h4>DEPTH:</h4>
+                    <form action="<%= genealogy_result_path(@dog) %>" method="GET">
+                      <input type="number" name="depth" class="form-control" min="1">
+                      <br>
+                      <input type="submit" class="btn btn-primary btn-search" value="Show">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SEARCH RESULT -->
+  </div>
+</div>
