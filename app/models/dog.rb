@@ -16,6 +16,14 @@ class Dog < ApplicationRecord
   accepts_nested_attributes_for :photos, reject_if: proc { |attributes| attributes[:image].blank? },
     allow_destroy: true
 
+  scope :not_this_one, ->(dog) { where.not(id: dog.id) }
+  scope :siblings, ->(dog) { not_this_one(dog).where(mother: dog.mother, father: dog.father) }
+  scope :half_brother, ->(dog, common_parent) do
+    diff_parent = common_parent == :father ? :mother : :father
+    where(common_parent => dog.send(common_parent)).where.not(diff_parent => dog.send(diff_parent))
+  end
+  scope :offspring, ->(dog) { where(mother: dog).or(where(father: dog)) }
+
   attr_accessor :depth
 
   def genealogy(depth = 3)
@@ -44,7 +52,7 @@ class Dog < ApplicationRecord
     result
   end
 
-  def rowspan(tree_depth = 3, self_depth)
+  def rowspan(tree_depth: 3, self_depth:)
     2**(tree_depth - self_depth)
   end
 

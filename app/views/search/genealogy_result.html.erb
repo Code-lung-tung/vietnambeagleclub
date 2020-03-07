@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <!-- BEGIN SEARCH RESULT -->
+    <div class="col-md-12 infoDetails">
+      <div class="grid search">
+        <div class="grid-body">
+          <div class="row">
+            <div class="infoDetails-pedigree">
+            <h3><i class="fa fa-folder-open"></i> GENEALOGY</h3>
+            <hr>
+            <table class="table table-bordered">
+              <tbody>
+                <tr style="font-family: serif; font-size: 14px;">
+                  <% (0..@depth).each_with_index do |_, index| %>
+                    <td align="center" bgcolor="#E66432">
+                      <font face="" size="1" color="#ffffff"><%= index.zero? ? '' : integer_to_roman(index) %></font>
+                    </td>
+                  <% end %>
+                </tr>
+                <% @genealogy.each do |dog_arr| %>
+                  <tr>
+                    <% dog_arr.each do |dog_record| %>
+                      <td rowspan="<%= dog_record.rowspan(tree_depth: @depth, self_depth: dog_record.depth) %>">
+                        <b>
+                          <% if dog_record.id? %>
+                            <%= link_to dog_record.name, details_path(dog_record.slug) %>
+                          <% else %>
+                            <%= dog_record.name %>
+                          <% end %>
+                        </b>
+                        <br>
+                        <%= dog_record.color_type %>
+                      </td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SEARCH RESULT -->
+  </div>
+</div>

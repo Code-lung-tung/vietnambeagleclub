@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <!-- BEGIN SEARCH RESULT -->
+    <div class="col-md-12">
+      <div class="grid search">
+        <div class="grid-body">
+          <div class="row">
+            <%= render "search_form" %>
+            <div class="col-md-9 infoDetails">
+              <%= render "main_info" %>
+              <div class="infoDetails-siblings">
+                <h3><i class="fa fa-photo"></i> SIBLINGS</h3>
+                <hr>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <tbody>
+                      <%= render partial: "dog", collection: @siblings, as: :dog %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="infoDetails-siblings">
+                <h3><i class="fa fa-photo"></i> HALF BROTHER</h3>
+                <hr>
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <tbody>
+                      <%= render partial: "dog", collection: @half_brothers, as: :dog %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END SEARCH RESULT -->
+  </div>
+</div>
