@@ -28,8 +28,7 @@ class Dog < ApplicationRecord
 
   def genealogy(depth = 3)
     result = []
-    init_father = self.father.presence || Dog.new(name: 'None')
-    init_mother = self.mother.presence || Dog.new(name: 'None')
+    init_father, init_mother = parents(self)
     self.depth, init_father.depth, init_mother.depth = [0, 1, 1]
     stack = [init_father, init_mother]
     depth_counter = 0
@@ -43,8 +42,7 @@ class Dog < ApplicationRecord
         depth_counter = stack.first.depth - 1 if stack.any?
       else
         depth_counter += 1
-        father = stack_element.father.presence || Dog.new(name: 'None')
-        mother = stack_element.mother.presence || Dog.new(name: 'None')
+        father, mother = parents(stack_element)
         father.depth, mother.depth = [depth_counter + 1, depth_counter + 1]
         stack.unshift(*[father, mother])
       end
@@ -59,5 +57,11 @@ class Dog < ApplicationRecord
   def descendant_count(sex = :male)
     return Dog.where(father: self, sex: sex).count if male?
     Dog.where(mother: self, sex: sex).count
+  end
+
+  private
+
+  def parents(dog)
+    [self.father.presence || Dog.new(name: 'None'), self.mother.presence || Dog.new(name: 'None')]
   end
 end
