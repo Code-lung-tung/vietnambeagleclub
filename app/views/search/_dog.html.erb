@@ -1,4 +1,4 @@
-<tr>
+<tr class="js-detailsRow" data-href="<%= details_path(dog.slug) %>">
   <td class="number text-center"><%= dog.id %></td>
   <td class="image">
     <%= image_tag dog.photos.any? ? dog.photos.first.image_url : "nopic" %>

@@ -226,7 +226,7 @@
                     class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  black-white"
                     <div class="tlp-portfolio-item">
                       <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="<%= dog.photos.first.image.url %>" alt="<%= dog.name %>">
+                        <img class="card-img-top" src="<%= dog.photos.first&.image_url %>" alt="<%= dog.name %>">
                         <div class="card-img-top">
                           <h5 class="card-title"><%= dog.name %></h5>
                           <a href="/portfolio/<%= dog.id %>" class="btn btn-primary">Xem Chi Tiết</a>

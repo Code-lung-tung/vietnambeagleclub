@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index 
     @articles = Article.published.order(created_at: :desc).page params[:page]
-    @dogs = Dog.by_male.page params[:page]
+    @dogs = Dog.male.page
     @services = Service.active.all.order :display_order
   end
 

@@ -1,0 +1,83 @@
+<!-- BEGIN RESULT -->
+<div class="col-md-9 infoDetails">
+  <h2><i class="fa fa-paw"></i> <%= @dog.name %></h2>
+  <hr>
+  <h5>
+    <%= link_to "MAIN INFORMATION", "#", class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+    <%= link_to "RELATIVES", "#", class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+    <%= link_to "OFFSPRING", "#", class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+    <%= link_to "TRIAL PEDIGREE", "#", class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+    <%= link_to "PEDIGREE", "#", class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+    <%= link_to "PEDIGREE", "#", class: "infoDetails-breadcrumb" %>
+  </h5>
+  <div class="row infoDetails-mainInfo">
+    <div class="col-md-5">
+      <%= image_tag @dog.photos.any? ? @dog.photos.first.image_url : "nopic.jpg", class: "infoDetails-mainInfo-photo" %>
+    </div>
+    <div class="col-md-7">
+      <div class="infoDetails-mainInfo-row">
+        <div class="col-md-6 infoLabel">Father:</div>
+        <div class="col-md-6 infoValue"><%= @dog.father&.name %></div>
+      </div>
+      <div class="infoDetails-mainInfo-row">
+        <div class="col-md-6 infoLabel">Mother:</div>
+        <div class="col-md-6 infoValue"><%= @dog.mother&.name %></div>
+      </div>
+      <div class="infoDetails-mainInfo-row">
+        <div class="col-md-6 infoLabel">Sex:</div>
+        <div class="col-md-6 infoValue"><%= @dog.sex %></div>
+      </div>
+      <div class="infoDetails-mainInfo-row">
+        <div class="col-md-6 infoLabel">Color:</div>
+        <div class="col-md-6 infoValue"><%= @dog.color_type %></div>
+      </div>
+      <div class="infoDetails-mainInfo-row">
+        <div class="col-md-6 infoLabel">Date of birth:</div>
+        <div class="col-md-6 infoValue"><%= @dog.date_of_birth&.strftime('%d-%m-%Y') %></div>
+      </div>
+      <div class="infoDetails-mainInfo-row">
+        <div class="col-md-6 infoLabel">Address of residence:</div>
+        <div class="col-md-6 infoValue"><%= @dog.living_address || 'None' %></div>
+      </div>
+      <div class="infoDetails-mainInfo-row">
+        <div class="col-md-6 infoLabel">Descendants in the database:</div>
+        <div class="col-md-6 infoValue"><%= @dog.descendant_count(:male) %> males<br><%= @dog.descendant_count(:female) %> females</div>
+      </div>
+    </div>
+  </div>
+  <div class="infoDetails-pedigree">
+    <h3><i class="fa fa-folder-open"></i> GENEROLOGY</h3>
+    <hr>
+    <table class="table table-bordered">
+      <tbody>
+        <% @dog.genealogy.each do |dog_arr| %>
+          <tr>
+            <% dog_arr.each do |dog_record| %>
+              <td rowspan="<%= dog_record.rowspan(dog_record.depth) %>">
+                <b>
+                  <% if dog_record.id? %>
+                    <%= link_to dog_record.name, details_path(dog_record.slug) %>
+                  <% else %>
+                    <%= dog_record.name %>
+                  <% end %>
+                </b>
+                <br>
+                <%= dog_record.color_type %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="infoDetails-photos">
+    <h3><i class="fa fa-photo"></i> PHOTOS</h3>
+    <hr>
+    <% @dog.photos.each do |photo| %>
+      <div class="col-md-3">
+        <%= image_tag photo.image_url %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<!-- END RESULT -->
