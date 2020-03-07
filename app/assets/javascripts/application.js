@@ -21,6 +21,7 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 //= require jquery.slick
 //= require search
+//= require custom
 
 $(function() {
     $('.slick-slider').slick({
