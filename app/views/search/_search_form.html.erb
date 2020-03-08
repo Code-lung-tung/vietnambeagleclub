@@ -1,41 +1,41 @@
 <!-- BEGIN FILTERS -->
 <div class="col-md-3">
-  <h2 class="grid-title"><i class="fa fa-filter"></i> Filters</h2>
+  <h2 class="grid-title"><i class="fa fa-filter"></i> <%= t('view.search.filter') %></h2>
   <hr>
   <%= search_form_for @q, url: search_path do |f| %>
     <!-- BEGIN FILTER BY CATEGORY -->
-    <h4>By color:</h4>
+    <h4><%= t('view.search.by_color') %> :</h4>
 
     <% Dog.color_types.each do |(key, val)| %>
       <div class="checkbox">
         <label>
           <%= f.check_box :color_type_in, { multiple: true }, val, nil %>
-          <%= key %>
+          <%= t("enum.#{key}") %>
         </label>
       </div>
     <% end %>
     <!-- END FILTER BY CATEGORY -->
     <div class="padding"></div>
     <!-- BEGIN FILTER BY SEX -->
-    <h4>By sex:</h4>
+    <h4><%= t('view.search.by_sex') %>:</h4>
     <% Dog.sexes.each do |(key, val)| %>
       <div class="checkbox">
         <label>
           <%= f.check_box :sex_in, { multiple: true }, val, nil %>
-          <%= key %>
+          <%= t("enum.#{key}") %>
         </label>
       </div>
     <% end %>
     <!-- END FILTER BY SEX -->
     <div class="padding"></div>
     <!-- BEGIN FILTER BY DATE -->
-    <h4>By date of birth:</h4>
-    From
+    <h4><%= t('view.search.by_birthday') %> :</h4>
+    <%= t('view.search.from') %>
     <div class="input-group date form_date">
       <%= f.search_field :date_of_birth_gteq, class: "form-control datepicker", value: params.dig(:q, :date_of_birth_gteq) %>
       <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
     </div>
-    To
+    <%= t('view.search.to') %>
     <div class="input-group date form_date">
       <%= f.search_field :date_of_birth_lteq, class: "form-control datepicker", value: params.dig(:q, :date_of_birth_lteq) %>
       <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
@@ -43,13 +43,13 @@
     <!-- END FILTER BY DATE -->
     <div class="padding"></div>
     <!-- BEGIN FILTER BY ID -->
-    <h4>By ID:</h4>
+    <h4><%= t('view.search.by_id') %>:</h4>
     <%= f.search_field :id_eq, class: "form-control" %>
     <!-- END FILTER BY ID -->
     <%= f.hidden_field :name_cont %>
     <div class="padding"></div>
     <h4>&nbsp;</h4>
-    <input type="submit" class="btn btn-primary btn-search" value="Search">
+    <input type="submit" class="btn btn-primary btn-search" value="<%= t('view.search.submit') %>">
   <% end %>
 </div>
 <!-- END FILTERS -->

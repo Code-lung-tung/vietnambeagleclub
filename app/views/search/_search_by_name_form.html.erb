@@ -11,5 +11,5 @@
 <% if params.dig(:q, :name_cont).nil? || params.dig(:q, :name_cont).empty? %>
   &nbsp;
 <% else %>
-  <p>Showing all results matching "<%= params.dig(:q, :name_cont) %>"</p>
+  <p>t('result_matching') "<%= params.dig(:q, :name_cont) %>"</p>
 <% end %>
