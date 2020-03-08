@@ -220,18 +220,15 @@
 
             <div class="parallax-content">
               <div class="page-content">
-                <div class="tlp-portfolio-isotope" style="position: relative; height: 802.188px;">
+                <div class="tlp-portfolio-isotope row">
                   <% @dogs.each do |dog| %>
-                  <div
-                    class="tlp-item tlp-single-item tlp-isotope-item tlp-col-lg-3 tlp-col-md-3 tlp-col-sm-6 tlp-col-xs-12  black-white"
-                    <div class="tlp-portfolio-item">
+                    <div class="tlp-portfolio-item col-sm-3">
                       <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="<%= dog.photos.first&.image_url %>" alt="<%= dog.name %>">
                         <div class="card-img-top">
                           <h5 class="card-title"><%= dog.name %></h5>
                           <a href="/portfolio/<%= dog.id %>" class="btn btn-primary">Xem Chi Tiết</a>
                         </div>
-                      </div>
                     </div>
                   </div>
                   <% end %>
@@ -248,6 +245,40 @@
             </div>
           </div>
         </section>
+        <section class="parallax-section clearfix default_template" id="section-787">
+        <div class="mid-content">
+          <h2><span>Cửa hàng</span></h2>
+          <div class="row">
+          <% @sales.each do |sale| %>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="">
+                            <img class="pic-1" src="<%= sale.photos.first.image.url %>">
+                        </a>
+                        <% if sale.price_dow %>
+                           <span class="product-new-label">Giảm Giá</span>
+                        <% end %>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star disable"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href=""><%= sale.title %></a></h3>
+                        <div class="price"><%= sale.price_dow %> đ
+                            <span><%= sale.price %> đ</span>
+                        </div>
+                        <a class="add-to-cart" href="">Mua Hàng</a>
+                    </div>
+                </div>
+            </div>
+          <% end %>
+          </div>
+        </section>
       </div>
     </div>
     </ins>
@@ -255,7 +286,7 @@
       title="GDPR Consent Management" style="width: 0px; height: 0px; position: absolute; left: -5000px;"></iframe>
     <!-- #page -->
 
-    <div id="go-top" style="display: block"><a href="#page"><i class="fa fa-angle-up"></i></a></div>
+    <div id="go-top"><a href="/"><i class="fa fa-angle-up"></i></a></div>
     <a href="tel:0989388651">
       <div class="coccoc-alo-phone coccoc-alo-green coccoc-alo-show" id="coccoc-alo-phoneIcon callnowicon"
         style="left:0px !important; bottom:20px !important;">

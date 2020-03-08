@@ -1,0 +1,57 @@
+<div class="mid-content clearfix" style="height: auto !important;">
+  <section id="primary" class="content-area woocommerce-area" style="height: auto !important;">
+    <main id="main" class="site-main" role="main" style="height: auto !important;">
+      <nav class="woocommerce-breadcrumb"><a href="https://collievn.com">Trang chủ</a>&nbsp;/&nbsp;ĐANG BÁN</nav>
+      <header class="woocommerce-products-header">
+        <h1 class="woocommerce-products-header__title page-title">ĐANG BÁN</h1>
+      </header>
+      <div class="woocommerce-notices-wrapper"></div>
+      <p class="woocommerce-result-count">
+       
+      </p>
+      <form class="woocommerce-ordering" method="get">
+        <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng">
+          <option value="popularity">Thứ tự theo mức độ phổ biến</option>
+          <option value="rating">Thứ tự theo điểm đánh giá</option>
+          <option value="date" selected="selected">Mới nhất</option>
+          <option value="price">Thứ tự theo giá: thấp đến cao</option>
+          <option value="price-desc">Thứ tự theo giá: cao xuống thấp</option>
+        </select>
+        <input type="hidden" name="paged" value="1">
+      </form>
+      <div class="products columns-3 row" style="margin-top: 50px">
+        <% @sales.each do |sale| %>
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="pic-1" src="<%= sale.photos.first.image.url %>">
+                        </a>
+                        <% if sale.price_dow %>
+                           <span class="product-new-label">Giảm Giá</span>
+                        <% end %>
+                    </div>
+                    <ul class="rating">
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star"></li>
+                        <li class="fa fa-star disable"></li>
+                    </ul>
+                    <div class="product-content">
+                        <h3 class="title"><a href="#"><%= sale.title %></a></h3>
+                        <div class="price"><%= sale.price_dow %> đ
+                            <span><%= sale.price %> đ</span>
+                        </div>
+                        <a class="add-to-cart" href="">Mua Hàng</a>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+        <%= paginate @sales %>
+      </div>
+      <div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4356221881663836" data-adsbygoogle-status="done" style="display: block; margin: 10px auto 16px; background-color: transparent; height: 280px;"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1160px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1160px;background-color:transparent;"><iframe width="1160" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 1160px; height: 280px; overflow: visible;"></iframe></ins></ins></ins></div>
+    </main>
+  </section>
+  <!-- #secondary -->
+</div>

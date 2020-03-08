@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sales/index'
+  get 'sales/show'
   root to: 'home#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
   get '/details/:id/genealogy-result', to: 'search#genealogy_result', as: :genealogy_result
   
   get '/bai-viet-moi', to: 'articles#index'
+  get '/chia-se-kinh-nghiem', to: 'shares#index'
+  get '/danh-muc/dang-ban', to: 'sales#index'
+  get '/san-pham/:slug', to: 'sales#show'
 
   get '/:slug', to: 'home#show'
   get '/portfolio/:id', to: 'dogs#show'

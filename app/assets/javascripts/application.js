@@ -21,6 +21,7 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 //= require jquery.slick
 //= require search
+//= require custom
 
 $(function() {
     $('.slick-slider').slick({
@@ -47,12 +48,18 @@ $(document).ready(function() {
     $("#menu-item-1792").removeClass("current-menu-item");
     $("#menu-item-1539").removeClass("current-menu-item");
     $("#menu-item-1537").removeClass("current-menu-item");
+    $("#menu-item-1").removeClass("current-menu-item");
+    $("#menu-item-2").removeClass("current-menu-item");
     if (uri == "/search") {
         $("#menu-item-1537").addClass("current-menu-item");
     } else if (uri == "/bai-viet-moi") {
         $("#menu-item-1539").addClass("current-menu-item");
-    } else {
+    } else if (uri == "/") {
         $("#menu-item-1792").addClass("current-menu-item");
+    } else if (uri == "/danh-muc/dang-ban") {
+        $("#menu-item-1").addClass("current-menu-item");
+    } else if (uri == "/chia-se-kinh-nghiem") {
+        $("#menu-item-2").addClass("current-menu-item");
     }
 })
 
