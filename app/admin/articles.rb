@@ -17,6 +17,9 @@ ActiveAdmin.register Article do
     column :status do |article|
       status_tag article.status
     end
+    column :type_of do |article|
+      status_tag article.type_of
+    end
     column :published_at
     actions
   end
@@ -25,6 +28,7 @@ ActiveAdmin.register Article do
   filter :slug
   filter :category_id
   filter :status
+  filter :type_of
   filter :published_at, as: :date_range
 
   form html: { multipart: true } do |f|

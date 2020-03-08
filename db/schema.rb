@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_075110) do
+ActiveRecord::Schema.define(version: 2020_03_08_022225) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_07_075110) do
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "type", default: 0
+    t.integer "type_of", default: 0
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
@@ -103,7 +103,19 @@ ActiveRecord::Schema.define(version: 2020_03_07_075110) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sale_id"
     t.index ["dog_id"], name: "index_photos_on_dog_id"
+    t.index ["sale_id"], name: "index_photos_on_sale_id"
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.string "title"
+    t.integer "price"
+    t.integer "price_dow"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
   end
 
   create_table "services", force: :cascade do |t|
@@ -133,4 +145,5 @@ ActiveRecord::Schema.define(version: 2020_03_07_075110) do
     t.string "file"
   end
 
+  add_foreign_key "photos", "sales"
 end

@@ -3,6 +3,7 @@ class HomeController < ApplicationController
     @articles = Article.published.order(created_at: :desc).page params[:page]
     @dogs = Dog.by_male.page params[:page]
     @services = Service.active.all.order :display_order
+    @sales = Sale.order(created_at: :desc).page params[:page]    
   end
 
   def show

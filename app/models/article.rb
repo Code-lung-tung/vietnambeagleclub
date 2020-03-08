@@ -4,6 +4,7 @@ class Article < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   enum status: %i[draft published inactive]
+  enum type_of: %i[write share]
 
   belongs_to :category
 
