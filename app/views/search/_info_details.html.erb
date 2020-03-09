@@ -2,7 +2,7 @@
 <div class="col-md-9 infoDetails">
   <%= render "main_info" %>
   <div class="infoDetails-pedigree">
-    <h3><i class="fa fa-folder-open"></i> GENEALOGY</h3>
+    <h3><i class="fa fa-folder-open"></i> <%= t('view.search.genealogy') %></h3>
     <hr>
     <table class="table table-bordered">
       <tbody>
@@ -27,7 +27,7 @@
     </table>
   </div>
   <div class="infoDetails-photos">
-    <h3><i class="fa fa-photo"></i> PHOTOS</h3>
+    <h3><i class="fa fa-photo"></i> <%= t('view.search.photos') %></h3>
     <hr>
     <% @dog.photos.each do |photo| %>
     <div class="col-md-3">
