@@ -1,33 +1,65 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  view:
+    search:
+      hello: "Hello world"
+      order_by: 'Sắp xếp theo'
+      result_matching: 'Toàn bộ kết quả'
+      by_color: 'Theo màu'
+      by_sex: 'Theo giới tính'
+      by_birthday: 'Theo ngày sinh'
+      from: 'Từ ngày'
+      to: 'Đến ngày'
+      by_id: 'Theo ID'
+      result: 'Kết quả'
+      filter: 'Lọc kết quả'
+      submit: 'Tìm kiếm'
+      genealogy: 'Phả hệ'
+      photos: 'HÌNH ẢNH'
+      father: 'Bố'
+      mother: 'Mẹ'
+      sex: 'Giới tính'
+      color: 'Màu sắc'
+      birthday: 'Ngày sinh'
+      address: 'Địa chỉ'
+      descendants: 'Hệ phả'
+      main_information: 'Thông tin chính'
+      relations: 'Họ hàng'
+      offshring: 'Con cái'
+      depth: 'Số đời phả hệ'
+      show: 'Kết quả'
+  enum:
+    monochrome: 'Đơn sắc'
+    bicolor: 'Hai màu'
+    tricolor: 'Ba màu'
+    male: 'Giống đực'
+    female: 'Giống cái'
+  activerecord:
+    attributes:
+      dog:
+        name: 'Tên'
+        date_of_birth: 'Ngày sinh'
+        father: 'Bố'
+        mother: 'Mẹ'
+        sex: 'Giới tính'
+        color_type: 'Loại màu'
+        price: 'Giá cứng'
+        price_dow: 'Giá đã giảm'
+        living_address: 'Địa chỉ sống'
+        description: 'Miêu tả'
+        photos: 'Ảnh'
+        title: 'Tiêu đề'
+      user:
+        email: 'Địa chỉ email'
+        password: 'Mật khẩu'
+        password_confirm: 'Nhập lại mật khẩu'
+      article:
+        photo: 'Hình ảnh'
+        title: 'Tiêu đề'
+        content: 'Nội dung'
+        status: 'Trạng thái'
+        type_of: 'Loại bài viết'
+        category: 'Danh mục'
+      category:
+        name: 'Tên bài viết'
+        description: 'Miêu tả'
+        status: 'Trạng thái'

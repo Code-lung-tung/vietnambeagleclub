@@ -9,6 +9,8 @@ class Dog < ApplicationRecord
   has_many :photos, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 355 }
+  validates :price, presence: true
+  validates :title, presence: true
 
   enum sex: %i[male female]
   enum color_type: %i[monochrome bicolor tricolor]

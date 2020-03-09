@@ -9,15 +9,15 @@
             <div class="col-md-9 infoDetails">
               <%= render "main_info" %>
               <div class="infoDetails-siblings">
-                <h3><i class="fa fa-photo"></i> GENEALOGY</h3>
+                <h3><i class="fa fa-photo"></i><%= t('view.search.genealogy') %></h3>
                 <hr>
                 <div class="row">
                   <div class="col-md-3">
-                    <h4>DEPTH:</h4>
+                    <h4><%= t('view.search.depth') %>:</h4>
                     <form action="<%= genealogy_result_path(@dog) %>" method="GET">
                       <input type="number" name="depth" class="form-control" min="1">
                       <br>
-                      <input type="submit" class="btn btn-primary btn-search" value="Show">
+                      <input type="submit" class="btn btn-primary btn-search" value="<%= t('view.search.show') %>">
                     </form>
                   </div>
                 </div>
