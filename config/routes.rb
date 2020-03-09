@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get '/san-pham/:slug', to: 'sales#show'
 
   get '/:slug', to: 'home#show'
-  get '/portfolio/:id', to: 'dogs#show'
+  get '/portfolio/:id', to: 'dogs#show', as: :portfolio
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   post '/tinymce_assets' => 'tinymce_assets#create'
 end

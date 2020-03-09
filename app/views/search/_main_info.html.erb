@@ -1,10 +1,10 @@
 <h2><i class="fa fa-paw"></i> <%= @dog.name %></h2>
 <hr>
 <h5>
-  <%= link_to "MAIN INFORMATION", details_path(@dog.slug), class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
-  <%= link_to "RELATIVES", relative_path(@dog.slug), class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
-  <%= link_to "OFFSPRING", descendant_path(@dog.slug), class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
-  <%= link_to "GENEALOGY", genealogy_path(@dog.slug), class: "infoDetails-breadcrumb" %>
+  <%= link_to t('view.search.main_information'), details_path(@dog.slug), class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+  <%= link_to t('view.search.relations'), relative_path(@dog.slug), class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+  <%= link_to t('view.search.offshring'), descendant_path(@dog.slug), class: "infoDetails-breadcrumb" %>&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
+  <%= link_to t('view.search.genealogy'), genealogy_path(@dog.slug), class: "infoDetails-breadcrumb" %>
 </h5>
 <div class="row infoDetails-mainInfo">
   <div class="col-md-5">

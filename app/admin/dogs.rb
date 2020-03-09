@@ -1,8 +1,8 @@
 ActiveAdmin.register Dog do
   NOT_DISPLAY_COLS = %i[description created_at updated_at]
 
-  permit_params :id, :name, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
-    :slug, :date_of_birth, :date_of_death, photos_attributes: %i[id title alt image _destroy]
+  permit_params :id, :name, :title, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
+    :slug, :price, :price_dow, :date_of_birth, :date_of_death, photos_attributes: %i[id title alt image _destroy]
 
   index do
     selectable_column

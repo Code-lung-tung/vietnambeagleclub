@@ -268,9 +268,9 @@
                         <li class="fa fa-star disable"></li>
                     </ul>
                     <div class="product-content">
-                        <h3 class="title"><a href=""><%= sale.title %></a></h3>
-                        <div class="price"><%= sale.price_dow %> đ
-                            <span><%= sale.price %> đ</span>
+                        <h3 class="title"><a href="/details/<%= sale.slug %>"><%= sale.title %></a></h3>
+                        <div class="price">
+                          <%= format_sale(sale.price, sale.price_dow) %>
                         </div>
                         <a class="add-to-cart" href="">Mua Hàng</a>
                     </div>
