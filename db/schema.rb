@@ -97,6 +97,8 @@ ActiveRecord::Schema.define(version: 2020_03_09_150602) do
     t.integer "price"
     t.integer "price_dow"
     t.string "title"
+    t.string "microchip_number"
+    t.string "owner"
   end
 
   create_table "photos", force: :cascade do |t|

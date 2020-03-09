@@ -61,6 +61,22 @@ class Dog < ApplicationRecord
     Dog.where(mother: self, sex: sex).count
   end
 
+  def details_info
+    [
+      [father&.name.presence || 'None', mother&.name || 'None'].compact.join(' x '),
+      sex? ? I18n.t("activerecord.attributes.dog.sexes.#{sex}") : nil,
+      color_type? ? I18n.t("activerecord.attributes.dog.color_types.#{color_type}") : nil,
+      owner,
+      living_address? ? living_address : nil
+    ].compact.join(', ')
+  end
+
+  class << self
+    def ordered_column_names
+      %i[name sex color_type microchip_number owner living_address description date_of_birth date_of_death]
+    end
+  end
+
   private
 
   def parents(dog)

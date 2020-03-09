@@ -1,8 +1,8 @@
 ActiveAdmin.register Dog do
   NOT_DISPLAY_COLS = %i[description created_at updated_at]
 
-  permit_params :id, :name, :title, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
-    :slug, :price, :price_dow, :date_of_birth, :date_of_death, photos_attributes: %i[id title alt image _destroy]
+  permit_params :id, :name, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
+    :microchip_number, :owner, :slug, :price, :price_dow, :date_of_birth, :date_of_death, photos_attributes: %i[id title alt image _destroy]
 
   index do
     selectable_column
@@ -32,11 +32,13 @@ ActiveAdmin.register Dog do
   filter :date_of_death
   filter :sex, as: :select, collection: Dog.sexes
   filter :color_type, as: :select, collection: Dog.color_types
+  filter :microschip_number
+  filter :owner
   filter :living_address
 
   form html: { multipart: true } do |f|
     f.inputs do
-      Dog.column_names.map(&:to_sym).each do |column|
+      Dog.ordered_column_names.map(&:to_sym).each do |column|
         next if %i[id slug created_at updated_at].include?(column)
         if column == :mother_id
           f.input column, as: :select, collection: Dog.male.map { |v| [v.name, v.id] }.to_h

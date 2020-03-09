@@ -4,11 +4,9 @@
     <%= image_tag dog.photos.any? ? dog.photos.first.image_url : "nopic" %>
   </td>
   <td class="product">
-    <strong><%= dog.name %></strong>
+    <strong><%= dog.name %></strong><%= dog.microchip_number? ? ", #{dog.microchip_number.upcase}" : '' %>
     <br>
-    <% if dog.father.present? && dog.mother.present? %>
-      <%= "#{dog.father.name} x #{dog.mother.name}" %>
-    <% end %>
+    <%= dog.details_info %>
   </td>
   <td class="price text-right">
     <% if dog.date_of_birth.present? %>
