@@ -1,4 +1,10 @@
 vi:
+  time:
+    formats:
+      long: "%d-%m-%Y %H:%M:%S"
+  date:
+    formats:
+      long: "%d-%m-%Y"
   view:
     search:
       hello: "Hello world"
@@ -34,7 +40,75 @@ vi:
     male: 'Giống đực'
     female: 'Giống cái'
   activerecord:
+    models:
+      dog: 'Cún'
+      category: 'Danh mục'
+      site_setting: 'Thiết lập trang'
+      article: 'Bài viết'
+      photo: 'Ảnh'
+      banner: 'Ảnh banner'
+      admin_user: 'Admin '
+      service: 'Dịch vụ'
     attributes:
       dog:
         name: 'Tên'
+        father_id: 'Bố'
+        mother_id: 'Mẹ'
+        sex: 'Giới tính'
+        color_type: 'Màu sắc'
+        living_address: 'Nơi sống'
+        description: 'Mô tả'
         date_of_birth: 'Ngày sinh'
+        date_of_death: 'Ngày mất'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+        color_types:
+          monochrome: 'Đơn sắc'
+          bicolor: 'Hai màu'
+          tricolor: 'Ba màu'
+        sexes:
+          male: 'Giống đực'
+          female: 'Giống cái'
+      category:
+        name: 'Tên'
+        description: 'Mô tả'
+        status: 'Trạng thái'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      site_setting:
+        status: 'Trạng thái'
+        value: 'Giá trị'
+        setting_type: 'Loại thiết lập'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      article:
+        category_id: 'Danh mục'
+        photo: 'Ảnh'
+        title: 'Tiêu đề'
+        content: 'Nội dung'
+        status: 'Trạng thái'
+        published_at: 'Ngày public'
+        type_of: 'Loại bài viết'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      photo:
+        image: 'Ảnh'
+        title: 'Tiêu đề'
+      service:
+        title: 'Tiêu đề'
+        content: 'Nội dung'
+        status: 'Trạng thái'
+        image: 'Ảnh'
+        display_order: 'Thứ tự hiển thị'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      banner:
+        title: 'Tiêu đề'
+        status: 'Trạng thái'
+        link: 'Đường dẫn'
+        image: 'Ảnh'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+
+
+

@@ -49,7 +49,7 @@ ActiveAdmin.register Dog do
         f.input column
       end
     end
-    f.inputs 'Photos' do
+    f.inputs 'Ảnh' do
       f.has_many :photos, heading: false, allow_destroy: true do |ff|
         ff.input :image, as: :file, input_html: { accept: 'image/*' }, 
           hint: ff.object.image.present? ? image_tag(ff.object.image.url, style: 'height:auto; max-width: 500px;') : ''
@@ -68,7 +68,7 @@ ActiveAdmin.register Dog do
       end
     end
 
-    panel "Photos" do
+    panel "Ảnh" do
       dog.photos.map do |photo|
         div do
           image_tag photo.image.url, style: 'max-width: 800px; height: auto;'
