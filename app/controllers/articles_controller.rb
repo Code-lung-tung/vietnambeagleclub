@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    
+    @article = Article.published.find_by(slug: params[:slug])
+    @last_article = Article.last
   end
 end

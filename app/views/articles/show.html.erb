@@ -1,2 +1,57 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div id="content" class="site-content container " style="padding-top: 109px;">
+  <div>
+    <div id="primary" class="content-area">
+      <main id="main" class="site-main" role="main">
+        <article id="post-2569" class="article-wrap post-2569 post type-post status-publish format-standard has-post-thumbnail hentry category-bai-viet-moi tag-10-dieu-ban-chua-biet-ve-border-collie tag-border-collie tag-giong-cho-thong-minh-nhat-the-gioi">
+          <div class="entry-thumb">
+            <img src="<%= @article.photo.url %>" alt="<%= @article.title %>">
+          </div>
+          <header class="entry-header">
+            <div class="entry-meta"><span class="posted-on"><time class="entry-date published" datetime="<%= @article.created_at %>"><span class="posted-day"><%= @article.created_at.day %></span><span class="posted-month">Th<%= @article.created_at.month %></span></time>
+              </span>
+            </div>
+            <div class="byline"> By <span class="author vcard"><a class="url fn n" href="https://collievn.com/author/bordercolievietnam">Border Collie Việt Nam</a></span></div>
+            <h1 class="entry-title"><%= @article.title %></h1>
+          </header>
+          <!-- .entry-header -->
+          <div class="entry-content">
+            <div class="content-body" data-js-component="contentBody" data-js-component-initialized="true">
+              <%= raw @article.content %>
+            </div>
+            <!-- Simple Share Buttons Adder (7.6.21) simplesharebuttons.com -->
+            <div class="ssba-classic-2 ssba ssbp-wrap left ssbp--theme-1">
+              <div style="text-align:left">
+                <a href="https://simplesharebuttons.com" target="_blank" class="ssba-share-text">Share this...</a>
+                <br>
+                <a data-site="" class="ssba_facebook_share" href="http://www.facebook.com/sharer.php?u=https://collievn.com/10-dieu-ban-chua-biet-ve-border-collie">
+                  <img src="https://collievn.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" style="width: 35px;" title="Facebook" class="ssba ssba-img" alt="Share on Facebook">
+                  <div title="Facebook" class="ssbp-text">Facebook</div>
+                </a>
+                <a data-site="" class="ssba_twitter_share" href="http://twitter.com/share?url=https://collievn.com/10-dieu-ban-chua-biet-ve-border-collie&amp;text=10%20%C4%91i%E1%BB%81u%20b%E1%BA%A1n%20ch%C6%B0a%20bi%E1%BA%BFt%20v%E1%BB%81%20Border%20Collie%20">
+                  <img src="https://collievn.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" style="width: 35px;" title="Twitter" class="ssba ssba-img" alt="Tweet about this on Twitter">
+                  <div title="Twitter" class="ssbp-text">Twitter</div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- .entry-content -->
+          <footer class="entry-footer">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <a href="<%= articles_path %>" rel="category tag">Bài Viết Mới</a> 
+          </footer>
+          <!-- .entry-footer -->
+        </article>
+        <!-- #post-## -->
+        <nav class="navigation post-navigation" role="navigation">
+          <h2 class="screen-reader-text">Điều hướng bài viết</h2>
+          <div class="nav-links">
+            <div class="nav-previous"><a href="<%= @last_article.slug %>" rel="prev"><i class="fa fa-hand-o-left"></i><%= @last_article.title %></a></div>
+          </div>
+        </nav>
+        <!-- #comments -->
+      </main>
+      <!-- #main -->
+    </div>
+    <!-- #primary -->
+  </div>
+</div>

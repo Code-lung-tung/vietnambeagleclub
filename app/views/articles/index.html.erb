@@ -1,4 +1,4 @@
-<section id="primary" class="content-area">
+<section id="primary" class="content-area container">
   <main id="main" class="site-main" role="main">
     <header class="page-header">
       <h1 class="page-title">Chuyên mục: Bài Viết Mới</h1>
@@ -7,7 +7,7 @@
     <% @articles.each_with_index do |article, index| %>
     <article id="post-2569" class="article-wrap post-2569 post type-post status-publish format-standard has-post-thumbnail hentry category-bai-viet-moi tag-10-dieu-ban-chua-biet-ve-border-collie tag-border-collie tag-giong-cho-thong-minh-nhat-the-gioi">
       <div class="entry-thumb">
-        <a href="/<%= article.slug %>"><img src="<%= article.photo.url %>" alt="<%= article.title %>"></a> 
+        <a href="<%= article_path article.slug %>"><img src="<%= article.photo.url %>" alt="<%= article.title %>"></a> 
       </div>
       <header class="entry-header">
         <div class="entry-meta"><span class="posted-on"><time class="entry-date published" datetime="<%= article.created_at %>"><span class="posted-day"><%= article.created_at.day %></span><span class="posted-month">Th<%= article.created_at.month %></span></time></span></div>
