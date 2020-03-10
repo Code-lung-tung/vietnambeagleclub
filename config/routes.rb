@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/details/:id/genealogy-result', to: 'search#genealogy_result', as: :genealogy_result
   
   get '/bai-viet-moi', to: 'articles#index', as: :articles
-  get '/chia-se-kinh-nghiem', to: 'shares#index'
+  get '/chia-se-kinh-nghiem', to: 'articles#experience', as: :articles_experience
   get '/danh-muc/dang-ban', to: 'sales#index'
   get '/san-pham/:slug', to: 'sales#show'
 

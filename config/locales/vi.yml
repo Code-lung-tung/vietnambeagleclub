@@ -97,7 +97,8 @@ vi:
         content: 'Nội dung'
         status: 'Trạng thái'
         published_at: 'Ngày public'
-        type_of: 'Loại bài viết'
+        category: 'Danh mục'
+        published_at: 'Ngày công khai'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
       photo:

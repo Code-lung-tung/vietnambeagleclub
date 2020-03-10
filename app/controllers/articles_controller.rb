@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.published.write.order(created_at: :desc)
+    @articles = Article.published.normal.order(created_at: :desc).page(params[:page]).per(10)
+  end
+
+  def experience
+    @articles = Article.published.experience.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def show

@@ -16,6 +16,7 @@
  *= require dashicons.min
  *= require main
  *= require custom
+ *= require article
  *= require search
  *= require bootstrap.min
  *= require bootstrap-datepicker

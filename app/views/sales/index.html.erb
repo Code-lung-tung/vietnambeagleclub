@@ -24,7 +24,7 @@
                 <div class="product-grid">
                     <div class="product-image">
                         <a href="#">
-                            <img class="pic-1" src="<%= sale.photos.first.image.url %>">
+                            <img class="pic-1" src="<%= sale.photos.first&.image_url %>">
                         </a>
                         <% if sale.price_dow %>
                            <span class="product-new-label">Giảm Giá</span>
