@@ -25,11 +25,11 @@
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-6 infoLabel"><%= t('view.search.sex') %>:</div>
-      <div class="col-md-6 infoValue"><%= @dog.sex %></div>
+      <div class="col-md-6 infoValue"><%= @dog.sex? ? t("activerecord.attributes.dog.sexes.#{@dog.sex}") : '' %></div>
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-6 infoLabel"><%= t('view.search.color') %>:</div>
-      <div class="col-md-6 infoValue"><%= @dog.color_type %></div>
+      <div class="col-md-6 infoValue"><%= @dog.color_type? ? t("activerecord.attributes.dog.sexes.#{@dog.color_type}") : '' %></div>
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-6 infoLabel"><%= t('view.search.birthday') %>:</div>
@@ -41,7 +41,7 @@
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-6 infoLabel"><%= t('view.search.descendants') %> :</div>
-      <div class="col-md-6 infoValue"><%= @dog.descendant_count(:male) %> males<br><%= @dog.descendant_count(:female) %> females</div>
+      <div class="col-md-6 infoValue"><%= @dog.descendant_count(:male) %> đực<br><%= @dog.descendant_count(:female) %> cái</div>
     </div>
   </div>
 </div>

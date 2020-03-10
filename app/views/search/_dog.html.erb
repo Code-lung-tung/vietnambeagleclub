@@ -1,14 +1,14 @@
-<tr class="js-detailsRow" data-href="<%= details_path(dog.slug) %>">
-  <td class="number text-center"><%= dog.id %></td>
-  <td class="image">
+<tr class="js-detailsRow searchResultRow" data-href="<%= details_path(dog.slug) %>">
+  <td class="number text-center searchResultRow-col"><%= dog.id %></td>
+  <td class="image searchResultRow-col">
     <%= image_tag dog.photos.any? ? dog.photos.first.image_url : "nopic" %>
   </td>
-  <td class="product">
+  <td class="product searchResultRow-col">
     <strong><%= dog.name %></strong><%= dog.microchip_number? ? ", #{dog.microchip_number.upcase}" : '' %>
     <br>
     <%= dog.details_info %>
   </td>
-  <td class="price text-right">
+  <td class="price text-right searchResultRow-col">
     <% if dog.date_of_birth.present? %>
       <%= dog.date_of_birth.strftime('%d-%m-%Y') %>
     <% else %>
