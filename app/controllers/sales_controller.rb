@@ -1,6 +1,7 @@
 class SalesController < ApplicationController
   def index
-    @sales = Dog.order(created_at: :desc).page params[:page] 
+    # @sales = Dog.order(created_at: :desc).page params[:page]
+    @sales = Sale.none
   end
 
   def show
