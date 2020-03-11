@@ -5,7 +5,7 @@ class Dog < ApplicationRecord
 
   belongs_to :father, class_name: 'Dog', optional: true
   belongs_to :mother, class_name: 'Dog', optional: true
-  belongs_to :pack
+  belongs_to :pack, required: false
   has_many :children_of_father, class_name: 'Dog', foreign_key: 'father_id'
   has_many :children_of_mother, class_name: 'Dog', foreign_key: 'mother_id'
   has_many :photos, dependent: :destroy

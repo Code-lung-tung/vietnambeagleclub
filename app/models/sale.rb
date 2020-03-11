@@ -4,6 +4,8 @@ class Sale < ApplicationRecord
 
   enum status: %i[out_of_stock in_stock]
 
+  validates :dog_id, presence: true
+
   class << self
     def show_column_names
       %i[price sale_price status description created_at updated_at]
