@@ -56,11 +56,14 @@ vi:
       banner: 'Ảnh banner'
       admin_user: 'Admin '
       service: 'Dịch vụ'
+      sale: 'Đang bán'
+      pack: 'Đàn chó'
     attributes:
       dog:
         name: 'Tên'
         father_id: 'Bố'
         mother_id: 'Mẹ'
+        pack_id: 'Đàn chó'
         sex: 'Giới tính'
         color_type: 'Màu sắc'
         microchip_number: 'Microchip'
@@ -117,6 +120,20 @@ vi:
         status: 'Trạng thái'
         link: 'Đường dẫn'
         image: 'Ảnh'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      sale:
+        description: 'Mô tả thêm'
+        price: 'Giá bán'
+        sale_price: 'Giá sale'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+        dog_id: 'Cún'
+      pack:
+        title: 'Tên đàn'
+        status: 'Trạng thái'
+        display_order: 'Thứ tự hiển thị'
+        description: 'Mô tả'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
 

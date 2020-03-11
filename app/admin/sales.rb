@@ -1,33 +1,37 @@
 ActiveAdmin.register Sale do
-  permit_params :id, :title, :price, :price_dow, :description, photos_attributes: %i[id title alt image _destroy]
+  permit_params do
+    Sale.column_names.map(&:to_sym)
+  end
 
   index do
     selectable_column
-    column :title
-    column :price
-    column :price_dow
-    column :description
+    column :id
+    column :dog_id do |sale|
+      link_to sale.dog.name, admin_dog_path(sale.dog)
+    end
+    column :price do |sale|
+      number_to_currency sale&.price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
+    end
+    column :sale_price do |sale|
+      number_to_currency sale&.price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
+    end
+    column :status do |sale|
+      status_tag sale.status
+    end
     actions
   end
 
-  filter :title
+  filter :dog_id
   filter :price
-  filter :price_dow
-  filter :description
+  filter :sale_price
+  filter :status, as: :select, collection: Sale.statuses
 
   form html: { multipart: true } do |f|
+    f.input :dog_id, as: :select, collection: Dog.all.map { |d| [d.name, d.id] }.to_h
     f.inputs do
       Sale.column_names.map(&:to_sym).each do |column|
-        next if %i[id created_at updated_at].include?(column)
+        next if %i[id dog_id created_at updated_at].include?(column)
         f.input column
-      end
-    end
-    f.inputs 'Ảnh' do
-      f.has_many :photos, heading: false, allow_destroy: true do |ff|
-        ff.input :image, as: :file, input_html: { accept: 'image/*' }, 
-          hint: ff.object.image.present? ? image_tag(ff.object.image.url, style: 'height:auto; max-width: 500px;') : ''
-        ff.input :title
-        ff.input :alt
       end
     end
     f.actions
@@ -35,18 +39,39 @@ ActiveAdmin.register Sale do
 
   show do
     attributes_table do
-      Sale.column_names.map(&:to_sym).each do |col|
-        next if col == :id
-        row col
+      row 'Microchip' do |sale|
+        link_to sale.dog.microchip_number, admin_dog_path(sale.dog)
       end
-    end
-
-    panel "Photos" do
-      sale.photos.map do |photo|
-        div do
-          image_tag photo.image.url, style: 'max-width: 800px; height: auto;'
+      row 'Cún' do |sale|
+        link_to sale.dog.name, admin_dog_path(sale.dog)
+      end
+      row 'Bố' do |sale|
+        link_to sale.dog.father.name, admin_dog_path(sale.dog.father) if sale.dog.father
+      end
+      row 'Mẹ' do |sale|
+        link_to sale.dog.mother.name, admin_dog_path(sale.dog.mother) if sale.dog.mother
+      end
+      row 'Giới tính' do |sale|
+        status_tag sale.dog.sex
+      end
+      row 'Màu lông' do |sale|
+        status_tag sale.dog.color_type
+      end
+      Sale.show_column_names.each do |col|
+        next if col == :id
+        if %i[price sale_price].include?(col)
+          row col do |sale|
+            number_to_currency sale.send(col), unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
+          end
+          next
         end
-        br
+        if col == :status
+          row col do |sale|
+            status_tag sale.status
+          end
+          next
+        end
+        row col
       end
     end
   end
