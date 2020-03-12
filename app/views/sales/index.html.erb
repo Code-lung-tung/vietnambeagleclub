@@ -30,7 +30,7 @@
                           </a>
                         </h3>
                         <div class="content-price">
-                          <%= format_sale(dog.sale.price, dog.sale.sale_price) %>
+                          <%= format_sale(dog.sale.sale_price, dog.sale.price) %>
                         </div>
                       </div>
                       <%= link_to 'Đọc tiếp', sale_path(dog.slug), class: 'btn btn-primary saleDog-container-btn col-md-12' %>
