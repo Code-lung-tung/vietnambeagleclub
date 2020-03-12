@@ -51,11 +51,11 @@ ActiveAdmin.register Dog do
           next
         end
         if column == :mother_id
-          f.input column, as: :select, collection: Dog.not_this_one(dog).male.map { |v| [v.name, v.id] }.to_h
+          f.input column, as: :select, collection: Dog.not_this_one(dog).female.map { |v| [v.name, v.id] }.to_h
           next
         end
         if column == :father_id
-          f.input column, as: :select, collection: Dog.not_this_one(dog).female.map { |v| [v.name, v.id] }.to_h
+          f.input column, as: :select, collection: Dog.not_this_one(dog).male.map { |v| [v.name, v.id] }.to_h
           next
         end
         if column == :description
