@@ -3,7 +3,7 @@ module SalesHelper
       format = "";
       if (!price_dow.nil?) 
         format = 
-          "<strike>#{format_money(price_dow)} đ</strike>
+          "<strike>#{format_money(price_dow)} <u>đ</u></strike>
           <span><b>#{format_money(price)} <u>đ</u></b></span>"
       else
         format = 

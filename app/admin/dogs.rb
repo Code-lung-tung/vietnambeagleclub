@@ -2,7 +2,7 @@ ActiveAdmin.register Dog do
   permit_params :id, :name, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
     :microchip_number, :owner, :slug, :date_of_birth, :date_of_death, :pack_id,
     photos_attributes: %i[id title alt image _destroy],
-    sale_attributes: %i[id description price sale_price _destroy]
+    sale_attributes: %i[id price sale_price _destroy]
 
   index do
     selectable_column
@@ -58,6 +58,10 @@ ActiveAdmin.register Dog do
           f.input column, as: :select, collection: Dog.not_this_one(dog).female.map { |v| [v.name, v.id] }.to_h
           next
         end
+        if column == :description
+          f.input :description, input_html: { class: 'editor' }
+          next
+        end
         f.input column
       end
     end
@@ -65,7 +69,6 @@ ActiveAdmin.register Dog do
       f.has_many :sale, heading: false, allow_destroy: true do |ff|
         ff.input :price
         ff.input :sale_price
-        ff.input :description
       end
     end
     f.inputs "Ảnh" do
