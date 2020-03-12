@@ -11,31 +11,34 @@
         <% @packs.each do |pack| %>
           <div class="row">
             <h2 class="pack-title"><%= pack.title %></h2>
-            <% pack.dogs.first(8).each do |dog| %>
-              <div class="col-md-4 saleDog">
-                <a href="<%= sale_path(dog.slug) %>">
-                  <div class="saleDog-container">
-                    <div class="saleDog-container-image">
-                      <%= image_tag dog.photos.first&.image_url || "nopic" %>
-                      <% if dog.sale.sale_price %>
-                        <span class="onsale">Giảm giá!</span>
-                      <% end %>
-                    </div>
-                    <div class="saleDog-container-content content">
-                      <h3 class="content-title">
-                        <a href="/details/<%= dog.slug %>">
-                          <%= dog.name.upcase %>
-                        </a>
-                      </h3>
-                      <div class="content-price">
-                        <%= format_sale(dog.sale.price, dog.sale.sale_price) %>
+            <hr>
+            <% pack.dogs.first(8).each_slice(3) do |slice| %>
+              <% slice.each do |dog| %>
+                <div class="col-md-4 saleDog">
+                  <a href="<%= sale_path(dog.slug) %>">
+                    <div class="saleDog-container">
+                      <div class="saleDog-container-image">
+                        <%= image_tag dog.photos.first&.image_url || "nopic" %>
+                        <% if dog.sale.sale_price %>
+                          <span class="onsale">Giảm giá!</span>
+                        <% end %>
                       </div>
+                      <div class="saleDog-container-content content">
+                        <h3 class="content-title">
+                          <a href="/details/<%= dog.slug %>">
+                            <%= dog.name.upcase %>
+                          </a>
+                        </h3>
+                        <div class="content-price">
+                          <%= format_sale(dog.sale.price, dog.sale.sale_price) %>
+                        </div>
+                      </div>
+                      <%= link_to 'Đọc tiếp', sale_path(dog.slug), class: 'btn btn-primary saleDog-container-btn col-md-12' %>
+                      <div class="saleDog-container-txt">&nbsp;<i class="fa fa-heart-o"></i>&nbsp;&nbsp;Add to Wishlist</div>
                     </div>
-                    <%= link_to 'Đọc tiếp', sale_path(dog.slug), class: 'btn btn-primary saleDog-container-btn col-md-12' %>
-                    <div class="saleDog-container-txt">&nbsp;<i class="fa fa-heart-o"></i>&nbsp;&nbsp;Add to Wishlist</div>
-                  </div>
-                </a>
-              </div>
+                  </a>
+                </div>
+              <% end %>
             <% end %>
           </div>
         <% end %>

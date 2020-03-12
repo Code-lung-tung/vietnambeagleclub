@@ -17,11 +17,11 @@
         overflow: hidden;
         &:hover {
           .saleDog-container-btn {
-            transform: translatey(0);
+            transform: translatey(10px);
           }
         }
         &-container {
-          height: 480px;
+          min-height: 480px;
           border: 1px solid #eee;
           padding: 10px 10px 70px;
           &-image {

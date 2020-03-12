@@ -1,10 +1,8 @@
 class Sale < ApplicationRecord
-  belongs_to :dog
+  belongs_to :dog, optional: true
   validates :price, presence: true
 
   enum status: %i[out_of_stock in_stock]
-
-  validates :dog_id, presence: true
 
   class << self
     def show_column_names
