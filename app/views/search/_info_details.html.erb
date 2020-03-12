@@ -18,7 +18,8 @@
               <% end %>
             </b>
             <br>
-            <%= dog_record.color_type %>
+            <%= [dog_record.microchip_number, dog_record.color_type? ? t("activerecord.attributes.dog.color_types.#{dog_record.color_type}") : nil].compact.join(', ') %>
+
           </td>
           <% end %>
         </tr>

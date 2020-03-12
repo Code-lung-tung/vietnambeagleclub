@@ -1,4 +1,3 @@
-
 class Dog < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -66,7 +65,7 @@ class Dog < ApplicationRecord
 
   def details_info
     [
-      [father&.name.presence || 'None', mother&.name || 'None'].compact.join(' x '),
+      [father&.name.presence || 'Ko có', mother&.name || 'Ko có'].compact.join(' x '),
       sex? ? I18n.t("activerecord.attributes.dog.sexes.#{sex}") : nil,
       color_type? ? I18n.t("activerecord.attributes.dog.color_types.#{color_type}") : nil,
       owner,
@@ -87,6 +86,6 @@ class Dog < ApplicationRecord
   private
 
   def parents(dog)
-    [dog.father.presence || Dog.new(name: 'None'), dog.mother.presence || Dog.new(name: 'None')]
+    [dog.father.presence || Dog.new(name: 'Ko có'), dog.mother.presence || Dog.new(name: 'Ko có')]
   end
 end
