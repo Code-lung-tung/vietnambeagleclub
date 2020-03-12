@@ -10,15 +10,12 @@ ActiveAdmin.register Article do
     column :photo do |article|
       image_tag article.photo.thumb.url
     end
-    column :category_id do |article|
-      link_to article.category.name, admin_category_path(article.category)
-    end
     column :slug
     column :status do |article|
       status_tag article.status
     end
-    column :type_of do |article|
-      status_tag article.type_of
+    column :category do |article|
+      status_tag article.category
     end
     column :published_at
     actions
@@ -26,19 +23,13 @@ ActiveAdmin.register Article do
 
   filter :title
   filter :slug
-  filter :category_id
   filter :status
-  filter :type_of
-  filter :published_at, as: :date_range
+  filter :category
 
   form html: { multipart: true } do |f|
     f.inputs do
       Article.column_names.map(&:to_sym).each do |column|
-        next if %i[id slug published_at created_at updated_at].include?(column)
-        if column == :category_id
-          f.input :category_id, as: :select, collection: Category.all.map { |v| [v.name, v.id] }.to_h
-          next
-        end
+        next if %i[id slug created_at updated_at].include?(column)
         if column == :photo
           f.input :photo, as: :file, input_html: { accept: 'image/*' }
           next
@@ -59,6 +50,12 @@ ActiveAdmin.register Article do
         if column == :photo
           row column do |article|
             image_tag article.photo.url, style: 'height:auto; max-width: 500px;'
+          end
+          next
+        end
+        if column == :category
+          row column do |article|
+            status_tag article.category
           end
           next
         end

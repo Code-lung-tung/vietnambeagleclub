@@ -1,22 +1,25 @@
+
 class Dog < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
   belongs_to :father, class_name: 'Dog', optional: true
   belongs_to :mother, class_name: 'Dog', optional: true
+  belongs_to :pack, required: false
   has_many :children_of_father, class_name: 'Dog', foreign_key: 'father_id'
   has_many :children_of_mother, class_name: 'Dog', foreign_key: 'mother_id'
   has_many :photos, dependent: :destroy
+  has_one :sale, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 355 }
-  validates :price, presence: true
-  validates :title, presence: true
 
   enum sex: %i[male female]
   enum color_type: %i[monochrome bicolor tricolor]
 
   accepts_nested_attributes_for :photos, reject_if: proc { |attributes| attributes[:image].blank? },
     allow_destroy: true
+
+  accepts_nested_attributes_for :sale, allow_destroy: true
 
   scope :not_this_one, ->(dog) { where.not(id: dog.id) }
   scope :siblings, ->(dog) { not_this_one(dog).where(mother: dog.mother, father: dog.father) }
@@ -59,6 +62,26 @@ class Dog < ApplicationRecord
   def descendant_count(sex = :male)
     return Dog.where(father: self, sex: sex).count if male?
     Dog.where(mother: self, sex: sex).count
+  end
+
+  def details_info
+    [
+      [father&.name.presence || 'None', mother&.name || 'None'].compact.join(' x '),
+      sex? ? I18n.t("activerecord.attributes.dog.sexes.#{sex}") : nil,
+      color_type? ? I18n.t("activerecord.attributes.dog.color_types.#{color_type}") : nil,
+      owner,
+      living_address? ? living_address : nil
+    ].compact.join(', ')
+  end
+
+  class << self
+    def ordered_column_names
+      %i[name father_id mother_id pack_id sex color_type microchip_number owner living_address description date_of_birth date_of_death]
+    end
+
+    def index_ordered_column_names
+      %i[microchip_number name father_id mother_id sex color_type owner living_address]
+    end
   end
 
   private

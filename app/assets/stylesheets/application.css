@@ -16,8 +16,10 @@
  *= require dashicons.min
  *= require main
  *= require custom
+ *= require article
  *= require search
+ *= require sales
+ *= require lightslider.min
  *= require bootstrap.min
  *= require bootstrap-datepicker
- *= require font-awesome
  */

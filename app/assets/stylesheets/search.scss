@@ -19,7 +19,7 @@
 
 .search table tr td.image {
   vertical-align: middle;
-  width: 100px;
+  width: 120px;
 }
 
 .search table tr td.rate {
@@ -88,4 +88,9 @@
       }
     }
   }
+}
+
+.search table tr td {
+  height: 100px;
+  font-size: 1.3em;
 }

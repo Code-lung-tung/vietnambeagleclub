@@ -1,9 +1,9 @@
 class SalesController < ApplicationController
   def index
-    @sales = Dog.order(created_at: :desc).page params[:page] 
+    @packs = Pack.active.joins(dogs: :sale).merge(Sale.in_stock).distinct.order(:display_order, created_at: :desc)
   end
 
   def show
-    @sale = Dog.find_by(slug: params[:slug])
+    @dog = Dog.joins(:sale).friendly.find(params[:slug])
   end
 end

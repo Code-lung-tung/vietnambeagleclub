@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_150602) do
+ActiveRecord::Schema.define(version: 2020_03_12_144922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2020_03_09_150602) do
   end
 
   create_table "articles", force: :cascade do |t|
-    t.bigint "category_id"
     t.string "photo", null: false
     t.string "title", null: false
     t.text "content"
@@ -51,11 +50,10 @@ ActiveRecord::Schema.define(version: 2020_03_09_150602) do
     t.string "meta_title"
     t.string "meta_keywords"
     t.text "meta_description"
-    t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "type_of", default: 0
-    t.index ["category_id"], name: "index_articles_on_category_id"
+    t.integer "category", default: 0
+    t.date "published_date"
   end
 
   create_table "banners", force: :cascade do |t|
@@ -94,9 +92,18 @@ ActiveRecord::Schema.define(version: 2020_03_09_150602) do
     t.date "date_of_death"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price"
-    t.integer "price_dow"
+    t.string "microchip_number"
+    t.string "owner"
+    t.integer "pack_id"
+  end
+
+  create_table "packs", force: :cascade do |t|
     t.string "title"
+    t.text "description"
+    t.integer "display_order", limit: 2, default: 0
+    t.integer "status", limit: 2, default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "photos", force: :cascade do |t|
@@ -112,13 +119,13 @@ ActiveRecord::Schema.define(version: 2020_03_09_150602) do
   end
 
   create_table "sales", force: :cascade do |t|
-    t.string "title"
     t.integer "price"
-    t.integer "price_dow"
-    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug"
+    t.integer "sale_price"
+    t.bigint "dog_id"
+    t.integer "status", limit: 2, default: 1
+    t.index ["dog_id"], name: "index_sales_on_dog_id"
   end
 
   create_table "services", force: :cascade do |t|

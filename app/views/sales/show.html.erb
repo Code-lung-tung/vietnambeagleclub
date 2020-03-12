@@ -1,0 +1,35 @@
+<div class="container dogDetails">
+  <div class="row">
+    <div class="demo col-md-6">
+      <ul id="lightSlider">
+        <% @dog.photos.each do |photo| %>
+          <li data-thumb="<%= photo.image.thumb.url %>">
+            <img src="<%= photo.image_url %>" />
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-6 dogDetails-content">
+      <h3 class="dogDetails-content-title"><%= @dog.name %></h3>
+      <div class="dogDetails-content-price"><%= format_sale(@dog.sale.price, @dog.sale.sale_price) %></div>
+      <div class="dogDetails-content-sex">Giới tính : <%= @dog.sex? ? t("activerecord.attributes.dog.sexes.#{@dog.sex}") : '' %></div>
+      <div class="dogDetails-content-color">Mầu lông : <%= @dog.color_type? ? t("activerecord.attributes.dog.sexes.#{@dog.color_type}") : '' %></div>
+      <div class="dogDetails-content-desc">
+        <%= @dog.description.html_safe %>
+      </div>
+      <button class="btn dogDetails-content-btn">Mua hàng</button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#lightSlider').lightSlider({
+    gallery: true,
+    item: 1,
+    loop: true,
+    slideMargin: 0,
+    thumbItem: 5,
+    auto: true,
+    vThumbWidth: 100
+  });
+</script>

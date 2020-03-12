@@ -1,53 +1,48 @@
-<div class="mid-content clearfix" style="height: auto !important;">
+<div class="container sale" style="height: auto !important;">
   <section id="primary" class="content-area woocommerce-area" style="height: auto !important;">
-    <main id="main" class="site-main" role="main" style="height: auto !important;">
-      <nav class="woocommerce-breadcrumb"><a href="https://collievn.com">Trang chủ</a>&nbsp;/&nbsp;ĐANG BÁN</nav>
-      <header class="woocommerce-products-header">
-        <h1 class="woocommerce-products-header__title page-title">ĐANG BÁN</h1>
+    <div class="site-welcome sale-welcome">
+      WELLCOME TO VIETNAM BEAGLE CLUB
+    </div>
+    <main id="main" class="site-main sale-main" role="main" style="height: auto !important;">
+      <header class="page-header sale-main-header">
+        <h1 class="page-title">ĐANG BÁN</h1>
       </header>
-      <div class="woocommerce-notices-wrapper"></div>
-      <p class="woocommerce-result-count">
-      </p>
-      <form class="woocommerce-ordering" method="get">
-        <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng">
-          <option value="date" selected="selected">Mới nhất</option>
-          <option value="price">Thứ tự theo giá: thấp đến cao</option>
-          <option value="price-desc">Thứ tự theo giá: cao xuống thấp</option>
-        </select>
-        <input type="hidden" name="paged" value="1">
-      </form>
-      <div class="products columns-3 row" style="margin-top: 50px">
-        <% @sales.each do |sale| %>
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid">
-                    <div class="product-image">
-                        <a href="#">
-                            <img class="pic-1" src="<%= sale.photos.first.image.url %>">
-                        </a>
-                        <% if sale.price_dow %>
-                           <span class="product-new-label">Giảm Giá</span>
+      <div class="products sale-main-pack pack" style="margin-top: 50px">
+        <% @packs.each do |pack| %>
+          <div class="row">
+            <h2 class="pack-title"><%= pack.title %></h2>
+            <hr>
+            <% pack.dogs.first(8).each_slice(3) do |slice| %>
+              <% slice.each do |dog| %>
+                <div class="col-md-4 saleDog">
+                  <a href="<%= sale_path(dog.slug) %>">
+                    <div class="saleDog-container">
+                      <div class="saleDog-container-image">
+                        <%= image_tag dog.photos.first&.image_url || "nopic" %>
+                        <% if dog.sale.sale_price %>
+                          <span class="onsale">Giảm giá!</span>
                         <% end %>
-                    </div>
-                    <ul class="rating">
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star"></li>
-                        <li class="fa fa-star disable"></li>
-                    </ul>
-                    <div class="product-content">
-                        <h3 class="title"><a href="/details/<%= sale.slug %>"><%= sale.title %></a></h3>
-                        <div class="price">
-                            <%= format_sale(sale.price, sale.price_dow) %>
+                      </div>
+                      <div class="saleDog-container-content content">
+                        <h3 class="content-title">
+                          <a href="/details/<%= dog.slug %>">
+                            <%= dog.name.upcase %>
+                          </a>
+                        </h3>
+                        <div class="content-price">
+                          <%= format_sale(dog.sale.price, dog.sale.sale_price) %>
                         </div>
-                        <a class="add-to-cart" href="">Mua Hàng</a>
+                      </div>
+                      <%= link_to 'Đọc tiếp', sale_path(dog.slug), class: 'btn btn-primary saleDog-container-btn col-md-12' %>
+                      <div class="saleDog-container-txt">&nbsp;<i class="fa fa-heart-o"></i>&nbsp;&nbsp;Add to Wishlist</div>
                     </div>
+                  </a>
                 </div>
-            </div>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
-        <%= paginate @sales %>
       </div>
-      <div class="google-auto-placed" style="width: 100%; height: auto; clear: both; text-align: center;"><ins data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-4356221881663836" data-adsbygoogle-status="done" style="display: block; margin: 10px auto 16px; background-color: transparent; height: 280px;"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1160px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1160px;background-color:transparent;"><iframe width="1160" height="280" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left: 0px; position: absolute; top: 0px; border: 0px; width: 1160px; height: 280px; overflow: visible;"></iframe></ins></ins></ins></div>
     </main>
   </section>
   <!-- #secondary -->

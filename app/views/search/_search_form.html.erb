@@ -1,10 +1,45 @@
 <!-- BEGIN FILTERS -->
-<div class="col-md-3">
+<div class="col-md-3" style="padding-bottom: 30px; background-color: rgb(223, 171, 114);">
   <h2 class="grid-title"><i class="fa fa-filter"></i> <%= t('view.search.filter') %></h2>
   <hr>
   <%= search_form_for @q, url: search_path do |f| %>
+    <!-- BEGIN FILTER BY ID -->
+    <h5><%= t('view.search.by_id') %>:</h5>
+    <%= f.search_field :id_eq, class: "form-control" %>
+    <!-- END FILTER BY ID -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY MICROCHIP -->
+    <h5><%= t('view.search.by_microchip_number') %>:</h5>
+    <%= f.search_field :microchip_number_cont, class: "form-control" %>
+    <!-- END FILTER BY MICROCHIP -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY NAME -->
+    <h5><%= t('view.search.by_name') %>:</h5>
+    <%= f.search_field :name_cont, class: "form-control" %>
+    <!-- END FILTER BY NAME -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY FATHER NAME -->
+    <h5><%= t('view.search.by_father') %>:</h5>
+    <%= f.search_field :father_name_cont, class: "form-control" %>
+    <!-- END FILTER BY FATHER NAME -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY MOTHER NAME -->
+    <h5><%= t('view.search.by_mother') %>:</h5>
+    <%= f.search_field :mother_name_cont, class: "form-control" %>
+    <!-- END FILTER BY MOTHER NAME -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY OWNER -->
+    <h5><%= t('view.search.by_owner') %>:</h5>
+    <%= f.search_field :owner_cont, class: "form-control" %>
+    <!-- END FILTER BY OWNER -->
+    <div class="padding"></div>
+    <!-- BEGIN FILTER BY LIVING_ADDRESS -->
+    <h5><%= t('view.search.by_living_address') %>:</h5>
+    <%= f.search_field :living_address_cont, class: "form-control" %>
+    <!-- END FILTER BY LIVING_ADDRESS -->
+    <div class="padding"></div>
     <!-- BEGIN FILTER BY CATEGORY -->
-    <h4><%= t('view.search.by_color') %> :</h4>
+    <h5><%= t('view.search.by_color') %> :</h5>
 
     <% Dog.color_types.each do |(key, val)| %>
       <div class="checkbox">
@@ -17,7 +52,7 @@
     <!-- END FILTER BY CATEGORY -->
     <div class="padding"></div>
     <!-- BEGIN FILTER BY SEX -->
-    <h4><%= t('view.search.by_sex') %>:</h4>
+    <h5><%= t('view.search.by_sex') %>:</h5>
     <% Dog.sexes.each do |(key, val)| %>
       <div class="checkbox">
         <label>
@@ -29,7 +64,7 @@
     <!-- END FILTER BY SEX -->
     <div class="padding"></div>
     <!-- BEGIN FILTER BY DATE -->
-    <h4><%= t('view.search.by_birthday') %> :</h4>
+    <h5><%= t('view.search.by_birthday') %> :</h5>
     <%= t('view.search.from') %>
     <div class="input-group date form_date">
       <%= f.search_field :date_of_birth_gteq, class: "form-control datepicker", value: params.dig(:q, :date_of_birth_gteq) %>
@@ -41,14 +76,9 @@
       <span class="input-group-addon bg-blue"><i class="fa fa-th"></i></span>
     </div>
     <!-- END FILTER BY DATE -->
-    <div class="padding"></div>
-    <!-- BEGIN FILTER BY ID -->
-    <h4><%= t('view.search.by_id') %>:</h4>
-    <%= f.search_field :id_eq, class: "form-control" %>
-    <!-- END FILTER BY ID -->
     <%= f.hidden_field :name_cont %>
     <div class="padding"></div>
-    <h4>&nbsp;</h4>
+    <h5>&nbsp;</h5>
     <input type="submit" class="btn btn-primary btn-search" value="<%= t('view.search.submit') %>">
   <% end %>
 </div>
