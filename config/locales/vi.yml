@@ -134,6 +134,8 @@ vi:
         status: 'Trạng thái'
         display_order: 'Thứ tự hiển thị'
         description: 'Mô tả'
+        pack: 'Đàn chó'
+        microchip_number: 'Microchip'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
 

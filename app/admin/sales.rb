@@ -6,8 +6,14 @@ ActiveAdmin.register Sale do
   index do
     selectable_column
     column :id
+    column :microchip_number do |sale|
+      link_to sale.dog.microchip_number, admin_dog_path(sale.dog) if sale.dog.microchip_number?
+    end
     column :dog_id do |sale|
       link_to sale.dog.name, admin_dog_path(sale.dog)
+    end
+    column :pack do |sale|
+      link_to sale.dog.pack.title, admin_pack_path(sale.dog.pack) if sale.dog.pack
     end
     column :price do |sale|
       number_to_currency sale&.price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"

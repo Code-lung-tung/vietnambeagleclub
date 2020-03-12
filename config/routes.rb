@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'sales/index'
-  get 'sales/show'
   root to: 'sales#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -14,7 +13,7 @@ Rails.application.routes.draw do
   get '/bai-viet-moi', to: 'articles#index', as: :articles
   get '/chia-se-kinh-nghiem', to: 'articles#experience', as: :articles_experience
   get '/danh-muc/dang-ban', to: 'sales#index'
-  get '/san-pham/:slug', to: 'sales#show'
+  get '/san-pham/:slug', to: 'sales#show', as: :sale
 
   get '/bai-viet/:slug', to: 'articles#show', as: :article
   get '/portfolio/:id', to: 'dogs#show', as: :portfolio
