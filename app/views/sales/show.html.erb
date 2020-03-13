@@ -1,11 +1,20 @@
 <div class="container dogDetails">
   <div class="row">
-    <div class="demo col-md-6">
+    <div class="sliderContainer col-md-6">
+      <% if @dog.sale.sale_price.present? %>
+        <span class="sliderContainer-sale">Giảm giá!</span>
+      <% end %>
       <ul id="lightSlider">
-        <% @dog.photos.each do |photo| %>
-          <li data-thumb="<%= photo.image.thumb.url %>">
-            <img src="<%= photo.image_url %>" />
+        <% if @dog.photos.empty? %>
+          <li data-thumb="">
+            <%= image_tag "nopic.jpg" %>
           </li>
+        <% else %>
+          <% @dog.photos.each do |photo| %>
+            <li data-thumb="<%= photo.image.thumb.url %>">
+              <img src="<%= photo.image_url %>" />
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </div>

@@ -102,24 +102,38 @@
       background-color: #E66432;
     }
   }
-  #lightSlider {
-    ul {
-      list-style: none outside none;
-      padding-left: 0;
-      margin-bottom: 0;
+  .sliderContainer {
+    position: relative;
+    &-sale {
+      position: absolute;
+      top: 20px;
+      left: 35px;
+      padding: 3px;
+      background-color: #E66432;
+      color: #fff;
+      font-size: 13px;
+      z-index: 1000;
     }
+    #lightSlider {
+      ul {
+        list-style: none outside none;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
 
-    li {
-      display: block;
-      float: left;
-      margin-right: 6px;
-      cursor: pointer;
-    }
+      li {
+        display: block;
+        float: left;
+        margin-right: 6px;
+        cursor: pointer;
+      }
 
-    img {
-      display: block;
-      height: auto;
-      max-width: 100%;
+      img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+      }
     }
   }
+  
 }
