@@ -19,7 +19,7 @@ ActiveAdmin.register Sale do
       number_to_currency sale&.price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
     end
     column :sale_price do |sale|
-      number_to_currency sale&.price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
+      number_to_currency sale&.sale_price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
     end
     column :status do |sale|
       status_tag sale.status

@@ -1,9 +1,9 @@
 module SalesHelper
-    def format_sale(price, price_dow)
+    def format_sale(price, sale_price)
       format = "";
-      if (!price_dow.nil?) 
+      if (sale_price.present?) 
         format = 
-          "<strike>#{format_money(price_dow)} <u>đ</u></strike>
+          "<strike>#{format_money(sale_price)} <u>đ</u></strike>
           <span><b>#{format_money(price)} <u>đ</u></b></span>"
       else
         format = 
