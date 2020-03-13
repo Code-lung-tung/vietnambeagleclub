@@ -1,7 +1,7 @@
 <tr class="js-detailsRow searchResultRow" data-href="<%= details_path(dog.slug) %>">
   <td class="number text-center searchResultRow-col"><%= dog.id %></td>
   <td class="image searchResultRow-col">
-    <%= image_tag dog.photos.any? ? dog.photos.first.image_url : "nopic" %>
+    <%= image_tag dog.photos.any? ? dog.photos.first.image_url : "nopic.jpg" %>
   </td>
   <td class="product searchResultRow-col">
     <strong><%= dog.name %></strong><%= dog.microchip_number? ? ", #{dog.microchip_number.upcase}" : '' %>

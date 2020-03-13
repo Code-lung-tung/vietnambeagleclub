@@ -18,7 +18,7 @@
                   <a href="<%= sale_path(dog.slug) %>">
                     <div class="saleDog-container">
                       <div class="saleDog-container-image">
-                        <%= image_tag dog.photos.first&.image_url || "nopic" %>
+                        <%= image_tag dog.photos.first&.image_url || "nopic.jpg" %>
                         <% if dog.sale.sale_price %>
                           <span class="onsale">Giảm giá!</span>
                         <% end %>
