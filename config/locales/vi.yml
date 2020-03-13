@@ -46,6 +46,8 @@ vi:
     tricolor: 'Ba màu'
     male: 'Giống đực'
     female: 'Giống cái'
+    in_stock: 'Còn hàng'
+    out_of_stock: 'Hết hàng'
   activerecord:
     models:
       dog: 'Cún'
@@ -62,8 +64,11 @@ vi:
       dog:
         name: 'Tên'
         father_id: 'Bố'
+        father: 'Bố'
         mother_id: 'Mẹ'
+        mother: 'Mẹ'
         pack_id: 'Đàn chó'
+        pack: 'Đàn chó'
         sex: 'Giới tính'
         color_type: 'Màu sắc'
         microchip_number: 'Microchip'
@@ -104,6 +109,9 @@ vi:
         published_date: 'Ngày công khai'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
+        categories:
+          experience: 'Kinh nghiệm'
+          normal: 'Bài viết thông thường'
       photo:
         image: 'Ảnh'
         title: 'Tiêu đề'
@@ -130,8 +138,8 @@ vi:
         updated_at: 'Ngày cập nhật'
         dog_id: 'Cún'
       pack:
-        title: 'Tên đàn'
         status: 'Trạng thái'
+        title: 'Tên đàn'
         display_order: 'Thứ tự hiển thị'
         description: 'Mô tả'
         pack: 'Đàn chó'
