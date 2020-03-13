@@ -8,7 +8,7 @@
     <br>
     <%= dog.details_info %>
   </td>
-  <td class="price text-right searchResultRow-col col-md-2">
+  <td class="price text-right searchResultRow-col col-md-2" style="vertical-align: middle">
     <% if dog.date_of_birth.present? %>
       <%= dog.date_of_birth.strftime('%d-%m-%Y') %>
     <% else %>
