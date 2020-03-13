@@ -68,6 +68,14 @@ filter :name
           f.input :description, input_html: { class: 'editor' }
           next
         end
+        if column == :date_of_birth
+          f.input :date_of_birth, as: :date_picker
+          next
+        end
+        if column == :date_of_death
+          f.input :date_of_death, as: :date_picker
+          next
+        end
         f.input column
       end
     end
