@@ -101,7 +101,7 @@ vi:
         status: 'Trạng thái'
         published_at: 'Ngày public'
         category: 'Danh mục'
-        published_at: 'Ngày công khai'
+        published_date: 'Ngày công khai'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
       photo:
@@ -138,6 +138,41 @@ vi:
         microchip_number: 'Microchip'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
-
-
-
+      admin_user:
+        password: 'Mật khẩu'
+        password_confirmation: 'Xác nhận mật khẩu'
+        created_at: 'Ngày tạo'
+        sign_in_count: 'Số lần đăng nhập'
+        current_sign_in_at: 'Đăng nhập vào lúc'
+    errors:
+      models:
+        admin_user:
+          attributes:
+            password:
+              blank: 'Mật khẩu không được để trống'
+            password_confirmation:
+              confirmation: 'Xác nhận mật khẩu phải trùng khớp với mật khẩu'
+            email:
+              blank: 'Email không được để trống'
+        article:
+          attributes:
+            photo:
+              blank: 'Ảnh không được để trống'
+            title: 
+              blank: 'Tiêu đề không được để trống'
+        dog:
+          attributes:
+            name:
+              blank: 'Tên không được để trống'
+        photo:
+          attributes:
+            image:
+              blank: 'Ảnh không được để trống'
+        photo:
+          attributes:
+            image:
+              blank: 'Tên không được để trống'
+        pack:
+          attributes:
+            title:
+              blank: 'Tên không được để trống'
