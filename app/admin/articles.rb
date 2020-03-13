@@ -14,7 +14,7 @@ ActiveAdmin.register Article do
     column :status do |article|
       status_tag article.status
     end
-    column :published_at
+    column :published_date
     actions
   end
 
@@ -33,6 +33,10 @@ ActiveAdmin.register Article do
         end
         if column == :content
           f.input :content, input_html: { class: 'editor' }
+          next
+        end
+        if column == :published_date
+          f.input :published_date, as: :date_picker
           next
         end
         f.input column

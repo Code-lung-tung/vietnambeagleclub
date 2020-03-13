@@ -36,7 +36,7 @@ ActiveAdmin.register Dog do
     actions
   end
 
-  filter :name
+filter :name
   filter :pack
   filter :mother
   filter :father
