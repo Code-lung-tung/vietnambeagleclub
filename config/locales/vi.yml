@@ -46,6 +46,8 @@ vi:
     tricolor: 'Ba màu'
     male: 'Giống đực'
     female: 'Giống cái'
+    in_stock: 'Còn hàng'
+    out_of_stock: 'Hết hàng'
   activerecord:
     models:
       dog: 'Cún'
@@ -62,8 +64,11 @@ vi:
       dog:
         name: 'Tên'
         father_id: 'Bố'
+        father: 'Bố'
         mother_id: 'Mẹ'
+        mother: 'Mẹ'
         pack_id: 'Đàn chó'
+        pack: 'Đàn chó'
         sex: 'Giới tính'
         color_type: 'Màu sắc'
         microchip_number: 'Microchip'
@@ -101,9 +106,12 @@ vi:
         status: 'Trạng thái'
         published_at: 'Ngày public'
         category: 'Danh mục'
-        published_at: 'Ngày công khai'
+        published_date: 'Ngày công khai'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
+        categories:
+          experience: 'Kinh nghiệm'
+          normal: 'Bài viết thông thường'
       photo:
         image: 'Ảnh'
         title: 'Tiêu đề'
@@ -130,14 +138,49 @@ vi:
         updated_at: 'Ngày cập nhật'
         dog_id: 'Cún'
       pack:
-        title: 'Tên đàn'
         status: 'Trạng thái'
+        title: 'Tên đàn'
         display_order: 'Thứ tự hiển thị'
         description: 'Mô tả'
         pack: 'Đàn chó'
         microchip_number: 'Microchip'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
-
-
-
+      admin_user:
+        password: 'Mật khẩu'
+        password_confirmation: 'Xác nhận mật khẩu'
+        created_at: 'Ngày tạo'
+        sign_in_count: 'Số lần đăng nhập'
+        current_sign_in_at: 'Đăng nhập vào lúc'
+    errors:
+      models:
+        admin_user:
+          attributes:
+            password:
+              blank: 'Mật khẩu không được để trống'
+            password_confirmation:
+              confirmation: 'Xác nhận mật khẩu phải trùng khớp với mật khẩu'
+            email:
+              blank: 'Email không được để trống'
+        article:
+          attributes:
+            photo:
+              blank: 'Ảnh không được để trống'
+            title: 
+              blank: 'Tiêu đề không được để trống'
+        dog:
+          attributes:
+            name:
+              blank: 'Tên không được để trống'
+        photo:
+          attributes:
+            image:
+              blank: 'Ảnh không được để trống'
+        photo:
+          attributes:
+            image:
+              blank: 'Tên không được để trống'
+        pack:
+          attributes:
+            title:
+              blank: 'Tên không được để trống'

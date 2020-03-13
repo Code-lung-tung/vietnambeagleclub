@@ -18,6 +18,7 @@
  *= require custom
  *= require search
  *= require sales
+ *= require article
  *= require bootstrap.min
  *= require bootstrap-datepicker
  *= require lightslider.min

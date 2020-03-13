@@ -2,7 +2,9 @@
   <div class="col-md-9">
     <% @articles.each_with_index do |article, index| %>
       <div class="articles-item articleItem">
-        <span class="articleItem-badge" style="visibility: visible; animation-name: fadeIn;">New</span>
+        <% if article.published_date&.today? %>
+          <span class="articleItem-badge" style="visibility: visible; animation-name: fadeIn;">New</span>
+        <% end %>
         <div class="articleItem-imageContainer">
           <a href="<%= article_path(article.slug) %>">
             <img src="<%= article.photo_url %>" class="articleItem-imageContainer-image">

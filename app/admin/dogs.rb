@@ -19,6 +19,12 @@ ActiveAdmin.register Dog do
         end
         next
       end
+      if col == :sex
+        column col do |dog|
+          I18n.t("enum.#{dog.sex}")
+        end
+        next
+      end
       column col
     end
     column 'Giá' do |dog|
@@ -30,14 +36,14 @@ ActiveAdmin.register Dog do
     actions
   end
 
-  filter :name
+filter :name
   filter :pack
   filter :mother
   filter :father
   filter :date_of_birth
   filter :date_of_death
-  filter :sex, as: :select, collection: Dog.sexes
-  filter :color_type, as: :select, collection: Dog.color_types
+  filter :sex, as: :select, collection: Dog.sexes.to_a.map { |arr| [I18n.t("enum.#{arr[0]}"), arr[1]] }
+  filter :color_type, as: :select, collection: Dog.color_types.to_a.map { |arr| [I18n.t("enum.#{arr[0]}"), arr[1]] }
   filter :microschip_number
   filter :owner
   filter :living_address
@@ -60,6 +66,14 @@ ActiveAdmin.register Dog do
         end
         if column == :description
           f.input :description, input_html: { class: 'editor' }
+          next
+        end
+        if column == :date_of_birth
+          f.input :date_of_birth, as: :date_picker
+          next
+        end
+        if column == :date_of_death
+          f.input :date_of_death, as: :date_picker
           next
         end
         f.input column

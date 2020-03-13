@@ -1,17 +1,26 @@
 <div class="container dogDetails">
   <div class="row">
-    <div class="demo col-md-6">
+    <div class="sliderContainer col-md-6">
+      <% if @dog.sale.sale_price.present? %>
+        <span class="sliderContainer-sale">Giảm giá!</span>
+      <% end %>
       <ul id="lightSlider">
-        <% @dog.photos.each do |photo| %>
-          <li data-thumb="<%= photo.image.thumb.url %>">
-            <img src="<%= photo.image_url %>" />
+        <% if @dog.photos.empty? %>
+          <li data-thumb="">
+            <%= image_tag "nopic.jpg" %>
           </li>
+        <% else %>
+          <% @dog.photos.each do |photo| %>
+            <li data-thumb="<%= photo.image.thumb.url %>">
+              <img src="<%= photo.image_url %>" />
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </div>
     <div class="col-md-6 dogDetails-content">
       <h3 class="dogDetails-content-title"><%= @dog.name %></h3>
-      <div class="dogDetails-content-price"><%= format_sale(@dog.sale.sale_price, @dog.sale.price) %></div>
+      <div class="dogDetails-content-price"><%= format_sale(@dog.sale.price, @dog.sale.sale_price) %></div>
       <div>Microchip : <%= @dog.microchip_number %></div>
       <div>Bố : <%= link_to @dog.father.name, details_path(@dog.father.slug) if @dog.father %></div>
       <div>Mẹ : <%= link_to @dog.mother.name, details_path(@dog.mother.slug) if @dog.mother %></div>
@@ -20,7 +29,9 @@
       <div class="dogDetails-content-desc">
         <%= @dog.description.html_safe %>
       </div>
-      <button class="btn dogDetails-content-btn">Mua hàng</button>
+      <div class="dogDetails-content-saleInfo">
+        <%= setting(:sale_information) %>
+      </div>
     </div>
   </div>
 </div>

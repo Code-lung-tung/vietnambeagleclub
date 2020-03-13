@@ -11,7 +11,7 @@ class SiteSetting < ApplicationRecord
     contact: 5,
     fanpage: 6,
     certification: 7,
-    welcome_content: 8,
+    sale_information: 8,
     sidebar_address: 9,
     facebook: 10,
     twitter: 11, 

@@ -19,7 +19,7 @@ ActiveAdmin.register Sale do
       number_to_currency sale&.price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
     end
     column :sale_price do |sale|
-      number_to_currency sale&.price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
+      number_to_currency sale&.sale_price, unit: 'VNĐ', delimiter: '.', precision: 0, format: "%n %u"
     end
     column :status do |sale|
       status_tag sale.status
@@ -27,10 +27,10 @@ ActiveAdmin.register Sale do
     actions
   end
 
-  filter :dog_id
+  filter :dog_id, as: :select, collection: Dog.all.map { |v| [v.name, v.id] }.to_h
   filter :price
   filter :sale_price
-  filter :status, as: :select, collection: Sale.statuses
+  filter :status, as: :select, collection: Sale.statuses.to_a.map { |arr| [I18n.t("enum.#{arr[0]}"), arr[1]]  }
 
   form html: { multipart: true } do |f|
     f.input :dog_id, as: :select, collection: Dog.all.map { |d| [d.name, d.id] }.to_h
