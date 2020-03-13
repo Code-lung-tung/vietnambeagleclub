@@ -29,7 +29,8 @@
             height: 335px;
             img {
               width: 380px;
-              height: auto;
+              max-height: 335px;
+              object-fit: contain;
             }
             .onsale {
               top: 0;
