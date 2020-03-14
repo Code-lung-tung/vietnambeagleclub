@@ -4,15 +4,14 @@
       WELLCOME TO VIETNAM BEAGLE CLUB
     </div>
     <main id="main" class="site-main sale-main" role="main" style="height: auto !important;">
-      <header class="page-header sale-main-header">
-        <h2 class="page-title">Tìm nhà mới</h2>
-      </header>
-      <div class="products sale-main-pack pack" style="margin-top: 50px">
+      <h2 class="page-title" style="text-align: center;">Tìm nhà mới</h2>
+      <div class="home-divider"></div>
+      <div class="products sale-main-pack pack" style="margin-top: -20px;">
         <% @packs.each do |pack| %>
           <div class="row">
-            <h2 class="pack-title"><%= pack.title %></h2>
+            <h2 class="pack-title" style="margin-left: 12px;"><%= pack.title %></h2>
             <hr>
-            <% pack.dogs.first(8).each_slice(3) do |slice| %>
+            <% pack.in_sale_dogs.first(8).each_slice(3) do |slice| %>
               <% slice.each do |dog| %>
                 <div class="col-md-4 saleDog">
                   <a href="<%= sale_path(dog.slug) %>">
