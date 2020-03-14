@@ -17,9 +17,6 @@
               <%= dog_record.name %>
               <% end %>
             </b>
-            <br>
-            <%= [dog_record.microchip_number, dog_record.color_type? ? t("activerecord.attributes.dog.color_types.#{dog_record.color_type}") : nil].compact.join(', ') %>
-
           </td>
           <% end %>
         </tr>
@@ -30,10 +27,14 @@
   <div class="infoDetails-photos">
     <h3><i class="fa fa-photo"></i> <%= t('view.search.photos') %></h3>
     <hr>
-    <% @dog.photos.each do |photo| %>
-    <div class="col-md-3">
-      <%= image_tag photo.image_url %>
-    </div>
+    <% @dog.photos.each_slice(3) do |slice| %>
+      <div class="row">
+        <% slice.each do |photo| %>
+          <div class="col-md-4">
+            <%= image_tag photo.image_url %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

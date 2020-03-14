@@ -1758,9 +1758,16 @@ h3.h3 {
 }
 
 .site-welcome {
-  margin: 30px;
+  margin: 10px;
   text-align: center;
   font-weight: bold;
   font-size: 2.5em;
   color: #E66432;
+}
+
+.home-divider {
+  margin: 20px 0;
+  width: 100%;
+  min-height: 35px;
+  background: asset-data-url('divider.png') center center no-repeat;
 }

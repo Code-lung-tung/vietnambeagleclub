@@ -4,7 +4,7 @@
     <%= image_tag dog.photos.any? ? dog.photos.first.image_url : "nopic.jpg" %>
   </td>
   <td class="product searchResultRow-col col-md-7">
-    <strong><%= dog.name %></strong><%= dog.microchip_number? ? ", #{dog.microchip_number.upcase}" : '' %>
+    <strong><%= dog.name %></strong><%= dog.microchip_number? ? ", #{dog.private_microchip_number}" : '' %>
     <br>
     <%= dog.details_info %>
   </td>

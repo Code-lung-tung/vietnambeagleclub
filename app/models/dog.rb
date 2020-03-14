@@ -73,9 +73,16 @@ class Dog < ApplicationRecord
     ].compact.join(', ')
   end
 
+  def private_microchip_number
+    return '' if self.microchip_number.blank?
+    return 'xxxxx' if self.microchip_number.length <= 5
+    return microchip_number.gsub(/(?<=(.{1})).*(?=(.{1}))/, 'xxxxx') if self.microchip_number.length <= 8
+    microchip_number.gsub(/(?<=(.{4})).*(?=(.{4}))/, 'xxxx')
+  end
+
   class << self
     def ordered_column_names
-      %i[name father_id mother_id pack_id sex color_type microchip_number owner living_address description date_of_birth date_of_death]
+      %i[name father_id mother_id pack_id sex color_type microchip_number youtube_link owner living_address description date_of_birth date_of_death]
     end
 
     def index_ordered_column_names

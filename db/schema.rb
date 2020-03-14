@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_041447) do
+ActiveRecord::Schema.define(version: 2020_03_14_091914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_041447) do
     t.string "microchip_number"
     t.string "owner"
     t.integer "pack_id"
+    t.string "youtube_link"
   end
 
   create_table "packs", force: :cascade do |t|

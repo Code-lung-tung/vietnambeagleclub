@@ -1,6 +1,6 @@
 ActiveAdmin.register Dog do
   permit_params :id, :name, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
-    :microchip_number, :owner, :slug, :date_of_birth, :date_of_death, :pack_id,
+    :microchip_number, :owner, :slug, :date_of_birth, :date_of_death, :pack_id, :youtube_link,
     photos_attributes: %i[id title alt image _destroy],
     sale_attributes: %i[id price sale_price _destroy]
 
