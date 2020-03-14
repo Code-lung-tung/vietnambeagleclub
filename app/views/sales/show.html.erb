@@ -21,7 +21,7 @@
     <div class="col-md-6 dogDetails-content">
       <h3 class="dogDetails-content-title"><%= @dog.name %></h3>
       <div class="dogDetails-content-price"><%= format_sale(@dog.sale.price, @dog.sale.sale_price) %></div>
-      <div>Microchip : <%= @dog.microchip_number %></div>
+      <div>Microchip : <%= @dog.private_microchip_number %></div>
       <div>Bố : <%= link_to @dog.father.name, details_path(@dog.father.slug) if @dog.father %></div>
       <div>Mẹ : <%= link_to @dog.mother.name, details_path(@dog.mother.slug) if @dog.mother %></div>
       <div class="dogDetails-content-sex">Giới tính : <%= @dog.sex? ? t("activerecord.attributes.dog.sexes.#{@dog.sex}") : '' %></div>
