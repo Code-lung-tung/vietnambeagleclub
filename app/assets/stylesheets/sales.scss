@@ -107,7 +107,7 @@
     &-sale {
       position: absolute;
       top: 20px;
-      left: 35px;
+      right: 15px;
       padding: 3px;
       background-color: #E66432;
       color: #fff;
@@ -124,8 +124,11 @@
       li {
         display: block;
         float: left;
-        margin-right: 6px;
+        /*margin-right: -6px !important;*/
         cursor: pointer;
+        &:first-child {
+          margin-left: -20px !important;
+        }
       }
 
       img {

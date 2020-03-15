@@ -28,15 +28,8 @@ $(function() {
     $('.slick-slider').slick({
         autoplay: true,
         autoplaySpeed: 2000,
-        mobileFirst: true
-    })
-})
-
-$(function() {
-    $('.slick-slider').slick({
-        autoplay: true,
-        autoplaySpeed: 2000,
-        mobileFirst: true
+        mobileFirst: true,
+        slideMargin: 0
     })
 
     $('.datepicker').datepicker({
