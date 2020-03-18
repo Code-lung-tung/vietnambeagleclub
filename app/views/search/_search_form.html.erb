@@ -41,11 +41,11 @@
     <!-- BEGIN FILTER BY CATEGORY -->
     <h5><%= t('view.search.by_color') %> :</h5>
 
-    <% Dog.color_types.each do |(key, val)| %>
+    <% Color.all.each do |color| %>
       <div class="checkbox">
         <label>
-          <%= f.check_box :color_type_in, { multiple: true }, val, nil %>
-          <%= t("enum.#{key}") %>
+          <%= f.check_box :color_id_in, { multiple: true }, color.id, nil %>
+          <%= color.name %>
         </label>
       </div>
     <% end %>

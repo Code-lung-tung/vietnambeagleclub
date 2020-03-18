@@ -25,7 +25,7 @@
       <div>Bố : <%= link_to @dog.father.name, details_path(@dog.father.slug) if @dog.father %></div>
       <div>Mẹ : <%= link_to @dog.mother.name, details_path(@dog.mother.slug) if @dog.mother %></div>
       <div class="dogDetails-content-sex">Giới tính : <%= @dog.sex? ? t("activerecord.attributes.dog.sexes.#{@dog.sex}") : '' %></div>
-      <div class="dogDetails-content-color">Mầu lông : <%= @dog.color_type? ? t("activerecord.attributes.dog.color_types.#{@dog.color_type}") : '' %></div>
+      <div class="dogDetails-content-color">Mầu lông : <%= @dog.color&.name %></div>
       <div class="dogDetails-content-desc">
         <%= @dog.description.html_safe %>
       </div>

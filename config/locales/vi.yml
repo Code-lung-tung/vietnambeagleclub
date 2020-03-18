@@ -64,7 +64,10 @@ vi:
       service: 'Dịch vụ'
       sale: 'Đang bán'
       pack: 'Đàn chó'
+      color: 'Màu'
     attributes:
+      color:
+        name: 'Tên'
       dog:
         name: 'Tên'
         father_id: 'Bố'
@@ -83,6 +86,7 @@ vi:
         date_of_death: 'Ngày mất'
         created_at: 'Ngày tạo'
         updated_at: 'Ngày cập nhật'
+        color_id: 'Màu'
         color_types:
           monochrome: 'Đơn sắc'
           bicolor: 'Hai màu'
@@ -176,6 +180,8 @@ vi:
           attributes:
             name:
               blank: 'Tên không được để trống'
+            color_id:
+              blank: 'Màu không được để trống' 
         photo:
           attributes:
             image:
@@ -192,3 +198,7 @@ vi:
           attributes:
             price:
               blank: 'Giá không được để trống'
+        color:
+          attributes:
+            name:
+              blank: 'Tên không được để trống'

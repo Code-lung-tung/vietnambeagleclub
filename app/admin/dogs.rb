@@ -1,5 +1,5 @@
 ActiveAdmin.register Dog do
-  permit_params :id, :name, :mother_id, :father_id, :sex, :color_type, :living_address, :description,
+  permit_params :id, :name, :mother_id, :father_id, :sex, :color_id, :living_address, :description,
     :microchip_number, :owner, :slug, :date_of_birth, :date_of_death, :pack_id, :youtube_link,
     photos_attributes: %i[id title alt image _destroy],
     sale_attributes: %i[id price sale_price _destroy]
@@ -16,6 +16,12 @@ ActiveAdmin.register Dog do
       if col == :father_id
         column col do |dog|
           link_to dog.father.name, admin_dog_path(dog.father) if dog.father
+        end
+        next
+      end
+      if col == :color_id
+        column col do |dog|
+          link_to dog.color.name, admin_color_path(dog.color) if dog.color
         end
         next
       end
@@ -43,7 +49,7 @@ filter :name
   filter :date_of_birth
   filter :date_of_death
   filter :sex, as: :select, collection: Dog.sexes.to_a.map { |arr| [I18n.t("enum.#{arr[0]}"), arr[1]] }
-  filter :color_type, as: :select, collection: Dog.color_types.to_a.map { |arr| [I18n.t("enum.#{arr[0]}"), arr[1]] }
+  filter :color_id, as: :select, collection: Color.all.map { |c| [c.name, c.id] }.to_h
   filter :microschip_number
   filter :owner
   filter :living_address
@@ -62,6 +68,10 @@ filter :name
         end
         if column == :father_id
           f.input column, as: :select, collection: Dog.not_this_one(dog).male.map { |v| [v.name, v.id] }.to_h
+          next
+        end
+        if column == :color_id
+          f.input column, as: :select, collection: Color.all.map { |c| [c.name, c.id] }.to_h
           next
         end
         if column == :description

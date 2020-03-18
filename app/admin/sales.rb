@@ -61,7 +61,7 @@ ActiveAdmin.register Sale do
         status_tag sale.dog.sex
       end
       row 'Màu lông' do |sale|
-        status_tag sale.dog.color_type
+        status_tag sale.dog.color&.name
       end
       Sale.show_column_names.each do |col|
         next if col == :id

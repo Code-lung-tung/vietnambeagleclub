@@ -29,7 +29,7 @@
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-5 infoLabel"><%= t('view.search.color') %>:</div>
-      <div class="col-md-7 infoValue"><%= @dog.color_type? ? t("activerecord.attributes.dog.color_types.#{@dog.color_type}") : '' %></div>
+      <div class="col-md-7 infoValue"><%= @dog.color&.name %></div>
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-5 infoLabel"><%= t('view.search.birthday') %>:</div>
