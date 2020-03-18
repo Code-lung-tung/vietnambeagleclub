@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'sales/index'
   root to: 'sales#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+  ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
   get '/search', to: 'search#index'
   get '/details/:id', to: 'search#details', as: :details
   get '/details/:id/relative', to: 'search#relative', as: :relative
