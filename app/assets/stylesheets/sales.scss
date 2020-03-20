@@ -1,0 +1,142 @@
+.sale {
+  margin-bottom: 100px;
+  &-welcome {
+
+  }
+  &-main {
+    &-header {
+    }
+    .pack {
+      &-title {
+        font-weight: bold;
+      }
+      .saleDog {
+        position: relative;
+        overflow: hidden;
+        &:hover {
+          .saleDog-container-btn {
+            transform: translatey(10px);
+          }
+        }
+        &-container {
+          min-height: 480px;
+          border: 1px solid #eee;
+          padding: 10px 10px 70px;
+          &-image {
+            position: relative;
+            height: 335px;
+            img {
+              width: 380px;
+              height: 100%;
+              object-fit: cover;
+            }
+            .onsale {
+              top: 0;
+              right: 0;
+              left: auto;
+              min-width: 3.236em;
+              padding: .202em;
+              font-weight: 700;
+              position: absolute;
+              text-align: center;
+              background: #e66432;
+              border-radius: 0;
+              min-height: 0;
+              line-height: 1.5;
+              color: #fff;
+              font-size: .857em;
+              z-index: 9;
+            }
+          }
+          &-btn {
+            border: none;
+            padding: 10px;
+            background-color: #E66432;
+            transform: translatey(100px);
+            transition: all 0.3s ease;
+            z-index: 100;
+          }
+          &-txt {
+            position: absolute;
+            bottom: 22px;
+            margin-top: 25px;
+            font-size: 16px;
+          }
+          .content {
+            &-title {
+              text-align: center;
+              font-weight: bold;
+              font-size: 17px;
+              a {
+                text-decoration: none;
+                color: #333;
+              }
+            }
+            &-price {
+              font-size: 15px;
+              text-align: center;
+              color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.dogDetails {
+  margin-bottom: 20px;
+  &-content {
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 23px;
+    &-price {
+      font-size: 18px;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+    &-btn {
+      margin-top: 15px;
+      width: 150px;
+      background-color: #E66432;
+    }
+  }
+  .sliderContainer {
+    position: relative;
+    &-sale {
+      position: absolute;
+      top: 20px;
+      right: 15px;
+      padding: 3px;
+      background-color: #E66432;
+      color: #fff;
+      font-size: 13px;
+      z-index: 1000;
+    }
+    #lightSlider {
+      ul {
+        list-style: none outside none;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+
+      li {
+        display: block;
+        float: left;
+        /*margin-right: -6px !important;*/
+        cursor: pointer;
+        &:first-child {
+          margin-left: -20px !important;
+        }
+      }
+
+      img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+      }
+    }
+  }
+  
+}

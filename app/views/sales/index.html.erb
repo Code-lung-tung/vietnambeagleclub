@@ -1,0 +1,48 @@
+<div class="container sale" style="height: auto !important;">
+  <section id="primary" class="content-area woocommerce-area" style="height: auto !important;">
+    <div class="site-welcome sale-welcome">
+      WELLCOME TO VIETNAM BEAGLE CLUB
+    </div>
+    <main id="main" class="site-main sale-main" role="main" style="height: auto !important;">
+      <h2 class="page-title" style="margin-left: -5px;">Tìm nhà mới</h2>
+      <br>
+      <div class="products sale-main-pack pack" style="margin-top: -20px;">
+        <% @packs.each do |pack| %>
+          <div class="row">
+            <h2 class="pack-title" style="margin-left: 12px;"><%= pack.title %></h2>
+            <hr>
+            <% pack.in_sale_dogs.first(8).each_slice(3) do |slice| %>
+              <% slice.each do |dog| %>
+                <div class="col-md-4 saleDog">
+                  <a href="<%= sale_path(dog.slug) %>">
+                    <div class="saleDog-container">
+                      <div class="saleDog-container-image">
+                        <%= image_tag dog.photos.first&.image_url || "nopic.jpg" %>
+                        <% if dog.sale.sale_price %>
+                          <span class="onsale">Giảm giá!</span>
+                        <% end %>
+                      </div>
+                      <div class="saleDog-container-content content">
+                        <h3 class="content-title">
+                          <a href="/details/<%= dog.slug %>">
+                            <%= dog.name.upcase %>
+                          </a>
+                        </h3>
+                        <div class="content-price">
+                          <%= format_sale(dog.sale.price, dog.sale.sale_price) %>
+                        </div>
+                      </div>
+                      <%= link_to 'Đọc tiếp', sale_path(dog.slug), class: 'btn btn-primary saleDog-container-btn col-md-12' %>
+                      <div class="saleDog-container-txt">&nbsp;<i class="fa fa-heart-o"></i>&nbsp;&nbsp;Add to Wishlist</div>
+                    </div>
+                  </a>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </main>
+  </section>
+  <!-- #secondary -->
+</div>

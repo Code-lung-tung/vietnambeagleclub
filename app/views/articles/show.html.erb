@@ -1,0 +1,37 @@
+<div id="content" class="site-content container" style="padding-top: 25px;">
+  <div class="row">
+    <div id="primary" class="content-area col-md-9">
+      <main id="main" class="site-main" role="main">
+        <article id="post-2569" class="article-wrap post-2569 post type-post status-publish format-standard has-post-thumbnail hentry category-bai-viet-moi tag-10-dieu-ban-chua-biet-ve-border-collie tag-border-collie tag-giong-cho-thong-minh-nhat-the-gioi">
+          <div class="entry-thumb">
+            <img src="<%= @article.photo.url %>" alt="<%= @article.title %>">
+          </div>
+          <header class="entry-header">
+            <div class="entry-meta"><span class="posted-on"><time class="entry-date published" datetime="<%= @article.created_at %>"><span class="posted-day"><%= @article.created_at.day %></span><span class="posted-month">Th<%= @article.created_at.month %></span></time>
+              </span>
+            </div>
+            <div class="byline"> By <span class="author vcard"><a class="url fn n" href="https://collievn.com/author/bordercolievietnam">Border Collie Việt Nam</a></span></div>
+            <h1 class="entry-title"><%= @article.title %></h1>
+          </header>
+          <!-- .entry-header -->
+          <div class="entry-content">
+            <div class="content-body" data-js-component="contentBody" data-js-component-initialized="true">
+              <%= raw @article.content %>
+            </div>
+          </div>
+          <!-- .entry-content -->
+          <footer class="entry-footer">
+            <i class="fa fa-folder-open" aria-hidden="true"></i>
+            <a href="<%= @article.normal? ? articles_path : experience_path %>" rel="category tag">
+              <%= @article.normal? ? "Bài Viết Mới" : "Kinh nghiệm" %>
+            </a> 
+          </footer>
+          <!-- .entry-footer -->
+        </article>
+        <!-- #post-## -->
+      </main>
+      <!-- #main -->
+    </div>
+    <!-- #primary -->
+  </div>
+</div>

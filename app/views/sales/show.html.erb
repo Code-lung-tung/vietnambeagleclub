@@ -1,0 +1,53 @@
+<div class="container dogDetails">
+  <div class="row">
+    <div class="sliderContainer col-md-6">
+      <% if @dog.sale.sale_price.present? %>
+        <span class="sliderContainer-sale">Giảm giá!</span>
+      <% end %>
+      <ul id="lightSlider">
+        <% if @dog.photos.empty? %>
+          <li data-thumb="">
+            <%= image_tag "nopic.jpg" %>
+          </li>
+        <% else %>
+          <% @dog.photos.each do |photo| %>
+            <li data-thumb="<%= photo.image.thumb.url %>">
+              <img src="<%= photo.image_url %>" />
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-6 dogDetails-content">
+      <h3 class="dogDetails-content-title"><%= @dog.name %></h3>
+      <div class="dogDetails-content-price"><%= format_sale(@dog.sale.price, @dog.sale.sale_price) %></div>
+      <div>Microchip : <%= @dog.private_microchip_number %></div>
+      <div>Bố : <%= link_to @dog.father.name, details_path(@dog.father.slug) if @dog.father %></div>
+      <div>Mẹ : <%= link_to @dog.mother.name, details_path(@dog.mother.slug) if @dog.mother %></div>
+      <div class="dogDetails-content-sex">Giới tính : <%= @dog.sex? ? t("activerecord.attributes.dog.sexes.#{@dog.sex}") : '' %></div>
+      <div class="dogDetails-content-color">Mầu lông : <%= @dog.color&.name %></div>
+      <div class="dogDetails-content-desc">
+        <%= @dog.description.html_safe %>
+      </div>
+      <div class="dogDetails-content-saleInfo">
+        <%= setting(:sale_information) %>
+      </div>
+      <div class="dogDetails-content-youtube">
+        <iframe width="500" height="345" src="<%= @dog.youtube_link %>"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#lightSlider').lightSlider({
+    gallery: true,
+    item: 1,
+    loop: true,
+    slideMargin: 0,
+    thumbItem: 5,
+    auto: true,
+    vThumbWidth: 100,
+    controls: true
+  });
+</script>

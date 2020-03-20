@@ -1,0 +1,2 @@
+class AddTitleToDog < ApplicationRecord
+end

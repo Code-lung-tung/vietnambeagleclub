@@ -1,0 +1,34 @@
+<div class="social-icons" style="margin-top: -93px;">
+  <a href="<%= setting(:facebook) %>" class="facebook" data-title="Facebook" target="_blank">
+    <i class="fa fa-facebook"></i><span>Facebook</span>
+  </a>
+
+  <a href="<%= setting(:twitter) %>" class="twitter" data-title="Twitter" target="_blank">
+    <i class="fa fa-twitter"></i><span>Twitter</span>
+  </a>
+
+  <a href="<%= setting(:google_plus) %>" class="gplus" data-title="Google Plus" target="_blank">
+    <i class="fa fa-google-plus"></i><span>Google Plus</span>
+  </a>
+
+  <a href="<%= setting(:youtube) %>" class="youtube" data-title="Youtube" target="_blank">
+    <i class="fa fa-youtube"></i><span>Youtube</span>
+  </a>
+
+  <a href="<%= setting(:pinterest) %>" class="pinterest" data-title="Pinterest" target="_blank">
+    <i class="fa fa-pinterest"></i><span>Pinterest</span>
+  </a>
+
+  <a href="<%= setting(:instagram) %>" class="instagram" data-title="instagram" target="_blank">
+    <i class="fa fa-instagram"></i><span>instagram</span>
+  </a>
+</div>
+
+<script>
+  jQuery(document).ready(function ($) {
+    $(window).resize(function () {
+      var socialHeight = $('.social-icons').outerHeight();
+      $('.social-icons').css('margin-top', - (socialHeight / 2));
+    }).resize();
+  });
+</script>

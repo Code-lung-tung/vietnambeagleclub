@@ -1,0 +1,6 @@
+production:
+  cloud_name: ddwzefu1w
+  api_key: '892983527549454'
+  api_secret: QwINu2_Wy3YcRwcPlEaWtGX8tCM
+  enhance_image_tag: true
+  static_image_support: true

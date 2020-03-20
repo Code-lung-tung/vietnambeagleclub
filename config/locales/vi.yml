@@ -1,0 +1,204 @@
+vi:
+  time:
+    formats:
+      long: "%d-%m-%Y %H:%M:%S"
+  date:
+    formats:
+      long: "%d-%m-%Y"
+  view:
+    search:
+      hello: "Hello world"
+      order_by: 'Sắp xếp theo'
+      result_matching: 'Toàn bộ kết quả'
+      by_color: 'Theo màu'
+      by_sex: 'Theo giới tính'
+      by_birthday: 'Theo ngày sinh'
+      from: 'Từ ngày'
+      to: 'Đến ngày'
+      by_microchip_number: 'Theo microchip'
+      by_id: 'Theo ID'
+      by_name: 'Theo tên'
+      by_father: 'Theo tên bố'
+      by_mother: 'Theo tên mẹ'
+      by_owner: 'Theo chủ sở hữu'
+      by_living_address: 'Theo địa chỉ'
+      result: 'Kết quả'
+      filter: 'Lọc kết quả'
+      submit: 'Tìm kiếm'
+      genealogy: 'Phả hệ'
+      photos: 'Hình ảnh'
+      father: 'Bố'
+      mother: 'Mẹ'
+      sex: 'Giới tính'
+      color: 'Màu sắc'
+      birthday: 'Ngày sinh'
+      address: 'Địa chỉ'
+      descendants: 'Con cái'
+      main_information: 'Thông tin chính'
+      relations: 'Họ hàng'
+      offshring: 'Con cái'
+      depth: 'Số đời phả hệ'
+      show: 'Kết quả'
+      microchip_number: 'Microchip'
+      owner: 'Chủ sở hữu'
+      description: 'Mô tả'
+      half_brother: 'Anh em cùng cha (mẹ) khác mẹ (cha)'
+      siblings: 'Anh em ruột'
+  enum:
+    monochrome: 'Đơn sắc'
+    bicolor: 'Hai màu'
+    tricolor: 'Ba màu'
+    male: 'Giống đực'
+    female: 'Giống cái'
+    in_stock: 'Còn hàng'
+    out_of_stock: 'Hết hàng'
+  activerecord:
+    models:
+      dog: 'Cún'
+      category: 'Danh mục'
+      site_setting: 'Thiết lập trang'
+      article: 'Bài viết'
+      photo: 'Ảnh'
+      banner: 'Ảnh banner'
+      admin_user: 'Admin '
+      service: 'Dịch vụ'
+      sale: 'Đang bán'
+      pack: 'Đàn chó'
+      color: 'Màu'
+    attributes:
+      color:
+        name: 'Tên'
+      dog:
+        name: 'Tên'
+        father_id: 'Bố'
+        father: 'Bố'
+        mother_id: 'Mẹ'
+        mother: 'Mẹ'
+        pack_id: 'Đàn chó'
+        pack: 'Đàn chó'
+        sex: 'Giới tính'
+        color_type: 'Màu sắc'
+        microchip_number: 'Microchip'
+        living_address: 'Địa chỉ'
+        owner: 'Chủ sở hữu'
+        description: 'Mô tả'
+        date_of_birth: 'Ngày sinh'
+        date_of_death: 'Ngày mất'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+        color_id: 'Màu'
+        color_types:
+          monochrome: 'Đơn sắc'
+          bicolor: 'Hai màu'
+          tricolor: 'Ba màu'
+        sexes:
+          male: 'Giống đực'
+          female: 'Giống cái'
+      category:
+        name: 'Tên'
+        description: 'Mô tả'
+        status: 'Trạng thái'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      site_setting:
+        status: 'Trạng thái'
+        value: 'Giá trị'
+        setting_type: 'Loại thiết lập'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      article:
+        category_id: 'Danh mục'
+        photo: 'Ảnh'
+        title: 'Tiêu đề'
+        content: 'Nội dung'
+        status: 'Trạng thái'
+        published_at: 'Ngày public'
+        category: 'Danh mục'
+        published_date: 'Ngày công khai'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+        categories:
+          experience: 'Kinh nghiệm'
+          normal: 'Bài viết thông thường'
+      photo:
+        image: 'Ảnh'
+        title: 'Tiêu đề'
+      service:
+        title: 'Tiêu đề'
+        content: 'Nội dung'
+        status: 'Trạng thái'
+        image: 'Ảnh'
+        display_order: 'Thứ tự hiển thị'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      banner:
+        title: 'Tiêu đề'
+        status: 'Trạng thái'
+        link: 'Đường dẫn'
+        image: 'Ảnh'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      sale:
+        description: 'Mô tả thêm'
+        price: 'Giá bán'
+        sale_price: 'Giá sale'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+        dog_id: 'Cún'
+      pack:
+        status: 'Trạng thái'
+        title: 'Tên đàn'
+        display_order: 'Thứ tự hiển thị'
+        description: 'Mô tả'
+        pack: 'Đàn chó'
+        microchip_number: 'Microchip'
+        created_at: 'Ngày tạo'
+        updated_at: 'Ngày cập nhật'
+      admin_user:
+        password: 'Mật khẩu'
+        password_confirmation: 'Xác nhận mật khẩu'
+        created_at: 'Ngày tạo'
+        sign_in_count: 'Số lần đăng nhập'
+        current_sign_in_at: 'Đăng nhập vào lúc'
+    errors:
+      models:
+        admin_user:
+          attributes:
+            password:
+              blank: 'Mật khẩu không được để trống'
+            password_confirmation:
+              confirmation: 'Xác nhận mật khẩu phải trùng khớp với mật khẩu'
+            email:
+              blank: 'Email không được để trống'
+        article:
+          attributes:
+            photo:
+              blank: 'Ảnh không được để trống'
+            title: 
+              blank: 'Tiêu đề không được để trống'
+        dog:
+          attributes:
+            name:
+              blank: 'Tên không được để trống'
+            color_id:
+              blank: 'Màu không được để trống' 
+        photo:
+          attributes:
+            image:
+              blank: 'Ảnh không được để trống'
+        photo:
+          attributes:
+            image:
+              blank: 'Tên không được để trống'
+        pack:
+          attributes:
+            title:
+              blank: 'Tên không được để trống'
+        sale:
+          attributes:
+            price:
+              blank: 'Giá không được để trống'
+        color:
+          attributes:
+            name:
+              blank: 'Tên không được để trống'

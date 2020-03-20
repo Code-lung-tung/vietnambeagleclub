@@ -1,0 +1,89 @@
+<div class="mid-content clearfix rightsidebar">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1867" class="article-wrap post-1867 portfolio type-portfolio status-publish has-post-thumbnail hentry portfolio-category-black-white">
+        <div class="entry-thumb">
+          <img src="<%= @dog.photos.first.image.url %>" alt="<%= @dog.name %>"> 
+        </div>
+        <header class="entry-header">
+          <h1 class="entry-title"><%= @dog.name %></h1>
+        </header>
+        <!-- .entry-header -->
+        <div class="entry-content">
+          <div class="tlp-portfolio-container tlp-single-detail">
+            <div class="tlp-portfolio-detail-wrap">
+              <div class="tlp-portfolio-image">
+              <% @dog.photos.each do |dog| %>
+                <div class="portfolio-feature-img">
+                  <img width="960" height="640" src="<%= dog.image.url %>" 
+                  class="attachment-full size-full wp-post-image wp-post-image" alt="" 
+                  srcset="<%= dog.image.url %> 960w, <%= dog.image.url %> 300w, <%= dog.image.url %> 768w, <%= dog.image.url %> 384w" sizes="(max-width: 960px) 100vw, 960px">                
+                </div>
+              <% end %>
+              </div>
+              <div class="portfolio-detail-desc">
+                <h2 class="portfolio-title"><%= @dog.name %></h2>
+                <div class="portfolio-details">
+                  <!-- Simple Share Buttons Adder (7.6.21) simplesharebuttons.com -->
+                  <div class="ssba-classic-2 ssba ssbp-wrap left ssbp--theme-1">
+                    <div style="text-align:left">
+                      <a data-site="" class="ssba_facebook_share" href="http://www.facebook.com/sharer.php?u=<%= portfolio_url(@dog)%>">
+                        <img src="https://collievn.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/facebook.png" style="width: 35px;" title="Facebook" class="ssba ssba-img" alt="Share on Facebook">
+                        <div title="Facebook" class="ssbp-text">Facebook</div>
+                      </a>
+                      <a data-site="" class="ssba_twitter_share" href="http://twitter.com/share?url=<%= portfolio_url(@dog)%>">
+                        <img src="https://collievn.com/wp-content/plugins/simple-share-buttons-adder/buttons/somacro/twitter.png" style="width: 35px;" title="Twitter" class="ssba ssba-img" alt="Tweet about this on Twitter">
+                        <div title="Twitter" class="ssbp-text">Twitter</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="others-info">
+                  <ul class="single-item-meta">
+                    <ul class="single-item-meta">
+                      <li class="categories">Categories: Black &amp; White</li>
+                    </ul>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .entry-content -->
+        <footer class="entry-footer">
+        </footer>
+        <!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+    </main>
+    <!-- #main -->
+  </div>
+  <!-- #primary -->
+  <div id="secondary" class="widget-area" role="complementary">
+    <aside id="text-11" class="widget widget_text">
+      <div class="textwidget">
+        <p>
+           <h2 class="widget-title">Fanpage :</h2>
+            <div id="fb-root" class=" fb_reset">
+              <div class="fb-page" 
+                data-href="<%= setting(:fanpage) %>"
+                data-width="380" 
+                data-hide-cover="false"
+                data-show-facepile="false"></div>
+            </div>
+        </p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </aside>
+    <aside id="text-4" class="widget widget_text">
+      <h2 class="widget-title"><span>Vietnam Beagle Club</span></h2>
+      <div class="textwidget">
+        <p><strong style="font-style: inherit; font-weight: inherit;">–</strong><strong>Vietnam Beagle Club - Trại nuôi chó săn thỏ thuần chủng FCI VKA</strong></p>
+        <p><strong>-Address : Số 62 ngõ 32 An Dương - Tây Hồ - Hà Nội (cuối đường số 2)</strong></p>
+        <p><strong>-Hotline : 0917893699</strong></p>
+      </div>
+    </aside>
+  </div>
+  <!-- #secondary -->
+</div>

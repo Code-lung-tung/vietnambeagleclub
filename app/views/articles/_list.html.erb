@@ -1,0 +1,30 @@
+<div class="row">
+    <% @articles.each_with_index do |article, index| %>
+      <div class="col-md-4">
+        <div class="articles-item articleItem">
+          <% if article.published_date&.today? %>
+            <span class="articleItem-badge" style="visibility: visible; animation-name: fadeIn;">New</span>
+          <% end %>
+          <div class="articleItem-imageContainer">
+            <a href="<%= article_path(article.slug) %>">
+              <img src="<%= article.photo_url %>" class="articleItem-imageContainer-image">
+            </a>
+          </div>
+          <div class="articleItem-title">
+            <%= link_to article.title.truncate(70, omission: '...'), article_path(article.slug) %>
+          </div>
+          <div class="articleItem-publishedDate">
+            <%= link_to article.display_date, article_path(article.slug) %>
+          </div>
+          <div class="articleItem-content">
+            <%= (strip_tags(article.content)).truncate(200, omission: '...') %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
+<div class="row">
+  <ul class="pagination col-md-9" style="text-align: center;">
+    <%= paginate @articles %>
+  </ul>
+</div>
