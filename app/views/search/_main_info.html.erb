@@ -17,11 +17,11 @@
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-5 infoLabel"><%= t('view.search.father') %>:</div>
-      <div class="col-md-7 infoValue"><%= @dog.father&.name %></div>
+      <div class="col-md-7 infoValue"><%= link_to @dog.father.name, details_path(@dog.father.slug) if @dog.father %></div>
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-5 infoLabel"><%= t('view.search.mother') %>:</div>
-      <div class="col-md-7 infoValue"><%= @dog.mother&.name %></div>
+      <div class="col-md-7 infoValue"><%= link_to @dog.mother.name, details_path(@dog.mother.slug) if @dog.mother %></div>
     </div>
     <div class="infoDetails-mainInfo-row">
       <div class="col-md-5 infoLabel"><%= t('view.search.sex') %>:</div>
