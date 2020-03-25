@@ -33,7 +33,7 @@
         <%= setting(:sale_information) %>
       </div>
       <div class="dogDetails-content-youtube">
-        <%= @dog.youtube_link.html_safe %>
+        <%= @dog.youtube_link&.html_safe %>
       </div>
     </div>
   </div>
