@@ -16,7 +16,7 @@
       window.fbAsyncInit = function() {
         FB.init({
           xfbml            : true,
-          version          : 'v6.0'
+          version          : 'v5.8.0'
         });
       };
 
@@ -42,7 +42,7 @@
     <%= render 'partial/social' %>
     <%= yield %>
     <%= render 'partial/footer' %>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v6.0&appId=538825283650992&autoLogAppEvents=1"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v5.8.0&appId=538825283650992&autoLogAppEvents=1"></script>
     <script>
       window.addEventListener('sfsi_plus_functions_loaded', function () {
         if (typeof sfsi_plus_responsive_toggle == 'function') {
