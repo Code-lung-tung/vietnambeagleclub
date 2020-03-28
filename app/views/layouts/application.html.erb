@@ -7,9 +7,12 @@
     <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <meta property="og:image" content="http://res.cloudinary.com/ddwzefu1w/image/upload/v1584440985/skyjcqisthtpzfgp1zfp.jpg" />
-    <meta property="og:title" content="ahihi" />
-    <meta property="og:description" content="duydz" />
+    <% if @dog %>
+      <meta property="og:image" content="http://res.cloudinary.com/ddwzefu1w/image/upload/v1584440985/skyjcqisthtpzfgp1zfp.jpg" />
+      <meta property="og:url" content="http://res.cloudinary.com/ddwzefu1w/image/upload/v1584440985/skyjcqisthtpzfgp1zfp.jpg" />
+    <% else %>
+    <meta property="og:title" content="Vietnam Beagle Club" />
+    <meta property="og:description" content="Trại nuôi chó săn thỏ thuần chủng FCI VKA" />
   </head>
 
   <body>
