@@ -7,11 +7,11 @@
     <%= stylesheet_link_tag   'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <meta property="og:image" content="<%= @dog&.photos&.first&.image&.url %>" />
+    <meta property="og:image" content="<%= @meta_image.presence || '' %>" />
     <meta property="og:url" content="<%= request.original_url %>" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Vietnam Beagle Club" />
-    <meta property="og:description" content="Trại nuôi chó săn thỏ thuần chủng FCI VKA" />
+    <meta property="og:title" content="<%= @meta_title.presence || 'Vietnam Beagle Club' %>" />
+    <meta property="og:description" content="<%= (strip_tags(@meta_description.presence || 'Trại nuôi chó săn thỏ thuần chủng FCI VKA')).truncate(50) %>" />
     <meta property="fb:app_id" content="538825283650992" />
   </head>
 

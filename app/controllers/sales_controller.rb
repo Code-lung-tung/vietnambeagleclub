@@ -5,5 +5,8 @@ class SalesController < ApplicationController
 
   def show
     @dog = Dog.joins(:sale).friendly.find(params[:slug])
+    @meta_image = @dog.photos.first&.image_url
+    @meta_title = @dog.name
+    @meta_description = @dog.description
   end
 end

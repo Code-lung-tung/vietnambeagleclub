@@ -19,7 +19,7 @@
       </ul>
     </div>
     <div class="col-md-6 dogDetails-content">
-      <h3 class="dogDetails-content-title"><%= @dog.name %></h3>
+      <h3 class="dogDetails-content-title"><%= link_to @dog.name, details_path(@dog.slug) %></h3>
       <div class="dogDetails-content-price"><%= format_sale(@dog.sale.price, @dog.sale.sale_price) %></div>
       <div>Microchip : <%= @dog.private_microchip_number %></div>
       <div>Bố : <%= link_to @dog.father.name, details_path(@dog.father.slug) if @dog.father %></div>

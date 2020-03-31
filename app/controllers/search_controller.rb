@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  before_action :find_dog, except: :index
+  before_action :find_dog, :set_metas, except: :index
   before_action :init_search
 
   def index
@@ -30,6 +30,12 @@ class SearchController < ApplicationController
 
   def find_dog
     @dog = Dog.friendly.find(params[:id])
+  end
+
+  def set_metas
+    @meta_image = @dog.photos.first&.image_url
+    @meta_title = @dog.name
+    @meta_description = @dog.description
   end
 
   def init_search
