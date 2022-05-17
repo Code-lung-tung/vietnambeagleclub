@@ -1,6 +1,7 @@
 production:
-  cloud_name: ddwzefu1w
-  api_key: '892983527549454'
-  api_secret: QwINu2_Wy3YcRwcPlEaWtGX8tCM
+  cloud_name: t2technology
+  api_key: '295933957584529'
+  api_secret: 3rwBnVerIP7J6lD2QPFdg5C9ijU
   enhance_image_tag: true
   static_image_support: true
+  secure: true
